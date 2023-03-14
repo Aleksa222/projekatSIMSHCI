@@ -19,6 +19,7 @@ namespace projekatSIMS.Model
 
         //Cuvamo listu svih ENTITETA - da bi ih citali i pisali
         private List<Entity> users = new List<Entity>();
+        private List<Entity> accommodations = new List<Entity>(); 
 
         private User loginUser;
 
@@ -38,6 +39,7 @@ namespace projekatSIMS.Model
         public void Save()
         {
             GenericSave(users, "users.txt");
+            GenericSave(accommodations, "accommodations.txt");
         }
 
         public void GenericSave(List<Entity> entitites, string fileName) //Prosledis sta sejvujes i gde sejvujes
@@ -58,6 +60,7 @@ namespace projekatSIMS.Model
         public void Load()
         {
             GenericLoad(users,"users.txt",typeof(User));
+            GenericLoad(accommodations, "accommodations.txt", typeof(Accommodation));
         }
 
         public void GenericLoad(List<Entity> entities, string fileName, Type type) 
@@ -69,6 +72,13 @@ namespace projekatSIMS.Model
                 if(type == typeof(User))
                 {
                     User newEntity = new User();
+                    newEntity.ImportFromString(parts);
+                    entities.Add(newEntity);
+                }
+
+                if (type == typeof(Accommodation))
+                {
+                    Accommodation newEntity = new Accommodation();
                     newEntity.ImportFromString(parts);
                     entities.Add(newEntity);
                 }
@@ -97,6 +107,12 @@ namespace projekatSIMS.Model
                 users = entities;
                 return;
             }
+
+            if (type == typeof(Accommodation))
+            {
+                accommodations = entities;
+                return;
+            }
         }
 
         public List<Entity> Get(Type type) //Vraca celu listu entiteta 
@@ -104,6 +120,11 @@ namespace projekatSIMS.Model
             if(type == typeof(User))
             {
                 return users;
+            }
+
+            if (type == typeof(Accommodation))
+            {
+                return accommodations;
             }
 
             return null; //Mora jedan biti default return
@@ -117,6 +138,11 @@ namespace projekatSIMS.Model
         {
             get { return loginUser; }
             set { loginUser = value; }
+        }
+        public List<Entity> Accommodations
+        {
+            get { return accommodations; }
+            set { accommodations = value; }
         }
 
 

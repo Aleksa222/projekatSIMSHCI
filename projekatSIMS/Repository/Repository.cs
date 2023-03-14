@@ -36,6 +36,11 @@ namespace projekatSIMS.Repository
             SIMSContext.Instance.Get(typeof(TEntity)).Remove(entity);
         }
 
+        public virtual IEnumerable<Entity> Search(string term = "")
+        {
+            throw new NotImplementedException();  //Da nema ovoga ne bi moglo bacao bi gresku jer nema return vrednosti
+        }
+
         public void Save()
         {
             SIMSContext.Instance.Save(); //Ode u bazu , pozove save i dalje se izvrsi svaka generic save funkcija

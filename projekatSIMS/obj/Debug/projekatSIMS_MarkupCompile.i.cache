@@ -10,11 +10,17 @@ none
 false
 DEBUG;TRACE
 C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\App.xaml
+<<<<<<< Updated upstream
 1219584333
 
 131397657567
-13-1310406943
-MainWindow.xaml;
+=======
+2444586698
 
-False
+25-2128594574
+>>>>>>> Stashed changes
+13-1310406943
+MainWindow.xaml;UI\View\AccomodationSearchView.xaml;
+
+True
 

@@ -9,7 +9,21 @@ namespace projekatSIMS.Repository
 {
     public class UserRepository : Repository<User>
     {
+        public IEnumerable<Entity> Search(string term = "") //Posto se search razlikuje svaki entitet mora da implementira search na svoj nacin
+        {
+            List<Entity> result = new List<Entity>();  //Formiram praznu listu koju cu da popunim i vratim
+            foreach (Entity it in SIMSContext.Instance.Users) //Daj mi listu usera
+            {
+                if (((User)it).FirstName.ToLower().Contains(term.ToLower()) || ((User)it).LastName.ToLower().Contains(term.ToLower())) //Pogledaj da li se poklapaju ime ili prezime sa poslatim stringom
+                {
+                    result.Add(it); // ako da dodaj u listu jer moze da ih bude vise
+                }
+            }
+
+            return result; //vrati result
+        }
         //override za edit
+
         public override void Edit(Entity entity) //prosledjujem izmenjen entitet ali mu je id isti
         {
             Entity user = base.Get(entity.Id);
