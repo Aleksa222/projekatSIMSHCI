@@ -1,1 +1,8 @@
+<<<<<<< Updated upstream
 1|Acc1|Loc1|Loc2|APARTMENT|10|3|4
+=======
+﻿1|apartmani1|Beograd|Srbija|APARTMENT|5|3|10
+2|apartmani2|Novi Sad|Srbija|APARTMENT|4|3|15
+3|cottage3|Nis|Srbija|COTTAGE|5|3|10
+4|house4|Jagodina|Srbija|HOUSE|6|3|115
+>>>>>>> Stashed changes

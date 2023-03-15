@@ -66,8 +66,16 @@
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Service\AccommodationService.cs" />
     <Compile Include="Service\UserService.cs" />
+<<<<<<< Updated upstream
     <Compile Include="UI\View\AccomodationSearchView.xaml.cs">
       <DependentUpon>AccomodationSearchView.xaml</DependentUpon>
+=======
+    <Compile Include="UI\Dialogs\Model\ComboBoxData.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\AccommodationSearchViewModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\LoginViewModel.cs" />
+    <Compile Include="UI\Dialogs\View\AccommodationSearchView.xaml.cs">
+      <DependentUpon>AccommodationSearchView.xaml</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
 >>>>>>> Stashed changes
     <Page Include="MainWindow.xaml">

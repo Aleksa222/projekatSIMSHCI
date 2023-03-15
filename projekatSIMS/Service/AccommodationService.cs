@@ -69,5 +69,11 @@ namespace projekatSIMS.Service
             }
             return result;
         }
+
+        public List<Accommodation> GetAccommodationByType()
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            return unitOfWork.Accommodations.GetAccommodationByType();
+        }
     }
 }

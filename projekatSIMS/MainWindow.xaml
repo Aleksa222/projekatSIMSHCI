@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+<<<<<<< Updated upstream
         
+=======
+        <Button Content="Display Accommodations" HorizontalAlignment="Left" Margin="316,35,0,0" VerticalAlignment="Top" Height="23" Width="156" Click="Button_Click"/>
+        <ListBox Margin="477,0,79,29">
+            <ListBox x:Name="MyListBox" Height="227" Width="311" SelectionChanged="MyListBox_SelectionChanged">
+                <Border BorderBrush="Black" BorderThickness="1" Height="434" Width="800"/>
+            </ListBox>
+        </ListBox>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="316,76,0,0" VerticalAlignment="Top" Width="156" SelectionChanged="comboBox_SelectionChanged_1"/>
+
+>>>>>>> Stashed changes
     </Grid>
 </Window>

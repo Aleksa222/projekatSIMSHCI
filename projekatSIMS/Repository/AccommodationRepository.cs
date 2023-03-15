@@ -36,17 +36,24 @@ namespace projekatSIMS.Repository
 
             return result;
         }
+<<<<<<< Updated upstream
         public Accommodation GetAccommodationByType(AccommodationType type)
+=======
+
+        public List<Accommodation> GetAccommodationByType()
+>>>>>>> Stashed changes
         {
+            List<Accommodation> retList = new List<Accommodation>();
             foreach (Accommodation it in SIMSContext.Instance.Accommodations)
             {
-                if (it.Type == type)
+                if (it.Type == AccommodationType.APARTMENT)
                 {
-                    return it;
+                    retList.Add(it);
                 }
             }
-
-            return null;
+            return retList;
         }
+
+    
     }
 }

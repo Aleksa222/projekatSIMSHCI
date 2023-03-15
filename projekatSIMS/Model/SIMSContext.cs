@@ -60,7 +60,7 @@ namespace projekatSIMS.Model
         public void Load()
         {
             GenericLoad(users,"users.txt",typeof(User));
-            GenericLoad(accommodations, "accommodations.txt", typeof(Accommodation));
+            GenericLoad(accommodations, "accommodation.txt", typeof(Accommodation));
         }
 
         public void GenericLoad(List<Entity> entities, string fileName, Type type) 
