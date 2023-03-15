@@ -14,7 +14,7 @@ namespace projekatSIMS.Model
         private AccommodationType type;
         private int guestLimit;
         private int minimalStay;
-        private int cancelationLimit;
+        private int cancelationLimit = 1;
     
 
         public Accommodation() { 
