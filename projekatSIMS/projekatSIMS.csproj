@@ -75,15 +75,15 @@
     <Compile Include="Service\UserService.cs" />
     <Compile Include="UI\Dialogs\ViewModel\AccommodationSearchViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\LoginViewModel.cs" />
+    <Compile Include="UI\Dialogs\View\AccommodationRegistrationView.xaml.cs">
+      <DependentUpon>AccommodationRegistrationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\AccommodationSearchView.xaml.cs">
       <DependentUpon>AccommodationSearchView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\TourService.cs" />
     <Compile Include="UI\Dialogs\View\Gost2.xaml.cs">
       <DependentUpon>Gost2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Dialogs\View\Vlasnik.xaml.cs">
-      <DependentUpon>Vlasnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\Vodic.xaml.cs">
       <DependentUpon>Vodic.xaml</DependentUpon>
@@ -101,15 +101,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\Dialogs\View\AccommodationRegistrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\View\AccommodationSearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\Gost2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Dialogs\View\Vlasnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

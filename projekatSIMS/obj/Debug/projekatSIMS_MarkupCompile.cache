@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\
 projekatSIMS
 none
 false
 DEBUG;TRACE
-C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\App.xaml
-5687368134
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\App.xaml
+5-117272938
 
-32574300606
+32-2125543002
 13-1310406943
-MainWindow.xaml;UI\Dialogs\View\AccommodationSearchView.xaml;UI\Dialogs\View\Gost2.xaml;UI\Dialogs\View\Vlasnik.xaml;UI\Dialogs\View\Vodic.xaml;
+MainWindow.xaml;UI\Dialogs\View\AccommodationRegistrationView.xaml;UI\Dialogs\View\AccommodationSearchView.xaml;UI\Dialogs\View\Gost2.xaml;UI\Dialogs\View\Vodic.xaml;
 
 False
 
