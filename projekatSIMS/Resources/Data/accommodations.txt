@@ -9,7 +9,6 @@
 7|Hotel Madrid|Madrid|Spain|APARTMENT|180|3|10
 8|Hotel Roma|Rome|Italy|APARTMENT|90|3|10
 9|Hotel Athens|Athens|Greece|HOUSE|130|3|10
-10|Hotel Vienna|Vienna|Austria|APARTMENT|100|3|10
 11|Hotel Moscow|Moscow|Russia|COTTAGE|220|3|10
 13|Hotel Dublin|Dublin|Ireland|APARTMENT|110|3|10
 14|Hotel Oslo|Oslo|Norway|APARTMENT|90|3|10
@@ -19,3 +18,4 @@
 18|Hotel Warsaw|Warsaw|Poland|COTTAGE|110|3|10
 19|Hotel Prague|Prague|Czech Republic|APARTMENT|150|3|10
 20|Hotel Budapest|Budapest|Hungary|COTTAGE|130|3|10
+28|Apartmani Jankovic|Novi Sad|Srbija|APARTMENT|10|22|1

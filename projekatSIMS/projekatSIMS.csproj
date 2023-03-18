@@ -61,6 +61,7 @@
     <Compile Include="Model\KeyPoints.cs" />
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\GuestReview.cs" />
     <Compile Include="Model\SIMSContext.cs" />
     <Compile Include="Model\Tour.cs" />
     <Compile Include="Model\UserType.cs" />

@@ -75,7 +75,7 @@ namespace projekatSIMS.UI.Dialogs.View
 
             AccommodationService accommodationService = new AccommodationService();
 
-            
+             
 
             // Extract the values from the text boxes and use them to create a new Accommodation object
             Accommodation newAccommodation = new Accommodation();

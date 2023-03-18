@@ -1,7 +1,9 @@
 ﻿using projekatSIMS.Model;
 using projekatSIMS.Repository;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Documents;
 
 namespace projekatSIMS.Service
@@ -67,6 +69,9 @@ namespace projekatSIMS.Service
             return result;
         }
 
+        
+
+
         public void RegisterAccommodation(Accommodation accommodation)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
@@ -79,6 +84,24 @@ namespace projekatSIMS.Service
             unitOfWork.Accommodations.Add(accommodation);
             unitOfWork.Save();
         }
+
+        public bool CheckDeadLine(DateTime endTimeofRegistration)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            DateTime currentDate = DateTime.Now;
+
+            if (endTimeofRegistration > currentDate)
+            {
+                throw new Exception("Vaš rok za ocenjivanje gosta je istekao.");
+                return false;
+            }
+
+            return true;
+        }
+
+       
+
+
     }
 }
 
