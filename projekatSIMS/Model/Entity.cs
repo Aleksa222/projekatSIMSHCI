@@ -29,7 +29,14 @@ namespace projekatSIMS.Model
 
         public virtual void ImportFromString(string[] parts)
         {
-            Id = int.Parse(parts[0]);
+            if (int.TryParse(parts[0], out int id))
+            {
+                Id = id;
+            }
+            else
+            {
+                Console.WriteLine("Nemoguće parsirati ID smeštaja. Niska nije u odgovarajućem formatu.");
+            }
         }
     }
 }

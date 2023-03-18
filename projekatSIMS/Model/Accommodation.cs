@@ -115,7 +115,7 @@ namespace projekatSIMS.Model
 
         public override string ExportToString()
         {
-            return id + "|" + name + "|" + type.ToString() + "|" + location.City + "|" + location.Country + "|"+ guestLimit + "|" + minimalStay + "|" + cancelationLimit;
+            return id + "|" + name  + "|" + location.City + "|" + location.Country + "|" + type.ToString() + "|" + guestLimit + "|" + minimalStay + "|" + cancelationLimit;
         }
 
         public override void ImportFromString(string[] parts)

@@ -48,7 +48,7 @@ namespace projekatSIMS.Model
         public void GenericSave(List<Entity> entitites, string fileName) //Prosledis sta sejvujes i gde sejvujes
         {
             {
-                using (StreamWriter file = new StreamWriter(_projectPath + fileName)) //Cita file liniju po liniju
+                using (StreamWriter file = new StreamWriter(_projectPath + fileName,false,Encoding.UTF8)) //Cita file liniju po liniju
                 {
                     foreach (Entity entity in entitites)
                     {
@@ -69,7 +69,7 @@ namespace projekatSIMS.Model
 
         public void GenericLoad(List<Entity> entities, string fileName, Type type)
         {
-            foreach (string line in File.ReadLines(_projectPath + fileName))
+            foreach (string line in File.ReadLines(_projectPath + fileName, Encoding.UTF8))
             {
                 string[] parts = line.Split(delimiter);
 
