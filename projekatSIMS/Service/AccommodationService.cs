@@ -2,9 +2,7 @@
 using projekatSIMS.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace projekatSIMS.Service
 {
@@ -43,10 +41,10 @@ namespace projekatSIMS.Service
             return unitOfWork.Accommodations.GetAll();
         }
 
-       public IEnumerable<Entity> Search(string term = "")
+        public IEnumerable<Entity> Search(string term = "")
         {
-          UnitOfWork unitOfWork = new UnitOfWork();
-           return unitOfWork.Accommodations.Search(term);
+            UnitOfWork unitOfWork = new UnitOfWork();
+            return unitOfWork.Accommodations.Search(term);
         }
 
         public int GenerateId()
@@ -68,5 +66,21 @@ namespace projekatSIMS.Service
             }
             return result;
         }
+
+        public void RegisterAccommodation(Accommodation accommodation)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            if (unitOfWork.Accommodations.GetAccommodationById(accommodation.Id) != null)
+            {
+                throw new Exception("Smeštaj sa datim ID-jem već postoji.");
+            }
+
+            // registrovanje novog smeštaja
+            unitOfWork.Accommodations.Add(accommodation);
+            unitOfWork.Save();
+        }
     }
 }
+
+
+

@@ -48,5 +48,20 @@ namespace projekatSIMS.Repository
 
             return null;
         }
+
+        public Accommodation GetAccommodationById(int id)
+        {
+            foreach (Accommodation it in SIMSContext.Instance.Accommodations)
+            {
+                if (it.Id == id)
+                {
+                    return it;
+                }
+            }
+
+            return null;
+        }
+
+
     }
 }

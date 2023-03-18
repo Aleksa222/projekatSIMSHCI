@@ -81,21 +81,22 @@ namespace projekatSIMS.UI.Dialogs.View
             Accommodation newAccommodation = new Accommodation();
 
             newAccommodation.Id = int.Parse(IdTextBox.Text);
-            newAccommodation.Name = NameTextBox.Text;        
+            newAccommodation.Name = NameTextBox.Text;
             newAccommodation.Location = new Location { City = CityTextBox.Text, Country = CountryTextBox.Text };
-            newAccommodation.GuestLimit = int.Parse(GuestLimitTextBox.Text);
             if (Enum.TryParse(TypeComboBox.SelectedItem.ToString(), out AccommodationType type))
             {
                 newAccommodation.Type = type;
 
             }
+            newAccommodation.GuestLimit = int.Parse(GuestLimitTextBox.Text);
+            
             newAccommodation.MinimalStay = int.Parse(MinimalStayTextBox.Text);
             newAccommodation.CancelationLimit = int.Parse(CancelationLimitTextBox.Text);
 
             // Save the new Accommodation object to the database using the AccommodationService
-            accommodationService.Add(newAccommodation);
-
-
+            accommodationService.RegisterAccommodation(newAccommodation);
+           
+            
             foreach (Accommodation entity in accommodationService.GetAll())
             {
                 AllAccommodationsListBox.Items.Add(entity.Id + " " + entity.Name + " " + entity.Location.City + " " + entity.Location.Country + " " + entity.Type + " " + entity.GuestLimit + " " + entity.MinimalStay + " " + entity.CancelationLimit);
