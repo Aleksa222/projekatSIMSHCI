@@ -85,20 +85,7 @@ namespace projekatSIMS.Service
             unitOfWork.Save();
         }
 
-        public bool CheckDeadLine(DateTime endTimeofRegistration)
-        {
-            UnitOfWork unitOfWork = new UnitOfWork();
-            DateTime currentDate = DateTime.Now;
-
-            if (endTimeofRegistration > currentDate)
-            {
-                throw new Exception("Vaš rok za ocenjivanje gosta je istekao.");
-                return false;
-            }
-
-            return true;
-        }
-
+        
        
 
 

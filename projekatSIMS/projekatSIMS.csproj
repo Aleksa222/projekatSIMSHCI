@@ -62,17 +62,22 @@
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\GuestReview.cs" />
+    <Compile Include="Model\AccommodationReservation.cs" />
     <Compile Include="Model\SIMSContext.cs" />
     <Compile Include="Model\Tour.cs" />
     <Compile Include="Model\UserType.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Repository\AccommodationRepository.cs" />
+    <Compile Include="Repository\GuestReviewRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\AccommodationReservationRepository.cs" />
     <Compile Include="Repository\TourRepository.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Service\AccommodationService.cs" />
+    <Compile Include="Service\AccommodationReservationService.cs" />
+    <Compile Include="Service\GuestReviewService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="UI\Dialogs\ViewModel\AccommodationSearchViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\LoginViewModel.cs" />
@@ -85,6 +90,9 @@
     <Compile Include="Service\TourService.cs" />
     <Compile Include="UI\Dialogs\View\Gost2.xaml.cs">
       <DependentUpon>Gost2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\GuestReviewView.xaml.cs">
+      <DependentUpon>GuestReviewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\Vodic.xaml.cs">
       <DependentUpon>Vodic.xaml</DependentUpon>
@@ -111,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\Gost2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\GuestReviewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,6 +166,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Data\accommodations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Data\accommodation_reservations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Data\guest_reviews.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

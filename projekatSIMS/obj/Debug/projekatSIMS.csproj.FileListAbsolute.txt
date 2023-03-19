@@ -104,3 +104,5 @@ C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\Vodic.baml
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\AccommodationRegistrationView.g.cs
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\AccommodationRegistrationView.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\GuestReviewView.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\GuestReviewView.baml

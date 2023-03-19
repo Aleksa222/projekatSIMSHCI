@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace projekatSIMS.Model
 {
-    internal class GuestReview : Entity
+    public class GuestReview : Entity
     {
-        public int ownerId;
-        public int reservationId;
+        public AccommodationReservation accommodationReservation;
         public int cleanliness;
         public int respectingRules;
         public string comment;
 
         public GuestReview() { }
-        public GuestReview(int ownerId, int cleanliness, int respectingRules, string comment,int reservationId)
+        public GuestReview(AccommodationReservation accommodationReservation,int cleanliness, int respectingRules, string comment)
         {
+            this.accommodationReservation = accommodationReservation;
             this.comment = comment;
             this.cleanliness = cleanliness;
             this.respectingRules = respectingRules;
-            this.reservationId = reservationId;
+            
         }
 
-        public int OwnerId
+      public AccommodationReservation AccommodationReservation
         {
-            get { return ownerId; }
+            get { return accommodationReservation; }
             set
             {
-                ownerId = value;
-                OnPropertyChanged(nameof(OwnerId));
+                accommodationReservation = value;
+                OnPropertyChanged(nameof(AccommodationReservation));
             }
         }
 
@@ -61,29 +61,20 @@ namespace projekatSIMS.Model
             }
         }
 
-        public int ReservationId
-        {
-            get { return reservationId; }
-            set
-            {
-                reservationId = value;
-                OnPropertyChanged(nameof(ReservationId));
-            }
-        }
+       
         public override string ExportToString()
         {
-            return id + "|" + ownerId + " " + reservationId +  "|" + cleanliness + "|" + respectingRules + "|" + comment;
+            return id + "|" + accommodationReservation.Id + "|" + cleanliness + "|" + respectingRules + "|" + comment;
         }
 
         public override void ImportFromString(string[] parts)
         {
 
             base.ImportFromString(parts);
-            OwnerId = int.Parse(parts[1]);
-            ReservationId = int.Parse(parts[2]);
-            Cleanliness = int.Parse(parts[3]);
-            respectingRules = int.Parse(parts[4]);
-            Comment = parts[5];
+            accommodationReservation.Id = int.Parse(parts[1]);
+            Cleanliness = int.Parse(parts[2]);
+            respectingRules = int.Parse(parts[3]);
+            Comment = parts[4];
         }
     }
 }

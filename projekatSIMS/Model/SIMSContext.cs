@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projekatSIMS.Service;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace projekatSIMS.Model
         private List<Entity> users = new List<Entity>();
         private List<Entity> tours = new List<Entity>();
         private List<Entity> accommodations = new List<Entity>();
+        private List<Entity> accommodation_reservations = new List<Entity>();
+        private List<Entity> guest_reviews = new List<Entity>();
 
         private User loginUser;
 
@@ -43,6 +46,8 @@ namespace projekatSIMS.Model
             GenericSave(users, "users.txt");
             GenericSave(accommodations, "accommodations.txt");
             GenericSave(tours, "tours.txt");
+            GenericSave(accommodation_reservations, "accommodation_reservations.txt");
+            GenericSave(guest_reviews, "guest_reviews.txt");
         }
 
         public void GenericSave(List<Entity> entitites, string fileName) //Prosledis sta sejvujes i gde sejvujes
@@ -65,6 +70,8 @@ namespace projekatSIMS.Model
             GenericLoad(users, "users.txt", typeof(User));
             GenericLoad(accommodations, "accommodations.txt", typeof(Accommodation));
             GenericLoad(tours, "tours.txt", typeof(Tour));
+            GenericLoad(accommodation_reservations, "accommodation_reservations.txt",typeof(AccommodationReservation));
+            GenericLoad(guest_reviews, "guest_reviews.txt",typeof(GuestReview));
         }
 
         public void GenericLoad(List<Entity> entities, string fileName, Type type)
@@ -88,6 +95,20 @@ namespace projekatSIMS.Model
                 if (type == typeof(Tour))
                 {
                     Tour newEntity = new Tour();
+                    newEntity.ImportFromString(parts);
+                    entities.Add(newEntity);
+                }
+
+                if (type == typeof(AccommodationReservation))
+                {
+                    AccommodationReservation newEntity = new AccommodationReservation();
+                    newEntity.ImportFromString(parts);
+                    entities.Add(newEntity);
+                }
+
+                if (type == typeof(GuestReview))
+                {
+                    GuestReview newEntity = new GuestReview();
                     newEntity.ImportFromString(parts);
                     entities.Add(newEntity);
                 }
@@ -127,6 +148,18 @@ public int GenerateId(List<Entity> entities)
             tours = entities;
             return;
         }
+
+        if (type == typeof(AccommodationReservation))
+        {
+            accommodation_reservations = entities;
+            return;
+        }
+
+        if (type == typeof(GuestReview))
+        {
+            guest_reviews = entities;
+            return;
+        }
     }
 
     public List<Entity> Get(Type type) //Vraca celu listu entiteta 
@@ -139,6 +172,17 @@ public int GenerateId(List<Entity> entities)
         {
             return accommodations;
         }
+
+        if (type == typeof(AccommodationReservation))
+        {
+            return accommodation_reservations;
+        }
+
+        if (type == typeof(GuestReview))
+        {
+            return guest_reviews;
+        }
+
 
         return tours; //Mora jedan biti default return
     }
@@ -166,7 +210,21 @@ public int GenerateId(List<Entity> entities)
         get { return tours; }
         set { tours = value; }
     }
+
+    public List<Entity> AccommodationReservations
+    {
+        get { return accommodation_reservations; }
+        set { accommodation_reservations = value; }
     }
+
+    public List<Entity> GuestReviews
+    {
+        get { return guest_reviews; }
+        set { guest_reviews = value; }
+    }
+
+     
+  }
 
     
 

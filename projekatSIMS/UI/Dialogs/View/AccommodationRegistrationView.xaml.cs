@@ -139,5 +139,12 @@ namespace projekatSIMS.UI.Dialogs.View
         {
 
         }
+
+        private void GuestReviewButton_Click(object sender, RoutedEventArgs e)
+        {
+            GuestReviewView win2 = new GuestReviewView();
+            win2.Show();
+
+        }
     }
 }

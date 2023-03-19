@@ -38,6 +38,7 @@
         <Label Content="Cancelation Limit&#xD;&#xA;" HorizontalAlignment="Left" Margin="47,343,0,0" VerticalAlignment="Top"/>
         <Label Content="Smestaji:" HorizontalAlignment="Center" Height="27" Margin="0,10,0,0" VerticalAlignment="Top" Width="90"/>
         <Label Content="Smestaj(id) koji zelite da &#xD;&#xA;izbrisete:&#xD;&#xA;" HorizontalAlignment="Left" Height="44" Margin="354,296,0,0" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="GuestReviewButton" Content="Rezervacije" HorizontalAlignment="Left" Height="33" Margin="649,305,0,0" VerticalAlignment="Top" Width="79" Click="GuestReviewButton_Click"/>
 
     </Grid>
 </Window>

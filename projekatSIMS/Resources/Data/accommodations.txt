@@ -16,6 +16,7 @@
 16|Hotel Helsinki|Helsinki|Finland|APARTMENT|70|3|10
 17|Hotel Lisbon|Lisbon|Portugal|HOUSE|120|3|10
 18|Hotel Warsaw|Warsaw|Poland|COTTAGE|110|3|10
-19|Hotel Prague|Prague|Czech Republic|APARTMENT|150|3|10
 20|Hotel Budapest|Budapest|Hungary|COTTAGE|130|3|10
 28|Apartmani Jankovic|Novi Sad|Srbija|APARTMENT|10|22|1
+50|Koliba Maslacak|Novi Sad|Srbija|COTTAGE|10|11|5
+25|Kolibica|Novi Sad|Srbija|COTTAGE|10|11|1

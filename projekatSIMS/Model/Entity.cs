@@ -35,7 +35,7 @@ namespace projekatSIMS.Model
             }
             else
             {
-                Console.WriteLine("Nemoguće parsirati ID smeštaja. Niska nije u odgovarajućem formatu.");
+                Console.WriteLine("Nemoguće parsirati ID. Niska nije u odgovarajućem formatu.");
             }
         }
     }
