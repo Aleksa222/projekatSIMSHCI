@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AccommodationRegistrationView" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="83,43,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="143" Height="31" TextChanged="IdTextBox_TextChanged"/>
+        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="58,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" Height="25" TextChanged="IdTextBox_TextChanged"/>
         <TextBox x:Name="CityTextBox" HorizontalAlignment="Left" Height="21" Margin="83,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103"/>
         <TextBox x:Name="CountryTextBox" HorizontalAlignment="Left" Height="21" Margin="83,165,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="103" TextChanged="CountryTextBox_TextChanged"/>
         <ComboBox x:Name="TypeComboBox" HorizontalAlignment="Left" Height="39" Margin="83,0,0,0" VerticalAlignment="Center" Width="117" SelectionChanged="TypeComboBox_SelectionChanged"/>
@@ -28,7 +28,7 @@
         <ListBox x:Name="AllAccommodationsListBox" HorizontalAlignment="Left" Height="236" Margin="354,42,0,0" VerticalAlignment="Top" Width="355" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="AllAccommodationsListBox_SelectionChanged"/>
         <TextBox x:Name="DeleteIdTextBox" HorizontalAlignment="Left" Height="26" Margin="509,305,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="58" TextChanged="DeleteIdTextBox_TextChanged"/>
         <Button x:Name="DeleteButton" Content="Ukloni" HorizontalAlignment="Left" Height="26" Margin="509,351,0,0" VerticalAlignment="Top" Width="58" Click="DeleteButton_Click" RenderTransformOrigin="0.535,1.155"/>
-        <Label x:Name="IdLabel" Content="Id" HorizontalAlignment="Left" Height="31" Margin="24,43,0,0" VerticalAlignment="Top" Width="46"/>
+        <Label x:Name="IdLabel" Content="Id :" HorizontalAlignment="Left" Height="31" Margin="18,19,0,0" VerticalAlignment="Top" Width="46"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="24,87,0,0" VerticalAlignment="Top"/>
         <Label Content="City" HorizontalAlignment="Left" Margin="24,129,0,0" VerticalAlignment="Top"/>
         <Label Content="Country" HorizontalAlignment="Left" Margin="24,160,0,0" VerticalAlignment="Top"/>
