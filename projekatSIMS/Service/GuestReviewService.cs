@@ -49,18 +49,18 @@ namespace projekatSIMS.Service
             return unitOfWork.GuestReviews.GenerateId();
         }
 
-        public void CheckDate( DateTime endTimeofRegistration)
+        public bool CheckDate( DateTime endTimeofRegistration)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
             DateTime currentDate = DateTime.Now;
 
-            if (endTimeofRegistration > currentDate)
+            if (endTimeofRegistration < currentDate)
             {
                 throw new Exception("Vaš rok za ocenjivanje gosta je istekao.");
                
             }
 
-           
+            return true;
         }
 
      

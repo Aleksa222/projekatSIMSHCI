@@ -41,8 +41,9 @@ namespace projekatSIMS.UI.Dialogs.View
 
             endDate = ac.EndDate;
             endDate = endDate.AddDays(5);
-            guestReviewService.CheckDate(endDate);
-            
+            if (guestReviewService.CheckDate(endDate))
+            {
+
                 GuestReview guestReview = new GuestReview();
                 guestReview.accommodationReservation = ac;
                 guestReview.Cleanliness = int.Parse(CleanlinessTextBox.Text);
@@ -50,14 +51,7 @@ namespace projekatSIMS.UI.Dialogs.View
                 guestReview.Comment = CommentTextBox.Text;
 
                 guestReviewService.Add(guestReview);
-             
-           
-
-
-
-            
-
-
+            }
         }
 
       
@@ -91,7 +85,6 @@ namespace projekatSIMS.UI.Dialogs.View
         private void ReservationsDisplayButton_Click(object sender, RoutedEventArgs e)
         {
             ReservationsListBox.Items.Clear();
-
             AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
 
             foreach (AccommodationReservation entity in accommodationReservationService.GetAll())
