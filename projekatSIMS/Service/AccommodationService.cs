@@ -69,13 +69,14 @@ namespace projekatSIMS.Service
             return result;
         }
 
+
         
 
 
         public void RegisterAccommodation(Accommodation accommodation)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
-            if (unitOfWork.Accommodations.GetAccommodationByName(accommodation.Name) != null)
+            if (unitOfWork.Accommodations.GetAccommodationByNameCityAndCountry(accommodation) != null)
             { 
                throw new Exception("Smestaj sa unetim podacima vec postoji.");
             }

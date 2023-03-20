@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace projekatSIMS.Service
 {
@@ -72,7 +73,8 @@ namespace projekatSIMS.Service
 
             if(unitOfWork.GuestReviews.GetGuestReviewByAccommodation(id) != null)
             {
-                throw new Exception("Recenzija za datog gosta vec postoji.");
+                // throw new Exception("Recenzija za datog gosta vec postoji.");
+                MessageBox.Show("Vec ste ocenili ovog gosta!");
             }
 
             return true;

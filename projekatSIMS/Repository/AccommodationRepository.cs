@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -88,7 +89,21 @@ namespace projekatSIMS.Repository
             return null;
         }
 
-        
+
+        public Accommodation GetAccommodationByNameCityAndCountry(Accommodation accommodation)
+        {
+            foreach (Accommodation it in SIMSContext.Instance.Accommodations)
+            {
+                if (it.Name == accommodation.Name & it.Location.City == accommodation.Location.City & it.Location.Country == accommodation.Location.country)
+                {
+                    return it;
+                }
+            }
+
+            return null;
+        }
+       
+
 
     }
 }

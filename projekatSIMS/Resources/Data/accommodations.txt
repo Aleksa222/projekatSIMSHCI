@@ -20,3 +20,4 @@
 1|Koliba Maslacak|Novi Sad|Srbija|COTTAGE|10|11|5
 25|Kolibica|Novi Sad|Srbija|COTTAGE|10|11|1
 29|Hotel Mona|Budapest|Hungary|APARTMENT|5|4|1
+30|Apartmani Uzice|Uzice|Srbija|APARTMENT|3|4|5

@@ -40,10 +40,6 @@ namespace projekatSIMS.UI.Dialogs.View
 
             if (guestReviewService.GuestReviewExists(ac.Id))
             {
-
-
-
-
                 endDate = ac.EndDate;
                 endDate = endDate.AddDays(5);
                 if (guestReviewService.CheckDate(endDate))
@@ -59,6 +55,7 @@ namespace projekatSIMS.UI.Dialogs.View
                     guestReviewService.Add(guestReview);
                 }
             }
+            
         }
 
       
