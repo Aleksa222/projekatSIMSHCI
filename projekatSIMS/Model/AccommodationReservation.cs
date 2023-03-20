@@ -16,6 +16,7 @@ namespace projekatSIMS.Model
         private DateTime endDate;
         private int numberOfGuests;
 
+
         public AccommodationReservation() { }
 
         public AccommodationReservation(Accommodation accommodation, DateTime startDate, DateTime endDate, int numberOfGuests)

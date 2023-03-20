@@ -75,12 +75,14 @@ namespace projekatSIMS.Service
         public void RegisterAccommodation(Accommodation accommodation)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
-            if (unitOfWork.Accommodations.GetAccommodationById(accommodation.Id) != null)
-            {
-                throw new Exception("Smeštaj sa datim ID-jem već postoji.");
+            if (unitOfWork.Accommodations.GetAccommodationByName(accommodation.Name) != null)
+            { 
+               throw new Exception("Smestaj sa unetim podacima vec postoji.");
             }
 
             // registrovanje novog smeštaja
+            int id = GenerateId();
+            accommodation.Id = id;
             unitOfWork.Accommodations.Add(accommodation);
             unitOfWork.Save();
         }

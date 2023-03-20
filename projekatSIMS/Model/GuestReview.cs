@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projekatSIMS.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace projekatSIMS.Model
     public class GuestReview : Entity
     {
         public AccommodationReservation accommodationReservation;
+        AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
         public int cleanliness;
         public int respectingRules;
         public string comment;
@@ -71,7 +73,7 @@ namespace projekatSIMS.Model
         {
 
             base.ImportFromString(parts);
-            accommodationReservation.Id = int.Parse(parts[1]);
+            AccommodationReservation = (AccommodationReservation)accommodationReservationService.Get(int.Parse(parts[1]));
             Cleanliness = int.Parse(parts[2]);
             respectingRules = int.Parse(parts[3]);
             Comment = parts[4];

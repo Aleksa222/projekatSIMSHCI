@@ -12,7 +12,7 @@ namespace projekatSIMS.Service
     {
         public void Add(GuestReview guestReview)
         {
-            UnitOfWork unitOfWork = new UnitOfWork();
+            UnitOfWork unitOfWork = new UnitOfWork(); 
             unitOfWork.GuestReviews.Add(guestReview);
             unitOfWork.Save();
         }
@@ -58,6 +58,21 @@ namespace projekatSIMS.Service
             {
                 throw new Exception("Vaš rok za ocenjivanje gosta je istekao.");
                
+            }
+
+            return true;
+        }
+
+        
+
+        public bool GuestReviewExists(int id)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            GuestReview guestReview = new GuestReview();
+
+            if(unitOfWork.GuestReviews.GetGuestReviewByAccommodation(id) != null)
+            {
+                throw new Exception("Recenzija za datog gosta vec postoji.");
             }
 
             return true;

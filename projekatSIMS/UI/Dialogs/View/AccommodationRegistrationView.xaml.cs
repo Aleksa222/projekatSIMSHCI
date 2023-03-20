@@ -80,7 +80,7 @@ namespace projekatSIMS.UI.Dialogs.View
             // Extract the values from the text boxes and use them to create a new Accommodation object
             Accommodation newAccommodation = new Accommodation();
 
-            newAccommodation.Id = int.Parse(IdTextBox.Text);
+            //newAccommodation.Id = int.Parse(IdTextBox.Text);
             newAccommodation.Name = NameTextBox.Text;
             newAccommodation.Location = new Location { City = CityTextBox.Text, Country = CountryTextBox.Text };
             if (Enum.TryParse(TypeComboBox.SelectedItem.ToString(), out AccommodationType type))

@@ -19,6 +19,19 @@ namespace projekatSIMS.Repository
             ((GuestReview)guestReview).Comment = ((GuestReview)entity).Comment;
         }
 
-      
+        public GuestReview GetGuestReviewByAccommodation(int id)
+        {
+            GuestReview result = null;
+            foreach (GuestReview it in SIMSContext.Instance.GuestReviews)
+            {
+                if (it.AccommodationReservation.Id == id)
+                {
+                    result = it;
+                }
+            }
+            return result;
+        }
+
+
     }
 }

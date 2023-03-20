@@ -38,19 +38,26 @@ namespace projekatSIMS.UI.Dialogs.View
             AccommodationReservation ac = new AccommodationReservation();
             ac = (AccommodationReservation)accommodationReservationService.Get(int.Parse(ReservationId.Text));
 
-
-            endDate = ac.EndDate;
-            endDate = endDate.AddDays(5);
-            if (guestReviewService.CheckDate(endDate))
+            if (guestReviewService.GuestReviewExists(ac.Id))
             {
 
-                GuestReview guestReview = new GuestReview();
-                guestReview.accommodationReservation = ac;
-                guestReview.Cleanliness = int.Parse(CleanlinessTextBox.Text);
-                guestReview.RespectingRules = int.Parse(RespectingRulesTextBox.Text);
-                guestReview.Comment = CommentTextBox.Text;
 
-                guestReviewService.Add(guestReview);
+
+
+                endDate = ac.EndDate;
+                endDate = endDate.AddDays(5);
+                if (guestReviewService.CheckDate(endDate))
+                {
+
+                    GuestReview guestReview = new GuestReview();
+                    guestReview.accommodationReservation = ac;
+                    guestReview.Cleanliness = int.Parse(CleanlinessTextBox.Text);
+                    guestReview.RespectingRules = int.Parse(RespectingRulesTextBox.Text);
+                    guestReview.Comment = CommentTextBox.Text;
+
+                    guestReview.Id = guestReviewService.GenerateId();
+                    guestReviewService.Add(guestReview);
+                }
             }
         }
 
