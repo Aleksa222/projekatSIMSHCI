@@ -22,6 +22,8 @@ namespace projekatSIMS.UI.Dialogs.View
     /// </summary>
     public partial class GuestReviewView : Window
     {
+        AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
+        GuestReviewService guestReviewService = new GuestReviewService();
         public GuestReviewView()
         {
                 InitializeComponent();
@@ -30,31 +32,19 @@ namespace projekatSIMS.UI.Dialogs.View
 
         private void LayGuestReviewButton_Click(object sender, RoutedEventArgs e)
         {
+
+            AccommodationReservation ac = (AccommodationReservation)accommodationReservationService.Get(int.Parse(ReservationId.Text));
+
+            GuestReview guestReview = new GuestReview();
+            guestReview.accommodationReservation = ac;
+            //if(int.Parse(CleanlinessTextBox.Text) < 1 || int.Parse(CleanlinessTextBox.Text))
+            guestReview.Cleanliness = int.Parse(CleanlinessTextBox.Text);
+            guestReview.RespectingRules = int.Parse(RespectingRulesTextBox.Text);
+            guestReview.Comment = CommentTextBox.Text;
+
+            guestReviewService.PlaceGuestReview(guestReview);
             
-
-            GuestReviewService guestReviewService = new GuestReviewService();
-            AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
-            DateTime endDate = new DateTime();
-            AccommodationReservation ac = new AccommodationReservation();
-            ac = (AccommodationReservation)accommodationReservationService.Get(int.Parse(ReservationId.Text));
-
-            if (guestReviewService.GuestReviewExists(ac.Id))
-            {
-                endDate = ac.EndDate;
-                endDate = endDate.AddDays(5);
-                if (guestReviewService.CheckDate(endDate))
-                {
-
-                    GuestReview guestReview = new GuestReview();
-                    guestReview.accommodationReservation = ac;
-                    guestReview.Cleanliness = int.Parse(CleanlinessTextBox.Text);
-                    guestReview.RespectingRules = int.Parse(RespectingRulesTextBox.Text);
-                    guestReview.Comment = CommentTextBox.Text;
-
-                    guestReview.Id = guestReviewService.GenerateId();
-                    guestReviewService.Add(guestReview);
-                }
-            }
+     
             
         }
 
@@ -89,7 +79,6 @@ namespace projekatSIMS.UI.Dialogs.View
         private void ReservationsDisplayButton_Click(object sender, RoutedEventArgs e)
         {
             ReservationsListBox.Items.Clear();
-            AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
 
             foreach (AccommodationReservation entity in accommodationReservationService.GetAll())
             {

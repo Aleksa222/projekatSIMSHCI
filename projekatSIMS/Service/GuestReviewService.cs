@@ -57,29 +57,74 @@ namespace projekatSIMS.Service
 
             if (endTimeofRegistration < currentDate)
             {
-                throw new Exception("Vaš rok za ocenjivanje gosta je istekao.");
-               
+                return false;
             }
 
             return true;
         }
 
-        
+        /* public void SetTimer(DateTime endDate)
+         {
+             var timer = new System.Timers.Timer();
+             timer.Elapsed += (sender, e) => {
+                 if (DateTime.Now > endDate)
+                 {
+                     timer.Stop();
+                 }
+                 else
+                 {
+                     MessageBox.Show("Molimo vas da ocenite gosta.");
+                 }
+             };
+             timer.Interval = TimeSpan.FromDays(1).TotalMilliseconds;
+             timer.Start();
+         }*/
 
-        public bool GuestReviewExists(int id)
+        public bool CheckGrades(int cleanliness, int respectingRules)
+        {
+            if (cleanliness < 1 || cleanliness > 5 || respectingRules < 1 || respectingRules > 5)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+
+            public void PlaceGuestReview(GuestReview guestReview)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
-            GuestReview guestReview = new GuestReview();
 
-            if(unitOfWork.GuestReviews.GetGuestReviewByAccommodation(id) != null)
+            DateTime endDate = new DateTime();
+            endDate = guestReview.accommodationReservation.EndDate.AddDays(5);
+
+            if (CheckDate(endDate) == false)
             {
-                // throw new Exception("Recenzija za datog gosta vec postoji.");
+                MessageBox.Show("Vaš rok za ocenjivanje gosta je istekao.");
+                return;
+            }
+            
+
+            else if(unitOfWork.GuestReviews.GetGuestReviewByAccommodation(guestReview.accommodationReservation.Id) != null)
+            {
+               
                 MessageBox.Show("Vec ste ocenili ovog gosta!");
+                return;
+                
+            }
+             else if(!CheckGrades(guestReview.Cleanliness,guestReview.RespectingRules)) {
+                MessageBox.Show("Mozete da unesete ocenu samo od 1 do 5.");
+                return;
             }
 
-            return true;
+            else
+            {
+                guestReview.Id = GenerateId();
+                Add(guestReview);
+            }
+
         }
 
-     
+
     }
 }

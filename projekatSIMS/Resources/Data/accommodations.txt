@@ -21,3 +21,5 @@
 25|Kolibica|Novi Sad|Srbija|COTTAGE|10|11|1
 29|Hotel Mona|Budapest|Hungary|APARTMENT|5|4|1
 30|Apartmani Uzice|Uzice|Srbija|APARTMENT|3|4|5
+31|Hotel Beograd|Beograd|Srbija|APARTMENT|3|4|2
+32|Apartmani Mitic|Novi Sad|Srbija|APARTMENT|4|3|2

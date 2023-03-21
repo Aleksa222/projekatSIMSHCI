@@ -4,6 +4,7 @@ using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows;
 using System.Windows.Documents;
 
 namespace projekatSIMS.Service
@@ -77,15 +78,20 @@ namespace projekatSIMS.Service
         {
             UnitOfWork unitOfWork = new UnitOfWork();
             if (unitOfWork.Accommodations.GetAccommodationByNameCityAndCountry(accommodation) != null)
-            { 
-               throw new Exception("Smestaj sa unetim podacima vec postoji.");
-            }
+            {
+                MessageBox.Show("Smestaj sa unetim podacima vec postoji.");
+                return;
 
-            // registrovanje novog smeštaja
-            int id = GenerateId();
-            accommodation.Id = id;
-            unitOfWork.Accommodations.Add(accommodation);
-            unitOfWork.Save();
+            }
+            else
+            {
+
+                // registrovanje novog smeštaja
+                int id = GenerateId();
+                accommodation.Id = id;
+                unitOfWork.Accommodations.Add(accommodation);
+                unitOfWork.Save();
+            }
         }
 
         

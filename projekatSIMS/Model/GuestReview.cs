@@ -14,6 +14,7 @@ namespace projekatSIMS.Model
         public int cleanliness;
         public int respectingRules;
         public string comment;
+       
 
         public GuestReview() { }
         public GuestReview(AccommodationReservation accommodationReservation,int cleanliness, int respectingRules, string comment)
@@ -22,7 +23,7 @@ namespace projekatSIMS.Model
             this.comment = comment;
             this.cleanliness = cleanliness;
             this.respectingRules = respectingRules;
-            
+         
         }
 
       public AccommodationReservation AccommodationReservation

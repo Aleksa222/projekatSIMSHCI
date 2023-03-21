@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace projekatSIMS.Service
 {
@@ -74,5 +75,9 @@ namespace projekatSIMS.Service
             }
             return availableAccommodations;
         }
+
+       
+
+        
     }
 }
