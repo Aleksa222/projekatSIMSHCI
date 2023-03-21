@@ -14,10 +14,10 @@ namespace projekatSIMS.Repository
             Entity accommodationReservation = base.Get(entity.Id);
 
             ((AccommodationReservation)accommodationReservation).Id = ((AccommodationReservation)entity).Id;
-            ((AccommodationReservation)accommodationReservation).Accommodation = ((AccommodationReservation)entity).Accommodation;
+            ((AccommodationReservation)accommodationReservation).AccommodationName = ((AccommodationReservation)entity).AccommodationName;
             ((AccommodationReservation)accommodationReservation).StartDate = ((AccommodationReservation)entity).StartDate;
             ((AccommodationReservation)accommodationReservation).EndDate = ((AccommodationReservation)entity).EndDate;
-            ((AccommodationReservation)accommodationReservation).NumberOfGuests = ((AccommodationReservation)entity).NumberOfGuests;
+            ((AccommodationReservation)accommodationReservation).GuestCount = ((AccommodationReservation)entity).GuestCount;
 
 
 

@@ -24,6 +24,7 @@ namespace projekatSIMS.UI.Dialogs.View
     {
         AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
         GuestReviewService guestReviewService = new GuestReviewService();
+        GuestReviewRepository guestReviewRepository = new GuestReviewRepository();
         public GuestReviewView()
         {
                 InitializeComponent();
@@ -37,7 +38,6 @@ namespace projekatSIMS.UI.Dialogs.View
 
             GuestReview guestReview = new GuestReview();
             guestReview.accommodationReservation = ac;
-            //if(int.Parse(CleanlinessTextBox.Text) < 1 || int.Parse(CleanlinessTextBox.Text))
             guestReview.Cleanliness = int.Parse(CleanlinessTextBox.Text);
             guestReview.RespectingRules = int.Parse(RespectingRulesTextBox.Text);
             guestReview.Comment = CommentTextBox.Text;
@@ -82,8 +82,13 @@ namespace projekatSIMS.UI.Dialogs.View
 
             foreach (AccommodationReservation entity in accommodationReservationService.GetAll())
             {
-                ReservationsListBox.Items.Add(entity.Id + " " + entity.Accommodation.Id + " " +  entity.StartDate + " " + entity.EndDate + " " + entity.NumberOfGuests);
+                ReservationsListBox.Items.Add(entity.Id + " " + entity.AccommodationName + " " +  entity.StartDate + " " + entity.EndDate + " " + entity.GuestCount);
+                if(DateTime.Now < (entity.EndDate.AddDays(5)) && guestReviewRepository.GetGuestReviewByAccommodation(entity.Id) == null ) 
+                {
+                    MessageBox.Show("Niste ocenili gosta sa ID rezervacijom : " + entity.Id);
+                }
             }
+           
         }
     }
 }

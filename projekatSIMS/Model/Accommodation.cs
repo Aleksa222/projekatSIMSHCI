@@ -115,7 +115,7 @@ namespace projekatSIMS.Model
 
         public override string ExportToString()
         {
-            return id + "|" + name  + "|" + location.City + "|" + location.Country + "|" + type.ToString() + "|" + guestLimit + "|" + minimalStay + "|" + cancelationLimit;
+            return id + "|" + name  + "|" + type.ToString() + "|" + location.City + "|" + location.Country  + "|" + guestLimit + "|" + minimalStay + "|" + cancelationLimit;
         }
 
         public override void ImportFromString(string[] parts)
@@ -123,9 +123,10 @@ namespace projekatSIMS.Model
             base.ImportFromString(parts);
             
             Name = parts[1];
-            Location.City = parts[2];
-            Location.Country = parts[3];
-            SetAccommodationType(parts[4]);
+            SetAccommodationType(parts[2]); 
+            Location.City = parts[3];
+            Location.Country = parts[4];
+            
             GuestLimit = int.Parse(parts[5]);
             MinimalStay = int.Parse(parts[6]);
             CancelationLimit = int.Parse(parts[7]);

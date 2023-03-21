@@ -1,8 +1,10 @@
 ﻿using projekatSIMS.Service;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -10,30 +12,29 @@ namespace projekatSIMS.Model
 {
     public class AccommodationReservation  : Entity
     {
-        private Accommodation accommodation;
-        private AccommodationService accommodationService = new AccommodationService();
-        private DateTime startDate;
-        private DateTime endDate;
-        private int numberOfGuests;
+            private string accommodationName;
+            private DateTime startDate;
+            private DateTime endDate;
+            private int guestCount;
 
 
         public AccommodationReservation() { }
 
-        public AccommodationReservation(Accommodation accommodation, DateTime startDate, DateTime endDate, int numberOfGuests)
+        public AccommodationReservation(string accommodation, DateTime startDate, DateTime endDate, int guestCount)
         {
-            this.accommodation = accommodation;
+            this.accommodationName = accommodation;
             this.startDate = startDate;
             this.endDate = endDate;
-            this.numberOfGuests = numberOfGuests;
+            this.guestCount = guestCount;
         }
 
-        public Accommodation Accommodation
+        public string AccommodationName
         {
-            get { return accommodation; }
+            get { return accommodationName; }
             set
             {
-                accommodation = value;
-                OnPropertyChanged(nameof(Accommodation));
+                accommodationName = value;
+                OnPropertyChanged(nameof(AccommodationName));
             }
         }
 
@@ -57,33 +58,34 @@ namespace projekatSIMS.Model
                 OnPropertyChanged(nameof(EndDate));
             }
         }
-        public int NumberOfGuests
+        public int GuestCount
         {
-            get { return numberOfGuests; }
+            get { return guestCount; }
             set
             {
-                numberOfGuests = value;
-                OnPropertyChanged(nameof(NumberOfGuests));
+                guestCount = value;
+                OnPropertyChanged(nameof(GuestCount));
             }
         }
 
+      
+
         public override string ExportToString()
         {
-            return id + "|" + accommodation.Id + "|" + startDate.Date + "|" + endDate.Date + "|" + numberOfGuests;
+            return id + "|" + accommodationName + "|" + startDate.ToString("yyyy-MM-dd") + "|" + endDate.ToString("yyyy-MM-dd") + "|" + guestCount;
         }
 
         public override void ImportFromString(string[] parts)
         {
             base.ImportFromString(parts);
-            Accommodation = (Accommodation)accommodationService.Get(int.Parse(parts[1]));
-            StartDate = DateTime.ParseExact(parts[2], "dd.MM.yyyy", null);
-            EndDate = DateTime.ParseExact(parts[3], "dd.MM.yyyy", null);
-            NumberOfGuests = int.Parse(parts[4]);
-            
+            accommodationName = parts[1];
+            startDate = DateTime.ParseExact(parts[2], "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            endDate = DateTime.ParseExact(parts[3], "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            guestCount = int.Parse(parts[4]);
 
-        }
-
+        }
 
 
-    }
+    }
+
 }

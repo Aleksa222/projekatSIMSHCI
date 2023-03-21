@@ -56,28 +56,5 @@ namespace projekatSIMS.Service
             return unitOfWork.AccommodationReservations.GenerateId();
         }
 
-        public List<Entity> GetAvailableAccommodations(DateTime start, DateTime end)
-        {
-
-            UnitOfWork unitOfWork = new UnitOfWork();
-            List<Entity> allAccommodations = new List<Entity>(unitOfWork.Accommodations.GetAll());
-            var reservedAccommodations = this.GetAll();
-            List<Entity> availableAccommodations = new List<Entity>(allAccommodations);
-            foreach (Accommodation r in allAccommodations)
-            {
-                foreach (AccommodationReservation reservation in reservedAccommodations)
-                {
-                    if ((((start <= reservation.StartDate) && (end > reservation.StartDate)) || ((start < reservation.EndDate) && (end >= reservation.EndDate))) && (reservation.Accommodation == r))
-                    {
-                        availableAccommodations.Remove(r);
-                    }
-                }
-            }
-            return availableAccommodations;
-        }
-
-       
-
-        
     }
 }
