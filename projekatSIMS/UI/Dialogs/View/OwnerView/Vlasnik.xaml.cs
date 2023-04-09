@@ -75,7 +75,7 @@ namespace projekatSIMS.UI.Dialogs.View
 
             AccommodationService accommodationService = new AccommodationService();
 
-             
+
 
             // Extract the values from the text boxes and use them to create a new Accommodation object
             Accommodation newAccommodation = new Accommodation();
@@ -89,17 +89,17 @@ namespace projekatSIMS.UI.Dialogs.View
 
             }
             newAccommodation.GuestLimit = int.Parse(GuestLimitTextBox.Text);
-            
-            newAccommodation.MinimalStay = int.Parse(MinimalStayTextBox.Text);
-            newAccommodation.CancelationLimit = int.Parse(CancelationLimitTextBox.Text);
+
+            newAccommodation.MinimumStayDays = int.Parse(MinimalStayTextBox.Text);
+            newAccommodation.CancellationDays = int.Parse(CancelationLimitTextBox.Text);
 
             // Save the new Accommodation object to the database using the AccommodationService
             accommodationService.RegisterAccommodation(newAccommodation);
-           
-            
+
+
             foreach (Accommodation entity in accommodationService.GetAll())
             {
-                AllAccommodationsListBox.Items.Add(entity.Id + " " + entity.Name + " " + entity.Location.City + " " + entity.Location.Country + " " + entity.Type + " " + entity.GuestLimit + " " + entity.MinimalStay + " " + entity.CancelationLimit);
+                AllAccommodationsListBox.Items.Add(entity.Id + " " + entity.Name + " " + entity.Location.City + " " + entity.Location.Country + " " + entity.Type + " " + entity.GuestLimit + " " + entity.MinimumStayDays + " " + entity.CancellationDays);
             }
         }
 
@@ -118,8 +118,8 @@ namespace projekatSIMS.UI.Dialogs.View
 
             foreach (Accommodation entity in accommodationService.GetAll())
             {
-                if(entity.Id == int.Parse(DeleteIdTextBox.Text))
-                { 
+                if (entity.Id == int.Parse(DeleteIdTextBox.Text))
+                {
                     accommodationService.Remove(entity);
                     break;
                 }
@@ -128,7 +128,7 @@ namespace projekatSIMS.UI.Dialogs.View
 
             foreach (Accommodation entity in accommodationService.GetAll())
             {
-                AllAccommodationsListBox.Items.Add(entity.Id + " " + entity.Name + " " + entity.Location.City  + " " + entity.Location.Country + " " + entity.Type + " " + entity.GuestLimit + " " + entity.MinimalStay + " " + entity.CancelationLimit);
+                AllAccommodationsListBox.Items.Add(entity.Id + " " + entity.Name + " " + entity.Location.City + " " + entity.Location.Country + " " + entity.Type + " " + entity.GuestLimit + " " + entity.MinimumStayDays + " " + entity.CancellationDays);
             }
 
 
@@ -144,6 +144,29 @@ namespace projekatSIMS.UI.Dialogs.View
         {
             GuestReviewView win2 = new GuestReviewView();
             win2.Show();
+
+        }
+
+        private void ImageAccTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ShowImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            AccommodationService accommodationService = new AccommodationService();
+            Accommodation accommodation = accommodationService.GetAccommodationById(int.Parse(ImageAccTextBox.Text));
+         
+
+            if (accommodation != null && accommodation.ImageUrls.Count > 0)
+            {
+                BitmapImage bitmapImage = new BitmapImage(new Uri(accommodation.ImageUrls[0]));
+                AccommodationImage.Source = bitmapImage;
+            }
+            else
+            {
+                AccommodationImage.Source = null;
+            }
 
         }
     }

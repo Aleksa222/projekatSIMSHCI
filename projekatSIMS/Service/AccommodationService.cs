@@ -70,6 +70,20 @@ namespace projekatSIMS.Service
             return result;
         }
 
+        public Accommodation GetAccommodationById(int id)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            Accommodation result = null;
+            foreach (Accommodation it in unitOfWork.Accommodations.GetAll())
+            {
+                if (it.Id == id)
+                {
+                    result = it;
+                }
+            }
+            return result;
+        }
+
         public void RegisterAccommodation(Accommodation accommodation)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
@@ -85,8 +99,40 @@ namespace projekatSIMS.Service
                 // registrovanje novog smeštaja
                 int id = GenerateId();
                 accommodation.Id = id;
+                accommodation.OwnerId = unitOfWork.Users.GetLoginUser().Id;
                 unitOfWork.Accommodations.Add(accommodation);
                 unitOfWork.Save();
+            }
+        }
+
+
+
+        public void AddImageToAccommodation(int accommodationId, string imageUrl)
+        {
+            UnitOfWork unitOfWork=new UnitOfWork();
+            if (unitOfWork.Accommodations.GetAccommodationById(accommodationId) != null)
+            {
+                Accommodation accommodation = unitOfWork.Accommodations.GetAccommodationById(accommodationId);
+                accommodation.AddImage(imageUrl);
+            }
+        }
+        public void RemoveImageFromAccommodation(int accommodationId, string imageUrl)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            if (unitOfWork.Accommodations.GetAccommodationById(accommodationId) != null)
+            {
+                Accommodation accommodation = unitOfWork.Accommodations.GetAccommodationById(accommodationId);
+                accommodation.RemoveImage(imageUrl);
+            }
+        }
+
+        public void ShowImagesForAccommodation(int accommodationId)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            if (unitOfWork.Accommodations.GetAccommodationById(accommodationId) != null)
+            {
+                Accommodation accommodation = unitOfWork.Accommodations.GetAccommodationById(accommodationId);
+             
             }
         }
     }

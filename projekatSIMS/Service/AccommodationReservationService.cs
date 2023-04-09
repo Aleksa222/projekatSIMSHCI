@@ -66,5 +66,29 @@ namespace projekatSIMS.Service
             unitOfWork.AccommodationReservations.Add(accommodationReservation);
             unitOfWork.Save();
         }
+
+
+        public bool AreNewDatesAvailable(int reservationId,DateTime startDate, DateTime endDate)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            List<AccommodationReservation> existingReservations = (List<AccommodationReservation>)unitOfWork.AccommodationReservations.GetAll(); // Preuzmi sve postojeće rezervacije
+
+            foreach (AccommodationReservation reservation in existingReservations)
+            {
+                if (reservation.Id == reservationId &&
+                    !(reservation.StartDate <= startDate || reservation.StartDate >= endDate))
+                {
+                    return false;
+                    
+                }
+            }
+            return true;
+            
+        }
+       
+
+
+
+
     }
 }

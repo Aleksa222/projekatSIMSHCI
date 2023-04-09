@@ -42,7 +42,7 @@ namespace projekatSIMS.UI.Dialogs.View
             guestReview.RespectingRules = int.Parse(RespectingRulesTextBox.Text);
             guestReview.Comment = CommentTextBox.Text;
 
-            guestReviewService.PlaceGuestReview(guestReview);
+            guestReviewService.SaveGuestReview(guestReview);
 
 
 
@@ -95,7 +95,7 @@ namespace projekatSIMS.UI.Dialogs.View
             foreach (AccommodationReservation entity in accommodationReservationService.GetAll())
             {
                 DateTime currentTime = DateTime.Now;
-                if (currentTime <=  (entity.EndDate.AddDays(5)) && currentTime >= (entity.EndDate) && guestReviewRepository.GetGuestReviewByAccommodation(entity.Id) == null)
+                if (guestReviewService.IsDeadlineActive(entity))
                 {
                     NotRatedGuestListBox.Items.Add(entity.Id + " " + entity.AccommodationName + " " + entity.StartDate + " " + entity.EndDate + " " + entity.GuestCount);
                     MessageBox.Show("Niste ocenili gosta sa ID rezervacijom : " + entity.Id);

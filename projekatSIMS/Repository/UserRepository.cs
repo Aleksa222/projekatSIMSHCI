@@ -19,6 +19,10 @@ namespace projekatSIMS.Repository
             ((User)user).FirstName = ((User)entity).FirstName;
             ((User)user).LastName = ((User)entity).LastName;
             ((User)user).Password = ((User)entity).Password;
+            ((User)user).AverageRating = ((User)entity).AverageRating;
+            ((User)user).ReviewCount = ((User)entity).ReviewCount;
+            
+
         }
 
         public void SetLoginUser(User user)
@@ -31,9 +35,22 @@ namespace projekatSIMS.Repository
             return DataContext.Instance.LoginUser;
         }
 
+
         public string GetLoginUserType()
         {
             return DataContext.Instance.LoginUser.UserType.ToString();
         }
+
+        public int GetOwnerReviewCount()
+        {
+            return DataContext.Instance.LoginUser.ReviewCount;
+        }
+
+
+        public double GetOwnerAverageRating()
+        {
+            return DataContext.Instance.LoginUser.AverageRating;
+        }
+
     }
 }

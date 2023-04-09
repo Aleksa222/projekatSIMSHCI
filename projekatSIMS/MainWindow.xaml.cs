@@ -2,6 +2,7 @@
 using projekatSIMS.Service;
 using projekatSIMS.UI.Dialogs.View;
 using projekatSIMS.UI.Dialogs.View.TouristView;
+using projekatSIMS.UI.Dialogs.View.OwnerView;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,7 +37,7 @@ namespace projekatSIMS
             switch (type)
             {
                 case "OWNER":
-                    windowToDisplay = new AccommodationRegistrationView();
+                    windowToDisplay = new OwnerMainWindow();
                     break;
                 case "GUEST":
                     windowToDisplay = new AccommodationSearchView();

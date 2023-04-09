@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="CompositeComon\RelayCommand.cs" />
     <Compile Include="Model\Accommodation.cs" />
+    <Compile Include="Model\AccommodationOwnerRating.cs" />
     <Compile Include="Model\AccommodationReservation.cs" />
     <Compile Include="Model\AccommodationType.cs" />
     <Compile Include="Model\GuestReview.cs" />
@@ -64,27 +65,36 @@
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\DataContext.cs" />
+    <Compile Include="Model\RequestStatusType.cs" />
+    <Compile Include="Model\ReservationRescheduleRequest.cs" />
     <Compile Include="Model\Tour.cs" />
     <Compile Include="Model\TourReservation.cs" />
     <Compile Include="Model\UserType.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Repository\AccommodationOwnerRatingRepository.cs" />
     <Compile Include="Repository\AccommodationRepository.cs" />
     <Compile Include="Repository\AccommodationReservationRepository.cs" />
     <Compile Include="Repository\GuestReviewRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\KeyPointsRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\ReservationRescheduleRequestRepository.cs" />
     <Compile Include="Repository\TourRepository.cs" />
     <Compile Include="Repository\TourReservationRepository.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Service\AccommodationOwnerRatingService.cs" />
     <Compile Include="Service\AccommodationReservationService.cs" />
     <Compile Include="Service\AccommodationService.cs" />
     <Compile Include="Service\GuestReviewService.cs" />
     <Compile Include="Service\KeyPointsService.cs" />
+    <Compile Include="Service\ReservationRescheduleRequestService.cs" />
     <Compile Include="Service\TourReservationService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="UI\Dialogs\Model\ComboBoxData.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerAccommodationRegistration.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerHomeModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerMainWindowModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristHomeModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristMainWindowModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristSearchTourModel.cs" />
@@ -95,10 +105,16 @@
       <DependentUpon>AccommodationSearchView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\TourService.cs" />
+    <Compile Include="UI\Dialogs\View\OwnerView\OwnerHomeView.xaml.cs">
+      <DependentUpon>OwnerHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\OwnerMainWindow.xaml.cs">
+      <DependentUpon>OwnerMainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\Tourist.xaml.cs">
       <DependentUpon>Tourist.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dialogs\View\GuestReviewView.xaml.cs">
+    <Compile Include="UI\Dialogs\View\OwnerView\GuestReviewView.xaml.cs">
       <DependentUpon>GuestReviewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\TouristView\TouristHomeView.xaml.cs">
@@ -113,7 +129,7 @@
     <Compile Include="UI\Dialogs\View\TourReservationView.xaml.cs">
       <DependentUpon>TourReservationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dialogs\View\Vlasnik.xaml.cs">
+    <Compile Include="UI\Dialogs\View\OwnerView\Vlasnik.xaml.cs">
       <DependentUpon>Vlasnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\Vodic.xaml.cs">
@@ -140,11 +156,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\OwnerHomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\OwnerMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\View\Tourist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Dialogs\View\GuestReviewView.xaml">
+    <Page Include="UI\Dialogs\View\OwnerView\GuestReviewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,7 +188,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Dialogs\View\Vlasnik.xaml">
+    <Page Include="UI\Dialogs\View\OwnerView\Vlasnik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,6 +247,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Data\reservation_reschedule_request.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Data\accommodation_owner_rating.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

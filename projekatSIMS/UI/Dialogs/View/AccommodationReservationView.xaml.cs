@@ -223,12 +223,12 @@ namespace projekatSIMS.UI.Dialogs.View
             }
 
             selectedAccommodation = (Accommodation)AccommodationDataGrid.SelectedItem;
-            MinimalStayLabel.Content = $"Minimal stay: {selectedAccommodation.MinimalStay} days";
+            MinimalStayLabel.Content = $"Minimal stay: {selectedAccommodation.MinimumStayDays} days";
 
             return true;
         }
 
-        private bool ValidateDateRange()
+        private bool ValidateDateRange()    
         {
             startDate = (DateTime)StartDatePicker.SelectedDate;
             endDate = (DateTime)EndDatePicker.SelectedDate;
@@ -239,9 +239,9 @@ namespace projekatSIMS.UI.Dialogs.View
                 return false;
             }
 
-            if ((endDate - startDate).TotalDays < selectedAccommodation.MinimalStay)
+            if ((endDate - startDate).TotalDays < selectedAccommodation.MinimumStayDays)
             {
-                MessageBox.Show($"Minimum stay is {selectedAccommodation.MinimalStay} days.");
+                MessageBox.Show($"Minimum stay is {selectedAccommodation.MinimumStayDays} days.");
                 return false;
             }
 

@@ -15,6 +15,9 @@ namespace projekatSIMS.Model
         private DateTime endDate;
         private int guestCount;
 
+        private bool guestRated;
+        private bool ownerRated;
+
         public AccommodationReservation()
         {
 
@@ -26,6 +29,8 @@ namespace projekatSIMS.Model
             this.startDate = startDate;
             this.endDate = endDate;
             this.guestCount = guestCount;
+            this.guestRated = false;
+            this.ownerRated = false;
         }
 
         public string AccommodationName
@@ -66,6 +71,30 @@ namespace projekatSIMS.Model
                 OnPropertyChanged(nameof(GuestCount));
             }
         }
+
+        public bool GuestRated
+        {
+            get { return guestRated; }
+            set
+            {
+                guestRated = value;
+                OnPropertyChanged(nameof(GuestRated));
+            }
+
+        }
+
+        public bool OwnerRated
+        {
+            get { return ownerRated; }
+            set
+            {
+                ownerRated = value;
+                OnPropertyChanged(nameof(OwnerRated));
+            }
+
+        }
+
+
 
         public override string ExportToString()
         {

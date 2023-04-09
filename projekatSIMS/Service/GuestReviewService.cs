@@ -90,11 +90,22 @@ namespace projekatSIMS.Service
             return true;
         }
 
-       
+        public bool IsDeadlineActive(AccommodationReservation reservation)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            DateTime currentTime = DateTime.Now;
+
+            if (currentTime <= (reservation.EndDate.AddDays(5))
+                && currentTime >= (reservation.EndDate)
+                && unitOfWork.GuestReviews.GetGuestReviewByAccommodation(reservation.Id) == null)
+            {
+                return true;
+            }
+            return false;
+        }
 
 
-
-        public void PlaceGuestReview(GuestReview guestReview)
+        public void SaveGuestReview(GuestReview guestReview)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
 
@@ -134,6 +145,7 @@ namespace projekatSIMS.Service
             }
 
         }
+
 
 
     }

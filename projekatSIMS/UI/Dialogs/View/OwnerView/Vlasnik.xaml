@@ -37,6 +37,9 @@
         <Label Content="Smeštaji :" HorizontalAlignment="Center" Height="27" Margin="0,10,0,0" VerticalAlignment="Top" Width="90"/>
         <Label Content="Smestaj(id) koji zelite da &#xD;&#xA;izbrisete:&#xD;&#xA;" HorizontalAlignment="Left" Height="44" Margin="354,296,0,0" VerticalAlignment="Top" Width="150"/>
         <Button x:Name="GuestReviewButton" Content="Rezervacije" HorizontalAlignment="Left" Height="33" Margin="649,305,0,0" VerticalAlignment="Top" Width="79" Click="GuestReviewButton_Click"/>
+        <TextBox x:Name="ImageAccTextBox" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="204,219,476,178" TextChanged="ImageAccTextBox_TextChanged"/>
+        <Button x:Name="ShowImageButton" Content="Button" Margin="236,280,527,116" Click="ShowImageButton_Click"/>
+        <Image x:Name="AccommodationImage" Margin="209,56,463,273" Stretch="Fill"/>
 
     </Grid>
 </Window>
