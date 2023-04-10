@@ -37,7 +37,7 @@ namespace projekatSIMS
             switch (type)
             {
                 case "OWNER":
-                    windowToDisplay = new OwnerMainWindow();
+                    windowToDisplay = new kt2();
                     break;
                 case "GUEST":
                     windowToDisplay = new AccommodationSearchView();

@@ -57,23 +57,46 @@ namespace projekatSIMS.Service
             return unitOfWork.ReservationRescheduleRequests.GenerateId();
         }
 
-        public bool AreNewDatesAvailable(ReservationRescheduleRequest request)
+        public int GetRequestOwnerId(ReservationRescheduleRequest request)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
-            List<AccommodationReservation> existingReservations = (List<AccommodationReservation>)unitOfWork.AccommodationReservations.GetAll(); // Preuzmi sve postojeće rezervacije
+            AccommodationReservation reservation = (AccommodationReservation)unitOfWork.AccommodationReservations.Get(request.ReservationId);
+            Accommodation accommodation = (Accommodation)unitOfWork.Accommodations.GetAccommodationByName(reservation.AccommodationName);
+            int ownerId = accommodation.OwnerId;
+            return ownerId;
+        }
+
+        /*public IEnumerable<Entity> GetAllByAccommodation(Accommodation accommodation)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            User user = (User)unitOfWork.Users.Get(accommodation.OwnerId);
+            return unitOfWork.ReservationRescheduleRequests.GetAllByOwner(user);
+        }*/
+
+        /* public IEnumerable<Entity> GetAllByOwner()
+         {
+             UnitOfWork unitOfWork = new UnitOfWork();
+             User user = unitOfWork.Users.GetLoginUser();
+             return unitOfWork.ReservationRescheduleRequests.GetAllByOwner(user);
+         }*/
+
+        public bool AreNewRequestDatesAvailable(ReservationRescheduleRequest request)
+         {
+             UnitOfWork unitOfWork = new UnitOfWork();
+            List<Entity> existingReservations = (List<Entity>)unitOfWork.AccommodationReservations.GetAll(); // Preuzmi sve postojeće rezervacije
 
             foreach (AccommodationReservation reservation in existingReservations)
-            {
-                if (reservation.Id == request.ReservationId &&
-                    !(reservation.StartDate <= request.NewStartDate || reservation.StartDate >= request.NewEndDate))
-                {
-                    return false;
+             {
+                 if (reservation.Id == request.ReservationId &&
+                     !(reservation.StartDate <= request.NewStartDate || reservation.StartDate >= request.NewEndDate))
+                 {
+                     return false;
 
-                }
-            }
-            return true;
+                 }
+             }
+             return true;
 
-        }
+         }
 
         public void AcceptRequest(ReservationRescheduleRequest request)
         {
@@ -84,6 +107,7 @@ namespace projekatSIMS.Service
 
             unitOfWork.AccommodationReservations.Edit(reservation);
             request.Status = RequestStatusType.APPROVED;
+            request.Comment = "";
             unitOfWork.ReservationRescheduleRequests.Edit(request);
             unitOfWork.Save();
         }

@@ -193,3 +193,14 @@ C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerMainWindow.baml
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\GuestReviewView.baml
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\Vlasnik.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\kt2.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\kt2.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\bin\Debug\MahApps.Metro.IconPacks.Core.dll
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\bin\Debug\MahApps.Metro.IconPacks.Core.pdb
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\projekatSIMS.csproj.CopyComplete
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\SuperOwnerView.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\SuperOwnerView.baml

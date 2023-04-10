@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projekatSIMS.Service;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -15,22 +16,23 @@ namespace projekatSIMS.Model
         private DateTime endDate;
         private int guestCount;
 
-        private bool guestRated;
-        private bool ownerRated;
+        private bool guestsRate;
+        private bool ownersRate;
+        AccommodationService accommodationService = new AccommodationService();
 
         public AccommodationReservation()
         {
 
         }
 
-        public AccommodationReservation(string accommodationName, DateTime startDate, DateTime endDate, int guestCount)
+        public AccommodationReservation(string accommodationName, DateTime startDate, DateTime endDate, int guestCount,bool guestsRate = false, bool ownersRate = false)
         {
             this.accommodationName = accommodationName;
             this.startDate = startDate;
             this.endDate = endDate;
             this.guestCount = guestCount;
-            this.guestRated = false;
-            this.ownerRated = false;
+            //this.guestsRate = false;
+            //this.ownersRate = false;
         }
 
         public string AccommodationName
@@ -72,24 +74,24 @@ namespace projekatSIMS.Model
             }
         }
 
-        public bool GuestRated
+        public bool GuestsRate
         {
-            get { return guestRated; }
+            get { return guestsRate; }
             set
             {
-                guestRated = value;
-                OnPropertyChanged(nameof(GuestRated));
+                guestsRate = value;
+                OnPropertyChanged(nameof(GuestsRate));
             }
 
         }
 
-        public bool OwnerRated
+        public bool OwnersRate
         {
-            get { return ownerRated; }
+            get { return ownersRate; }
             set
             {
-                ownerRated = value;
-                OnPropertyChanged(nameof(OwnerRated));
+                ownersRate = value;
+                OnPropertyChanged(nameof(OwnersRate));
             }
 
         }
@@ -98,16 +100,18 @@ namespace projekatSIMS.Model
 
         public override string ExportToString()
         {
-            return id + "|" + accommodationName + "|" + startDate.ToString("yyyy-MM-dd") + "|" + endDate.ToString("yyyy-MM-dd") + "|" + guestCount;
+            return id + "|" + accommodationName + "|" + startDate.ToString("yyyy-MM-dd") + "|" + endDate.ToString("yyyy-MM-dd") + "|" + guestCount + "|" + guestsRate + "|" + ownersRate;
         }
 
         public override void ImportFromString(string[] parts)
         {
-            base.ImportFromString(parts);  
-            accommodationName = parts[1];
+            base.ImportFromString(parts);
+            AccommodationName =parts[1];
             startDate = DateTime.ParseExact(parts[2], "yyyy-MM-dd", CultureInfo.InvariantCulture);
             endDate = DateTime.ParseExact(parts[3], "yyyy-MM-dd", CultureInfo.InvariantCulture);
             guestCount = int.Parse(parts[4]);
+            guestsRate = bool.Parse(parts[5]);
+            ownersRate = bool.Parse(parts[6]);
 
         }
 

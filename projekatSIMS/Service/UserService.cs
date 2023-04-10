@@ -68,6 +68,8 @@ namespace projekatSIMS.Service
             }
         }
 
+       
+
         public User GetLoginUser()
         {
             UnitOfWork unitOfWork = new UnitOfWork();
@@ -137,10 +139,10 @@ namespace projekatSIMS.Service
 
             if (owner != null && IsSuperOwner(ownerId))
             {
-                owner.SuperOwner = true;
+                owner.SuperStatus = true;
             }
 
-            owner.SuperOwner = false;
+            owner.SuperStatus = false;
 
         }
 

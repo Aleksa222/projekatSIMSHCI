@@ -25,5 +25,18 @@ namespace projekatSIMS.Repository
         {
             return base.Search(term);
         }
+
+        /*public IEnumerable<Entity> GetAllByOwner(User user)
+        {
+            List<Entity> result = new List<Entity>();
+            foreach (AccommodationOwnerRating it in DataContext.Instance.AccommodationOwnerRatings)
+            {
+                if (it.Reservation.Accommodation.OwnerId == user.Id)
+                {
+                    result.Add(it);
+                }
+            }
+            return result;
+        }*/
     }
 }

@@ -78,6 +78,21 @@ namespace projekatSIMS.Repository
             return null;
         }
 
+        public List<Entity> GetAccommodationsByOwner(int ownerId)
+        {
+            List<Entity> result = new List<Entity>();
+            foreach (Accommodation it in DataContext.Instance.Accommodations)
+            {
+                if (it.OwnerId == ownerId)
+                {
+
+                    result.Add(it);
+                }
+            }
+
+            return null;
+        }
+
         public Accommodation GetAccommodationByLocation(Location location)
         {
             foreach (Accommodation it in DataContext.Instance.Accommodations)

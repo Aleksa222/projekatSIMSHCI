@@ -18,6 +18,8 @@ namespace projekatSIMS.Repository
             ((AccommodationReservation)accommodationReservation).StartDate = ((AccommodationReservation)entity).StartDate;
             ((AccommodationReservation)accommodationReservation).EndDate = ((AccommodationReservation)entity).EndDate;
             ((AccommodationReservation)accommodationReservation).GuestCount = ((AccommodationReservation)entity).GuestCount;
+            ((AccommodationReservation)accommodationReservation).GuestsRate = ((AccommodationReservation)entity).GuestsRate;
+            ((AccommodationReservation)accommodationReservation).OwnersRate = ((AccommodationReservation)entity).OwnersRate;
 
         }
 
@@ -41,6 +43,19 @@ namespace projekatSIMS.Repository
                 if (it.Id == id)
                 {
                     return it;
+                }
+            }
+            return null;
+        }
+
+        public IEnumerable<Entity> GetAccommodationReservationByAccommodation(string accommodationName)
+        {
+            List<Entity> result = new List<Entity>();
+            foreach (AccommodationReservation it in DataContext.Instance.AccommodationReservations)
+            {
+                if (it.AccommodationName == accommodationName)
+                {
+                    result.Add(it);
                 }
             }
             return null;

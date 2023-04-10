@@ -21,7 +21,9 @@ namespace projekatSIMS.Repository
             ((User)user).Password = ((User)entity).Password;
             ((User)user).AverageRating = ((User)entity).AverageRating;
             ((User)user).ReviewCount = ((User)entity).ReviewCount;
-            
+            ((User)user).SuperStatus = ((User)entity).SuperStatus;
+
+
 
         }
 

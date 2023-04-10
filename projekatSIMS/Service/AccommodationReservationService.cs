@@ -2,6 +2,7 @@
 using projekatSIMS.Repository;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,13 @@ namespace projekatSIMS.Service
             return unitOfWork.AccommodationReservations.Search(term);
         }
 
+        /*public IEnumerable<Entity> GetAllRequestByAccommodation(string accommodationName)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            Accommodation accommodation = unitOfWork.Accommodations.GetAccommodationByName(accommodationName);
+            return unitOfWork.ReservationRescheduleRequests.GetAllByAccommodation(accommodation);
+        }*/
+
         public int GenerateId()
         {
             UnitOfWork unitOfWork = new UnitOfWork();
@@ -83,6 +91,8 @@ namespace projekatSIMS.Service
                 }
             }
             return true;
+
+
             
         }
        

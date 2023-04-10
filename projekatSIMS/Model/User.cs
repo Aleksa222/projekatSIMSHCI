@@ -17,7 +17,7 @@ namespace projekatSIMS.Model
         private UserType userType;
         private int reviewCount;
         private double averageRating;
-        private bool superOwner;
+        private bool superStatus;
 
         public User() { }
 
@@ -102,13 +102,13 @@ namespace projekatSIMS.Model
             }
         }
 
-        public bool SuperOwner
+        public bool SuperStatus
         {
-            get { return superOwner; }
+            get { return superStatus; }
             set
             {
-                superOwner = value;
-                OnPropertyChanged(nameof(SuperOwner));
+                superStatus = value;
+                OnPropertyChanged(nameof(SuperStatus));
             }
         }
 
@@ -138,7 +138,7 @@ namespace projekatSIMS.Model
 
         public override string ExportToString()
         {
-            return id + "|" + firstName + "|" + lastName + "|" + email + "|" + password + "|" + userType.ToString() + "|" + reviewCount + "|" + averageRating + "|" + superOwner;
+            return id + "|" + firstName + "|" + lastName + "|" + email + "|" + password + "|" + userType.ToString() + "|" + reviewCount + "|" + averageRating + "|" + superStatus;
         }
 
         public override void ImportFromString(string[] parts)
@@ -151,7 +151,7 @@ namespace projekatSIMS.Model
             SetUserType(parts[5]);
             ReviewCount = int.Parse(parts[6]);
             AverageRating = double.Parse(parts[7]);
-            SuperOwner = bool.Parse(parts[8]);
+            SuperStatus = bool.Parse(parts[8]);
         }
     }
 }

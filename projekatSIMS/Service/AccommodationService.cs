@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Linq;
 
 namespace projekatSIMS.Service
 {
@@ -70,6 +71,7 @@ namespace projekatSIMS.Service
             return result;
         }
 
+      
         public Accommodation GetAccommodationById(int id)
         {
             UnitOfWork unitOfWork = new UnitOfWork();

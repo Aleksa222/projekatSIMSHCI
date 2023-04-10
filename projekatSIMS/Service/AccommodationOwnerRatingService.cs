@@ -3,6 +3,7 @@ using projekatSIMS.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,10 +44,38 @@ namespace projekatSIMS.Service
             return unitOfWork.AccommodationOwnerRatings.GetAll();
         }
 
+       
         public IEnumerable<Entity> Search(string term = "")
         {
             UnitOfWork unitOfWork = new UnitOfWork();
             return unitOfWork.AccommodationOwnerRatings.Search(term);
+        }
+
+        /* public IEnumerable<Entity> GetAllOwnerRatings()
+         {
+             UnitOfWork unitOfWork = new UnitOfWork();
+             List<Entity> accommodations = unitOfWork.Accommodations.GetAccommodationsByOwner(unitOfWork.Users.GetLoginUser().Id);
+
+             foreach (Accommodation accommodation in accommodations)
+             {
+                AccommodationReservation reservation = unitOfWork.AccommodationReservations.GetAccommodationReservationByAccommodation(accommodation);
+             }
+
+             foreach (AccommodationReservation accommodation in accommodations)
+             {
+                 unitOfWork.AccommodationReservations.GetAccommodationReservationByAccommodation(accommodation);
+             }
+
+             return unitOfWork.AccommodationOwnerRatings.GetAll();
+         }*/
+
+        public int GetRatingOwnerId(AccommodationOwnerRating request)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            AccommodationReservation reservation = (AccommodationReservation)unitOfWork.AccommodationReservations.Get(request.ReservationId);
+            Accommodation accommodation = (Accommodation)unitOfWork.Accommodations.GetAccommodationByName(reservation.AccommodationName);
+            int ownerId = accommodation.OwnerId;
+            return ownerId;
         }
 
         public int GenerateId()

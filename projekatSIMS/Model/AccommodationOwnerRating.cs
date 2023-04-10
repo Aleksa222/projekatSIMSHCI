@@ -15,6 +15,7 @@ namespace projekatSIMS.Model
         private string comment;
         private string imageUrl;
 
+
         public AccommodationOwnerRating()
         {
 
@@ -86,7 +87,7 @@ namespace projekatSIMS.Model
         public override void ImportFromString(string[] parts)
         {
             base.ImportFromString(parts);
-            reservationId = int.Parse(parts[1]);
+            ReservationId = int.Parse(parts[1]);
             cleanliness = int.Parse(parts[2]);
             ownerPoliteness = int.Parse(parts[3]);
             comment = parts[4];

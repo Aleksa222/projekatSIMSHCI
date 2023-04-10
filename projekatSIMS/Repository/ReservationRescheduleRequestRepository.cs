@@ -18,6 +18,7 @@ namespace projekatSIMS.Repository
             ((ReservationRescheduleRequest)reservationRescheduleRequest).NewEndDate = ((ReservationRescheduleRequest)entity).NewEndDate;
             ((ReservationRescheduleRequest)reservationRescheduleRequest).GuestName = ((ReservationRescheduleRequest)entity).GuestName;
             ((ReservationRescheduleRequest)reservationRescheduleRequest).Status = ((ReservationRescheduleRequest)entity).Status;
+            ((ReservationRescheduleRequest)reservationRescheduleRequest).Comment = ((ReservationRescheduleRequest)entity).Comment;
 
         }
 
@@ -25,5 +26,18 @@ namespace projekatSIMS.Repository
         {
             return base.Search(term);
         }
+
+       /*public IEnumerable<Entity> GetAllByOwner(User user)
+        {
+            List<Entity> result = new List<Entity>();
+            foreach (ReservationRescheduleRequest it in DataContext.Instance.ReservationRescheduleRequest)
+            {
+                if (=>Accommodation=>OwnerId == user.Id)
+                {
+                    result.Add(it);
+                }
+            }
+            return result;
+        }*/
     }
 }

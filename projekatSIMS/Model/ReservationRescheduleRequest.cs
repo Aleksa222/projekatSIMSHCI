@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using projekatSIMS.Service;
 using System.Windows.Documents;
 using System;
 using System.Collections.Generic;
@@ -18,17 +19,21 @@ namespace projekatSIMS.Model
         private RequestStatusType status;
         private string comment;
 
+        AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
+
         public ReservationRescheduleRequest()
         {
         }
 
-        public ReservationRescheduleRequest(int reservationId, DateTime newStartDate, DateTime newEndDate, string guestName, RequestStatusType status)
+        public ReservationRescheduleRequest(int reservationId, DateTime newStartDate, DateTime newEndDate, string guestName, RequestStatusType status,string comment = null)
         {
             this.reservationId = reservationId;
             this.newStartDate = newStartDate;
             this.newEndDate = newEndDate;
             this.guestName = guestName;
             this.status = status;
+            this.comment = comment;
+       
         }
 
         public int ReservationId
@@ -41,6 +46,7 @@ namespace projekatSIMS.Model
             }
         }
 
+      
         public DateTime NewStartDate
         {
             get { return newStartDate; }
@@ -101,7 +107,7 @@ namespace projekatSIMS.Model
 
         public string Comment
         {
-            get { return Comment; }
+            get { return comment; }
             set
             {
                 comment = value;
@@ -119,7 +125,7 @@ namespace projekatSIMS.Model
         {
             base.ImportFromString(parts);
 
-            reservationId = int.Parse(parts[1]);
+            ReservationId = int.Parse(parts[1]);
             newStartDate = DateTime.ParseExact(parts[2], "yyyy-MM-dd", CultureInfo.InvariantCulture);
             newEndDate = DateTime.ParseExact(parts[3], "yyyy-MM-dd", CultureInfo.InvariantCulture);
             guestName = parts[4];
