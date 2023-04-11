@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace projekatSIMS.UI.Dialogs.View.OwnerView
 {
     /// <summary>
@@ -38,6 +40,28 @@ namespace projekatSIMS.UI.Dialogs.View.OwnerView
 
         private void AccommodationImageListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            var selectedItem = AccommodationImageListBox.SelectedItem as Accommodation;
+
+            if (selectedItem != null)
+            {
+                // Prikazivanje informacija o selektovanom itemu u TextBox-ovima
+                NameTextBox.Text = selectedItem.Name;
+                CityTextBox.Text = selectedItem.Location.City;
+                CountryTextBox.Text = selectedItem.Location.Country;
+                TypeTextBox.Text = selectedItem.Type.ToString();
+                ImageUrlTextBox.Text = selectedItem.ImageUrls[0];
+
+                /* BitmapImage bitmapImage = new BitmapImage();
+                 bitmapImage.BeginInit();
+                 bitmapImage.UriSource = new Uri(ImageUrlTextBox.Text);
+                 bitmapImage.EndInit();
+
+                 // Postavljanje izvora slike na Image kontrolu
+                 imgDisplay.DataContext = bitmapImage;*/
+
+
+            }
 
         }
 
@@ -83,6 +107,16 @@ namespace projekatSIMS.UI.Dialogs.View.OwnerView
             {
                 AccommodationListBox.Items.Add(item);
             }
+        }
+
+        private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TypeTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

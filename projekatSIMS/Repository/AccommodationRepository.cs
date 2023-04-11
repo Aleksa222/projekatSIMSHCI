@@ -65,6 +65,7 @@ namespace projekatSIMS.Repository
             return null;
         }
 
+        
         public Accommodation GetAccommodationByName(string name)
         {
             foreach (Accommodation it in DataContext.Instance.Accommodations)

@@ -130,24 +130,13 @@ namespace projekatSIMS.Model
             get { return imageUrls; }
             set
             {
-                if (imageUrls != value)
-                {
-                    imageUrls = value;
-                    OnPropertyChanged(nameof(ImageUrls));
-                }
+                 imageUrls = value;
+                 OnPropertyChanged(nameof(ImageUrls));
+                
             }
         }
 
-        public void AddImage(string imageUrl)
-        {
-            imageUrls.Add(imageUrl);
-        }
-
-        // Uklanjanje slike smeštaja
-        public void RemoveImage(string imageUrl)
-        {
-            imageUrls.Remove(imageUrl);
-        }
+      
 
         // Svojstvo za prikazivanje svih slika smeštaja
       
@@ -155,7 +144,8 @@ namespace projekatSIMS.Model
 
         public override string ExportToString()
         {
-            return id + "|" + ownerId + "|" + name + "|" + type.ToString() + "|" + location.City + "|" + location.Country + "|" + guestLimit + "|" + minimumStayDays + "|" + cancellationDays + "|" + imageUrls;
+            string imageUrlsString = string.Join(";", ImageUrls);
+            return id + "|" + ownerId + "|" + name + "|" + type.ToString() + "|" + location.City + "|" + location.Country + "|" + guestLimit + "|" + minimumStayDays + "|" + cancellationDays + "|" + imageUrlsString;
         }
 
         public override void ImportFromString(string[] parts)
@@ -171,9 +161,10 @@ namespace projekatSIMS.Model
             GuestLimit = int.Parse(parts[6]);
             MinimumStayDays = int.Parse(parts[7]);
             CancellationDays = int.Parse(parts[8]);
-            string[] imageUrls = parts[9].Split(',');
+            string[] imageUrlsArray = parts[9].Split(';');
+            ImageUrls = new List<string>(imageUrlsArray);
 
-            ImageUrls = new List<string>(imageUrls);
+
 
         }
 

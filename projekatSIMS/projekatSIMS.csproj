@@ -266,14 +266,18 @@
   <ItemGroup>
     <Resource Include="Resources\Data\guest_reviews.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Data\reservation_reschedule_request.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Data\accommodation_owner_rating.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\planet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\download.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

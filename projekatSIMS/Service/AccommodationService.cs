@@ -109,13 +109,13 @@ namespace projekatSIMS.Service
 
 
 
-        public void AddImageToAccommodation(int accommodationId, string imageUrl)
+       /* public void AddImageToAccommodation(int accommodationId, string imageUrl)
         {
             UnitOfWork unitOfWork=new UnitOfWork();
             if (unitOfWork.Accommodations.GetAccommodationById(accommodationId) != null)
             {
                 Accommodation accommodation = unitOfWork.Accommodations.GetAccommodationById(accommodationId);
-                accommodation.AddImage(imageUrl);
+                unitOfWork.Accommodations.Add(imageUrls);
             }
         }
         public void RemoveImageFromAccommodation(int accommodationId, string imageUrl)
@@ -136,6 +136,6 @@ namespace projekatSIMS.Service
                 Accommodation accommodation = unitOfWork.Accommodations.GetAccommodationById(accommodationId);
              
             }
-        }
+        }*/
     }
 }

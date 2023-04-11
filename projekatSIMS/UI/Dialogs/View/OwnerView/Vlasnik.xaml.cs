@@ -158,16 +158,6 @@ namespace projekatSIMS.UI.Dialogs.View
             Accommodation accommodation = accommodationService.GetAccommodationById(int.Parse(ImageAccTextBox.Text));
          
 
-            if (accommodation != null && accommodation.ImageUrls.Count > 0)
-            {
-                BitmapImage bitmapImage = new BitmapImage(new Uri(accommodation.ImageUrls[0]));
-                AccommodationImage.Source = bitmapImage;
-            }
-            else
-            {
-                AccommodationImage.Source = null;
-            }
-
         }
     }
 }
