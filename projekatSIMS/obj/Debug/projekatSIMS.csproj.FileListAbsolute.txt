@@ -271,3 +271,7 @@ C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialo
 C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TourGuideView\TourGuideHomeView.baml
 C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TourGuideView\TourGuideMainWindow.baml
 C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TourGuideView\TourGuideToursToday.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\LeftMenuBarUserControl.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\LeftMenuBarUserControl.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\NavigationBar.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\NavigationBar.baml

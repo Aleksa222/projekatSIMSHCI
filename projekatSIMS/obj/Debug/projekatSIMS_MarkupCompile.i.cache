@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\App.xaml
-21-1696613439
+26641389417
 
-7960485116
+841530107956
 13-1310406943
-MainWindow.xaml;Styles\UIColors.xaml;UI\Dialogs\View\AccommodationReservationView.xaml;UI\Dialogs\View\AccommodationSearchView.xaml;UI\Dialogs\View\GuestView\GuestMainView.xaml;UI\Dialogs\View\OwnerView\kt2.xaml;UI\Dialogs\View\OwnerView\OwnerHomeView.xaml;UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml;UI\Dialogs\View\OwnerView\SuperOwnerView.xaml;UI\Dialogs\View\TourGuideView\TourGuideHomeView.xaml;UI\Dialogs\View\TourGuideView\TourGuideMainWindow.xaml;UI\Dialogs\View\TourGuideView\TourGuideToursToday.xaml;UI\Dialogs\View\GuestView\GuestPageView.xaml;UI\Dialogs\View\GuestView\RescheduleReservationNotificationView.xaml;UI\Dialogs\View\GuestReviewView.xaml;UI\Dialogs\View\TouristView\TouristHomeView.xaml;UI\Dialogs\View\TouristView\TouristMainWindow.xaml;UI\Dialogs\View\TouristView\TouristReservationView.xaml;UI\Dialogs\View\TouristView\TouristSearchTourView.xaml;UI\Dialogs\View\Vlasnik.xaml;UI\Dialogs\View\Vodic.xaml;
+MainWindow.xaml;Styles\UIColors.xaml;UI\Dialogs\View\AccommodationReservationView.xaml;UI\Dialogs\View\AccommodationSearchView.xaml;UI\Dialogs\View\GuestView\GuestMainView.xaml;UI\Dialogs\View\OwnerView\kt2.xaml;UI\Dialogs\View\OwnerView\NavigationBar.xaml;UI\Dialogs\View\OwnerView\OwnerAccommodationView.xaml;UI\Dialogs\View\OwnerView\OwnerHomeView.xaml;UI\Dialogs\View\OwnerView\OwnerInboxView.xaml;UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml;UI\Dialogs\View\OwnerView\OwnerReservationsView.xaml;UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml;UI\Dialogs\View\OwnerView\SuperOwnerView.xaml;UI\Dialogs\View\TourGuideView\TourGuideHomeView.xaml;UI\Dialogs\View\TourGuideView\TourGuideMainWindow.xaml;UI\Dialogs\View\TourGuideView\TourGuideToursToday.xaml;UI\Dialogs\View\GuestView\GuestPageView.xaml;UI\Dialogs\View\GuestView\RescheduleReservationNotificationView.xaml;UI\Dialogs\View\GuestReviewView.xaml;UI\Dialogs\View\TouristView\TouristHomeView.xaml;UI\Dialogs\View\TouristView\TouristMainWindow.xaml;UI\Dialogs\View\TouristView\TouristReservationView.xaml;UI\Dialogs\View\TouristView\TouristSearchTourView.xaml;UI\Dialogs\View\Vlasnik.xaml;UI\Dialogs\View\Vodic.xaml;
 
-False
+True
 

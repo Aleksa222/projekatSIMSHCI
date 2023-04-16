@@ -119,6 +119,9 @@
     <Compile Include="UI\Dialogs\View\OwnerView\kt2.xaml.cs">
       <DependentUpon>kt2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\OwnerHomeView.xaml.cs">
       <DependentUpon>OwnerHomeView.xaml</DependentUpon>
     </Compile>
@@ -194,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\OwnerView\kt2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -307,9 +314,6 @@
     <Resource Include="Resources\Data\guest_reviews.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Data\reservation_reschedule_request.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -329,6 +333,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Data\vouchers.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\bed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

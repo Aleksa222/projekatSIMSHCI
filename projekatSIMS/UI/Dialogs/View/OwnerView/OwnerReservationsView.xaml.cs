@@ -1,5 +1,4 @@
-﻿using projekatSIMS.UI.Dialogs.ViewModel.OwnerHomeModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,19 +16,13 @@ using System.Windows.Shapes;
 namespace projekatSIMS.UI.Dialogs.View.OwnerView
 {
     /// <summary>
-    /// Interaction logic for TouristHomeView.xaml
+    /// Interaction logic for OwnerReservationsView.xaml
     /// </summary>
-    public partial class OwnerHomeView : Page
+    public partial class OwnerReservationsView : Page
     {
-        public OwnerHomeView()
+        public OwnerReservationsView()
         {
             InitializeComponent();
-            DataContext = new OwnerHomeModel();
-        }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
         }
     }
 }

@@ -113,7 +113,7 @@ namespace projekatSIMS.Service
         {
             UnitOfWork unitOfWork = new UnitOfWork();
             User owner = (User)unitOfWork.Users.Get(ownerId);
-            return (owner.ReviewCount >= 50) && (owner.AverageRating >= 9.5);
+            return ((owner.ReviewCount >= 50) && (owner.AverageRating >= 9.5));
         }
 
         public void SetSuperOwner(int ownerId)

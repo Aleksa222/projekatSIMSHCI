@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="projekatSIMS.UI.Dialogs.View.OwnerView.NavigationBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Style ="{StaticResource ColumnGlowEffect}" CornerRadius="20" Margin="20" >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#23383f" Offset="0.3"/>
+                        <GradientStop Color="#4a5d5f" Offset="0.7"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+
+                <Grid>
+                    <Grid VerticalAlignment="Top">
+                        <Button Background="Transparent" BorderBrush="Transparent" >
+                            <Image Source="ownerpics/logo2.png" Width="20" Height="50"/>
+                        </Button>
+                    </Grid>
+                    <StackPanel VerticalAlignment="Center">
+
+                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                            <Image Source="ownerpics/home.png" Width="22.5" Height="50"/>
+                        </Button>
+
+                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                            <Image Source="ownerpics/user.png" Width="22.5" Height="50"/>
+                        </Button>
+
+                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                            <Image Source="ownerpics/bed.png" Width="22.5" Height="50"/>
+                        </Button>
+
+                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                            <Image Source="ownerpics/calendar.png" Width="22.5" Height="50"/>
+                        </Button>
+
+                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                            <Image Source="ownerpics/chat.png" Width="22.5" Height="50"/>
+                        </Button>
+
+
+
+                    </StackPanel>
+
+                    <Grid VerticalAlignment="Bottom">
+                        <Button Style="{StaticResource homeButton}" VerticalAlignment="Bottom">
+                            <Image Source="ownerpics/logout.png" Width="22.5" Height="30"/>
+                        </Button>
+
+                    </Grid>
+                </Grid>
+
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
