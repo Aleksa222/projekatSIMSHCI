@@ -31,16 +31,28 @@
 
         
             <!-- Stil za efekat svetlucanja oko grid kolone -->
-            <Style x:Key="ColumnGlowEffect" TargetType="Border">
-                <Setter Property="Effect">
-                    <Setter.Value>
-                        <DropShadowEffect Color="WhiteSmoke" ShadowDepth="20" BlurRadius="40" Opacity="1"/>
-                    </Setter.Value>
-                </Setter>
+        <Style x:Key="ColumnGlowEffect" TargetType="Border">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="WhiteSmoke" ShadowDepth="20" BlurRadius="40" Opacity="1"/>
+                </Setter.Value>
+            </Setter>
             <Setter Property="BorderBrush" Value= "WhiteSmoke" />
-                <Setter Property="BorderThickness" Value="0" />
-            </Style>
-       
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <Style x:Key="PageBackgroundStyle" TargetType="{x:Type Page}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <!-- Postavite željenu pozadinu ovdje -->
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#4a5d5f" Offset="0"/>
+                        <GradientStop Color="#23383f" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
 
 
 

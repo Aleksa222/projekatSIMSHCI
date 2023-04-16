@@ -63,43 +63,16 @@ namespace projekatSIMS.Service
             return true;
         }
 
-
-        /* public void SetTimer(DateTime endDate)
-         {
-             var timer = new System.Timers.Timer();
-             timer.Elapsed += (sender, e) => {
-                 if (DateTime.Now > endDate)
-                 {
-                     timer.Stop();
-                 }
-                 else
-                 {
-                     MessageBox.Show("Molimo vas da ocenite gosta.");
-                 }
-             };
-             timer.Interval = TimeSpan.FromDays(1).TotalMilliseconds;
-             timer.Start();
-         }*/
-
         public bool CheckGrades(int cleanliness, int respectingRules)
         {
-            if (cleanliness < 1 || cleanliness > 5 || respectingRules < 1 || respectingRules > 5)
-            {
-                return false;
-            }
-            return true;
+            return cleanliness >= 1 && cleanliness <= 5 && respectingRules >= 1 && respectingRules <= 5;
         }
 
-       
-
-
-
-        public void PlaceGuestReview(GuestReview guestReview)
+        public void SaveGuestReview(GuestReview guestReview)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
-
-            DateTime endDate = new DateTime();
-            endDate = guestReview.accommodationReservation.EndDate.AddDays(5);
+            AccommodationReservation reservation = unitOfWork.AccommodationReservations.GetAccommodationReservationById(guestReview.ReservationId);
+            DateTime endDate = reservation.EndDate.AddDays(5);
 
             if (CheckDate(endDate) == false)
             {
@@ -107,14 +80,14 @@ namespace projekatSIMS.Service
                 return;
             }
 
-            if (CheckDate(guestReview.AccommodationReservation.EndDate) != false)
+            if (CheckDate(reservation.EndDate) != false)
             {
                 MessageBox.Show("Nemate pravo da ocenite gosta dok se rezervacija ne zavrsi.");
                 return;
             }
 
 
-            else if (unitOfWork.GuestReviews.GetGuestReviewByAccommodation(guestReview.accommodationReservation.Id) != null)
+            else if (unitOfWork.GuestReviews.GetGuestReviewByAccommodation(reservation.Id) != null)
             {
 
                 MessageBox.Show("Vec ste ocenili ovog gosta!");

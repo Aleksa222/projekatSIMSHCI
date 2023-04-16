@@ -24,5 +24,7 @@ namespace projekatSIMS.UI.Dialogs.View.OwnerView
         {
             InitializeComponent();
         }
+
+       
     }
 }

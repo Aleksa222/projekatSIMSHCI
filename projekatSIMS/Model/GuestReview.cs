@@ -9,30 +9,29 @@ namespace projekatSIMS.Model
 {
     public class GuestReview : Entity
     {
-        public AccommodationReservation accommodationReservation;
-        AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
+        public int reservationId;
         public int cleanliness;
         public int respectingRules;
         public string comment;
 
 
         public GuestReview() { }
-        public GuestReview(AccommodationReservation accommodationReservation, int cleanliness, int respectingRules, string comment)
+        public GuestReview(int reservationId, int cleanliness, int respectingRules, string comment)
         {
-            this.accommodationReservation = accommodationReservation;
+            this.reservationId = reservationId;
             this.comment = comment;
             this.cleanliness = cleanliness;
             this.respectingRules = respectingRules;
 
         }
 
-        public AccommodationReservation AccommodationReservation
+        public int ReservationId
         {
-            get { return accommodationReservation; }
+            get { return reservationId; }
             set
             {
-                accommodationReservation = value;
-                OnPropertyChanged(nameof(AccommodationReservation));
+                reservationId = value;
+                OnPropertyChanged(nameof(ReservationId));
             }
         }
 
@@ -67,14 +66,14 @@ namespace projekatSIMS.Model
 
         public override string ExportToString()
         {
-            return id + "|" + accommodationReservation.Id + "|" + cleanliness + "|" + respectingRules + "|" + comment;
+            return id + "|" + reservationId + "|" + cleanliness + "|" + respectingRules + "|" + comment;
         }
 
         public override void ImportFromString(string[] parts)
         {
 
             base.ImportFromString(parts);
-            AccommodationReservation = (AccommodationReservation)accommodationReservationService.Get(int.Parse(parts[1]));
+            ReservationId = int.Parse(parts[1]);
             Cleanliness = int.Parse(parts[2]);
             respectingRules = int.Parse(parts[3]);
             Comment = parts[4];

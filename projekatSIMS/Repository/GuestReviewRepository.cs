@@ -13,7 +13,7 @@ namespace projekatSIMS.Repository
         {
             Entity guestReview = base.Get(entity.Id);
 
-            ((GuestReview)guestReview).AccommodationReservation = ((GuestReview)entity).AccommodationReservation;
+            ((GuestReview)guestReview).ReservationId = ((GuestReview)entity).ReservationId;
             ((GuestReview)guestReview).Cleanliness = ((GuestReview)entity).Cleanliness;
             ((GuestReview)guestReview).respectingRules = ((GuestReview)entity).RespectingRules;
             ((GuestReview)guestReview).Comment = ((GuestReview)entity).Comment;
@@ -24,7 +24,7 @@ namespace projekatSIMS.Repository
             GuestReview result = null;
             foreach (GuestReview it in DataContext.Instance.GuestReviews)
             {
-                if (it.AccommodationReservation.Id == id)
+                if (it.ReservationId == id)
                 {
                     result = it;
                 }

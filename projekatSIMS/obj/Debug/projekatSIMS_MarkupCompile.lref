@@ -3,8 +3,13 @@ FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\App.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\MainWindow.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\GuestView\GuestMainView.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\kt2.xaml;;
+FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\NavigationBar.xaml;;
+FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\OwnerAccommodationView.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\OwnerHomeView.xaml;;
+FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\OwnerInboxView.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml;;
+FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\OwnerReservationsView.xaml;;
+FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\SuperOwnerView.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\TourGuideView\TourGuideHomeView.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\TourGuideView\TourGuideMainWindow.xaml;;
@@ -16,5 +21,4 @@ FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\Tou
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\TouristView\TouristSearchTourView.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\Vlasnik.xaml;;
 FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\Vodic.xaml;;
-FC:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\OwnerView\NavigationBar.xaml;;
 

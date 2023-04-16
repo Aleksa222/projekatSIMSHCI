@@ -27,9 +27,6 @@ namespace projekatSIMS.UI.Dialogs.View.OwnerView
             DataContext = new OwnerHomeModel();
         }
 
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
 
-        }
     }
 }

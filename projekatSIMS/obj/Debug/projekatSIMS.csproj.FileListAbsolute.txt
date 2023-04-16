@@ -275,3 +275,11 @@ C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\LeftMenuBarUserControl.baml
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\NavigationBar.g.cs
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\NavigationBar.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerAccommodationView.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerInboxView.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerReservationsView.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerUserAccountView.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerAccommodationView.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerInboxView.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerReservationsView.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerUserAccountView.baml

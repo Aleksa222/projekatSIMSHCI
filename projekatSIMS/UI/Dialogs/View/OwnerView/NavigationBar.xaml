@@ -5,9 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
              mc:Ignorable="d" 
+             Background="Transparent"
              d:DesignHeight="720" d:DesignWidth="1280">
-    <Grid>
-        <Grid>
+    <Border CornerRadius="30" Padding="20" >
+        <Border CornerRadius="30" ClipToBounds="True">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#051a2d" Offset="0"/>
+                    <GradientStop Color="#21535B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+         <Grid>
+            <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="110"/>
                 <ColumnDefinition Width="*"/>
@@ -16,8 +25,8 @@
             <Border Style ="{StaticResource ColumnGlowEffect}" CornerRadius="20" Margin="20" >
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#23383f" Offset="0.3"/>
-                        <GradientStop Color="#4a5d5f" Offset="0.7"/>
+                                <GradientStop Color="#21535B" Offset="0.3"/>
+                                <GradientStop Color="#051a2d" Offset="0.7"/>
                     </LinearGradientBrush>
                 </Border.Background>
 
@@ -31,23 +40,23 @@
                     <StackPanel VerticalAlignment="Center">
 
                         <Button Style="{StaticResource homeButton}" Margin="0,20">
-                            <Image Source="ownerpics/home.png" Width="22.5" Height="50"/>
+                            <Image Source="ownerpics/home.png" Width="20" Height="50"/>
                         </Button>
 
                         <Button Style="{StaticResource homeButton}" Margin="0,20">
-                            <Image Source="ownerpics/user.png" Width="22.5" Height="50"/>
+                            <Image Source="ownerpics/user.png" Width="20" Height="50"/>
                         </Button>
 
                         <Button Style="{StaticResource homeButton}" Margin="0,20">
-                            <Image Source="ownerpics/bed.png" Width="22.5" Height="50"/>
+                            <Image Source="ownerpics/bed.png" Width="20" Height="50"/>
                         </Button>
 
                         <Button Style="{StaticResource homeButton}" Margin="0,20">
-                            <Image Source="ownerpics/calendar.png" Width="22.5" Height="50"/>
+                            <Image Source="ownerpics/calendar.png" Width="20" Height="50"/>
                         </Button>
 
                         <Button Style="{StaticResource homeButton}" Margin="0,20">
-                            <Image Source="ownerpics/chat.png" Width="22.5" Height="50"/>
+                            <Image Source="ownerpics/chat.png" Width="20" Height="50"/>
                         </Button>
 
 
@@ -56,7 +65,7 @@
 
                     <Grid VerticalAlignment="Bottom">
                         <Button Style="{StaticResource homeButton}" VerticalAlignment="Bottom">
-                            <Image Source="ownerpics/logout.png" Width="22.5" Height="30"/>
+                            <Image Source="ownerpics/logout.png" Width="20" Height="30"/>
                         </Button>
 
                     </Grid>
@@ -65,4 +74,6 @@
             </Border>
         </Grid>
     </Grid>
+  </Border>
+ </Border>
 </UserControl>

@@ -122,11 +122,23 @@
     <Compile Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\OwnerAccommodationView.xaml.cs">
+      <DependentUpon>OwnerAccommodationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\OwnerHomeView.xaml.cs">
       <DependentUpon>OwnerHomeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\OwnerInboxView.xaml.cs">
+      <DependentUpon>OwnerInboxView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml.cs">
       <DependentUpon>OwnerMainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\OwnerReservationsView.xaml.cs">
+      <DependentUpon>OwnerReservationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml.cs">
+      <DependentUpon>OwnerUserAccountView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\SuperOwnerView.xaml.cs">
       <DependentUpon>SuperOwnerView.xaml</DependentUpon>
@@ -204,11 +216,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\OwnerAccommodationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\View\OwnerView\OwnerHomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\OwnerInboxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\OwnerReservationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -360,6 +388,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\bed1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\chat1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,23 +8,13 @@
       Background="Transparent"
       d:DesignHeight="720" d:DesignWidth="1280" 
       Title="OwnerHomeView">
-    <Border CornerRadius="30" 
-            Padding="20" MouseDown="Border_MouseDown" >
+
+    <Border CornerRadius="30" Padding="20" >
         <Border CornerRadius="30">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                    <GradientStop Color="#4a5d5f" Offset="0"/>
-                    <GradientStop Color="#23383f" Offset="1"/>
-
-                   
-                </LinearGradientBrush>
-            </Border.Background>
-
             <Grid>
                 <local:NavigationBar/>
             </Grid>
-
-
         </Border>
     </Border>
+
 </Page>
