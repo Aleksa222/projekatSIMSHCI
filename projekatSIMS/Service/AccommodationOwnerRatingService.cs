@@ -10,6 +10,17 @@ namespace projekatSIMS.Service
 {
     public class AccommodationOwnerRatingService
     {
+        private readonly IRepository<AccommodationOwnerRating> accommodationOwnerRatingRepository;
+
+        public AccommodationOwnerRatingService(IRepository<AccommodationOwnerRating> _accommodationOwnerRatingRepository)
+        {
+            accommodationOwnerRatingRepository = _accommodationOwnerRatingRepository;
+        }
+
+        public AccommodationOwnerRatingService()
+        {
+        }
+
         public void Add(AccommodationOwnerRating accommodationOwnerRating)
         {
             UnitOfWork unitOfWork = new UnitOfWork();

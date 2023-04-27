@@ -66,6 +66,7 @@
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\DataContext.cs" />
+    <Compile Include="Model\Renovation.cs" />
     <Compile Include="Model\RequestStatusType.cs" />
     <Compile Include="Model\ReservationRescheduleRequest.cs" />
     <Compile Include="Model\Tour.cs" />
@@ -77,8 +78,10 @@
     <Compile Include="Repository\AccommodationRepository.cs" />
     <Compile Include="Repository\AccommodationReservationRepository.cs" />
     <Compile Include="Repository\GuestReviewRepository.cs" />
+    <Compile Include="Repository\IAccommodationRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\KeyPointsRepository.cs" />
+    <Compile Include="Repository\RenovationRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\ReservationRescheduleRequestRepository.cs" />
     <Compile Include="Repository\TourRepository.cs" />
@@ -91,11 +94,13 @@
     <Compile Include="Service\AccommodationService.cs" />
     <Compile Include="Service\GuestReviewService.cs" />
     <Compile Include="Service\KeyPointsService.cs" />
+    <Compile Include="Service\RenovationService.cs" />
     <Compile Include="Service\ReservationRescheduleRequestService.cs" />
     <Compile Include="Service\TourReservationService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\VoucherService.cs" />
     <Compile Include="UI\Dialogs\Model\ComboBoxData.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\NavigationBarViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerHomeModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerMainWindowModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TourGuideViewModel\TourGuideHomeModel.cs" />
@@ -122,20 +127,11 @@
     <Compile Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dialogs\View\OwnerView\OwnerAccommodationView.xaml.cs">
-      <DependentUpon>OwnerAccommodationView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\OwnerHomeView.xaml.cs">
       <DependentUpon>OwnerHomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dialogs\View\OwnerView\OwnerInboxView.xaml.cs">
-      <DependentUpon>OwnerInboxView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml.cs">
       <DependentUpon>OwnerMainWindowView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Dialogs\View\OwnerView\OwnerReservationsView.xaml.cs">
-      <DependentUpon>OwnerReservationsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml.cs">
       <DependentUpon>OwnerUserAccountView.xaml</DependentUpon>
@@ -216,23 +212,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Dialogs\View\OwnerView\OwnerAccommodationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UI\Dialogs\View\OwnerView\OwnerHomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Dialogs\View\OwnerView\OwnerInboxView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Dialogs\View\OwnerView\OwnerReservationsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -394,6 +378,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\chat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\men.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\wowo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\wowow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\mann.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Data\renovations.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

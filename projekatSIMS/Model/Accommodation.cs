@@ -18,6 +18,8 @@ namespace projekatSIMS.Model
         private int cancellationDays;
         private List<string> imageUrls;
 
+        bool recentlyRenovated;
+
 
         public Accommodation()
         {
@@ -136,6 +138,16 @@ namespace projekatSIMS.Model
             }
         }
 
+        public bool RecentlyRenovated
+        {
+            get { return recentlyRenovated; }
+            set
+            {
+                recentlyRenovated = value;
+                OnPropertyChanged(nameof(RecentlyRenovated));
+            }
+        }
+
 
 
 
@@ -143,7 +155,7 @@ namespace projekatSIMS.Model
         public override string ExportToString()
         {
             string imageUrlsString = string.Join(";", ImageUrls);
-            return id + "|" + ownerId + "|" + name + "|" + type.ToString() + "|" + location.City + "|" + location.Country + "|" + guestLimit + "|" + minimumStayDays + "|" + cancellationDays + "|" + imageUrlsString;
+            return id + "|" + ownerId + "|" + name + "|" + type.ToString() + "|" + location.City + "|" + location.Country + "|" + guestLimit + "|" + minimumStayDays + "|" + cancellationDays + "|" + recentlyRenovated + "|" + imageUrlsString;
         }
 
         public override void ImportFromString(string[] parts)
@@ -159,7 +171,8 @@ namespace projekatSIMS.Model
             GuestLimit = int.Parse(parts[6]);
             MinimumStayDays = int.Parse(parts[7]);
             CancellationDays = int.Parse(parts[8]);
-            string[] imageUrlsArray = parts[9].Split(';');
+            RecentlyRenovated = bool.Parse(parts[9]);
+            string[] imageUrlsArray = parts[10].Split(';');
             ImageUrls = new List<string>(imageUrlsArray);
 
 

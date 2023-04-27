@@ -2,7 +2,9 @@
 using projekatSIMS.Repository;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +12,7 @@ namespace projekatSIMS.Service
 {
     public class AccommodationReservationService
     {
+        
         public void Add(AccommodationReservation accommodationReservation)
         {
             UnitOfWork unitOfWork = new UnitOfWork();
@@ -65,6 +68,24 @@ namespace projekatSIMS.Service
             }
             unitOfWork.AccommodationReservations.Add(accommodationReservation);
             unitOfWork.Save();
+        }
+
+     
+
+        public ObservableCollection<AccommodationReservation> GetOverlappingReservations(string accommodationName,DateTime from, DateTime to)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            ObservableCollection<AccommodationReservation> retList = new ObservableCollection<AccommodationReservation>();
+            foreach (AccommodationReservation r in unitOfWork.AccommodationReservations.GetAll())
+                {
+                    if (r.AccommodationName == accommodationName &&
+                    r.StartDate < from &&
+                    r.EndDate > to)
+                    {
+                       retList.Add(r);
+                    }
+                }
+            return retList;
         }
     }
 }

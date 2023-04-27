@@ -28,6 +28,8 @@ namespace projekatSIMS.Model
         private List<Entity> reservationRescheduleRequests = new List<Entity>();
         private List<Entity> accommodationOwnerRatings = new List<Entity>();
         private List<Entity> vouchers = new List<Entity>();
+        private List<Entity> renovations = new List<Entity>();
+
 
         private User loginUser = null;
 
@@ -57,6 +59,7 @@ namespace projekatSIMS.Model
             GenericSave(reservationRescheduleRequests, "reservation_reschedule_request.txt");
             GenericSave(accommodationOwnerRatings, "accommodation_owner_rating.txt");
             GenericSave(vouchers, "vouchers.txt");
+            GenericSave(renovations, "renovations.txt");
 
 
         }
@@ -88,6 +91,7 @@ namespace projekatSIMS.Model
             GenericLoad(reservationRescheduleRequests, "reservation_reschedule_request.txt", typeof(ReservationRescheduleRequest));
             GenericLoad(accommodationOwnerRatings, "accommodation_owner_rating.txt", typeof(AccommodationOwnerRating));
             GenericLoad(vouchers, "vouchers.txt", typeof(Voucher));
+            GenericLoad(renovations, "renovations.txt", typeof(Renovation));
         }
 
         public void GenericLoad(List<Entity> entities, string fileName, Type type)
@@ -153,6 +157,12 @@ namespace projekatSIMS.Model
                 if(type == typeof(Voucher))
                 {
                     Voucher newEntity= new Voucher();
+                    newEntity.ImportFromString(parts);
+                    entities.Add(newEntity);
+                }
+                if (type == typeof(Renovation))
+                {
+                    Renovation newEntity = new Renovation();
                     newEntity.ImportFromString(parts);
                     entities.Add(newEntity);
                 }
@@ -269,6 +279,10 @@ namespace projekatSIMS.Model
             {
                 return vouchers;
             }
+            if (type == typeof(Renovation))
+            {
+                return renovations;
+            }
 
             return null; //Mora jedan biti default return
         }
@@ -338,6 +352,12 @@ namespace projekatSIMS.Model
             get { return vouchers; }
             set { vouchers = value; }
 
+        }
+
+        public List<Entity> Renovations
+        {
+            get { return renovations; }
+            set { renovations = value; }
         }
     }
 }

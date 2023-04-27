@@ -6,26 +6,19 @@
              xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
              mc:Ignorable="d" 
              Background="Transparent"
-             d:DesignHeight="720" d:DesignWidth="1280">
-    <Border CornerRadius="30" Padding="20" >
-        <Border CornerRadius="30" ClipToBounds="True">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                    <GradientStop Color="#051a2d" Offset="0"/>
-                    <GradientStop Color="#21535B" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
+             d:DesignHeight="768" d:DesignWidth="1366">
+   
          <Grid>
             <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Border Style ="{StaticResource ColumnGlowEffect}" CornerRadius="20" Margin="20" >
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                <GradientStop Color="#21535B" Offset="0.3"/>
+                        <GradientStop Color="#21535B" Offset="0.3"/>
                                 <GradientStop Color="#051a2d" Offset="0.7"/>
                     </LinearGradientBrush>
                 </Border.Background>
@@ -39,11 +32,11 @@
                     </Grid>
                     <StackPanel VerticalAlignment="Center">
 
-                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                        <Button Style="{StaticResource homeButton}" Margin="0,20" Command="{Binding GoToHomePageCommand}">
                             <Image Source="ownerpics/home.png" Width="20" Height="50"/>
                         </Button>
 
-                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                        <Button Style="{StaticResource homeButton}" Margin="0,20" Command="{Binding GoToUserAccountPageCommand}">
                             <Image Source="ownerpics/user.png" Width="20" Height="50"/>
                         </Button>
 
@@ -64,7 +57,7 @@
                     </StackPanel>
 
                     <Grid VerticalAlignment="Bottom">
-                        <Button Style="{StaticResource homeButton}" VerticalAlignment="Bottom">
+                        <Button Style="{StaticResource homeButton}" VerticalAlignment="Bottom" Command="{Binding LogOutPageCommand}">
                             <Image Source="ownerpics/logout.png" Width="20" Height="30"/>
                         </Button>
 
@@ -74,6 +67,5 @@
             </Border>
         </Grid>
     </Grid>
-  </Border>
- </Border>
+ 
 </UserControl>

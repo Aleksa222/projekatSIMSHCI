@@ -6,15 +6,25 @@
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
       mc:Ignorable="d" 
       Background="Transparent"
-      d:DesignHeight="720" d:DesignWidth="1280" 
+      d:DesignHeight="768" d:DesignWidth="1366" 
       Title="OwnerHomeView">
 
-    <Border CornerRadius="30" Padding="20" >
-        <Border CornerRadius="30">
+    <Border CornerRadius="30" Padding="30" >
+        <Border CornerRadius="30" ClipToBounds="True">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#051a2d" Offset="0"/>
+                    <GradientStop Color="#21535B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
             <Grid>
                 <local:NavigationBar/>
-            </Grid>
-        </Border>
-    </Border>
 
+            </Grid>
+            
+
+        </Border>
+
+    </Border>
 </Page>

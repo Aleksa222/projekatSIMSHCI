@@ -37,12 +37,12 @@ namespace projekatSIMS.UI.Dialogs.View
             AccommodationReservation ac = (AccommodationReservation)accommodationReservationService.Get(int.Parse(ReservationId.Text));
 
             GuestReview guestReview = new GuestReview();
-            guestReview.accommodationReservation = ac;
+            guestReview.reservationId = ac.Id;
             guestReview.Cleanliness = int.Parse(CleanlinessTextBox.Text);
             guestReview.RespectingRules = int.Parse(RespectingRulesTextBox.Text);
             guestReview.Comment = CommentTextBox.Text;
 
-            guestReviewService.PlaceGuestReview(guestReview);
+            guestReviewService.SaveGuestReview(guestReview);
 
 
 

@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
         mc:Ignorable="d"
         Background="Transparent"
-        Title="OwnerMainWindow" Height="720" Width="1280" ResizeMode="NoResize">
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen" 
+        Title="OwnerMainWindow" Height="768" Width="1366" >
 
     <Grid>
-        <Frame NavigationUIVisibility="Hidden" x:Name="frame" Source="OwnerHomeView.xaml"/>
+        <Frame NavigationUIVisibility="Hidden" x:Name="frame" Source="OwnerUserAccountView.xaml"/>
 
     </Grid>
 

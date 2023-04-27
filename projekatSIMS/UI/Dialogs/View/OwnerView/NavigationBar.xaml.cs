@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace projekatSIMS.UI.Dialogs.View.OwnerView
         public NavigationBar()
         {
             InitializeComponent();
+            DataContext = new NavigationBarViewModel();
         }
 
        
