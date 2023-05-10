@@ -1,4 +1,4 @@
-﻿using projekatSIMS.UI.Dialogs.ViewModel.OwnerHomeModel;
+﻿using projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,9 @@ namespace projekatSIMS.UI.Dialogs.View.OwnerView
         public OwnerUserAccountView()
         {
             InitializeComponent();
-            DataContext = new OwnerHomeModel();
+            DataContext =new OwnerUserAccountViewModel();
         }
+
+       
     }
 }

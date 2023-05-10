@@ -35,6 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=21.2460.4.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.21.2.4\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.WPF, Version=21.2460.4.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfChart.WPF.21.2.4\lib\net46\Syncfusion.SfChart.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -66,6 +78,8 @@
     <Compile Include="Model\Language.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\DataContext.cs" />
+    <Compile Include="Model\ModelDto\AccommodationDto.cs" />
+    <Compile Include="Model\ModelDto\OwnerRatingDto.cs" />
     <Compile Include="Model\Renovation.cs" />
     <Compile Include="Model\RequestStatusType.cs" />
     <Compile Include="Model\ReservationRescheduleRequest.cs" />
@@ -100,6 +114,11 @@
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\VoucherService.cs" />
     <Compile Include="UI\Dialogs\Model\ComboBoxData.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\AccommodationMenuViewModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\AccommodationRatingsViewModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\GuestReviewChartViewModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerAccommodationsViewModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerUserAccountViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\NavigationBarViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerHomeModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerMainWindowModel.cs" />
@@ -111,9 +130,6 @@
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristMainWindowModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristReservationModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristSearchTourModel.cs" />
-    <Compile Include="UI\Dialogs\View\AccommodationReservationView.xaml.cs">
-      <DependentUpon>AccommodationReservationView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Dialogs\View\AccommodationSearchView.xaml.cs">
       <DependentUpon>AccommodationSearchView.xaml</DependentUpon>
     </Compile>
@@ -121,11 +137,26 @@
     <Compile Include="UI\Dialogs\View\GuestView\GuestMainView.xaml.cs">
       <DependentUpon>GuestMainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dialogs\View\OwnerView\kt2.xaml.cs">
-      <DependentUpon>kt2.xaml</DependentUpon>
+    <Compile Include="UI\Dialogs\View\OwnerView\AccommodationInformationView.xaml.cs">
+      <DependentUpon>AccommodationInformationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\AccommodationMenu.xaml.cs">
+      <DependentUpon>AccommodationMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\AccommodationNavigationBar.xaml.cs">
+      <DependentUpon>AccommodationNavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\AccommodationRatingsView.xaml.cs">
+      <DependentUpon>AccommodationRatingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\GuestReviewChart.xaml.cs">
+      <DependentUpon>GuestReviewChart.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\OwnerAccommodationPage.xaml.cs">
+      <DependentUpon>OwnerAccommodationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\OwnerHomeView.xaml.cs">
       <DependentUpon>OwnerHomeView.xaml</DependentUpon>
@@ -135,6 +166,9 @@
     </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml.cs">
       <DependentUpon>OwnerUserAccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\QuickAccessBar.xaml.cs">
+      <DependentUpon>QuickAccessBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\SuperOwnerView.xaml.cs">
       <DependentUpon>SuperOwnerView.xaml</DependentUpon>
@@ -192,10 +226,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Dialogs\View\AccommodationReservationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UI\Dialogs\View\AccommodationSearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -204,11 +234,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Dialogs\View\OwnerView\kt2.xaml">
+    <Page Include="UI\Dialogs\View\OwnerView\AccommodationInformationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\AccommodationMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\AccommodationNavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\AccommodationRatingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\GuestReviewChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\OwnerAccommodationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\QuickAccessBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -296,10 +350,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\NothingYouCouldDo-Regular.ttf" />
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\HomemadeApple-Regular.ttf" />
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\Aboreto-Regular.ttf" />
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\Crushed-Regular.ttf" />
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\MarcellusSC-Regular.ttf" />
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\LexendMega-VariableFont_wght.ttf" />
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\CinzelDecorative-Bold.ttf" />
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\Poppins-SemiBold.ttf" />
+    <Resource Include="UI\Dialogs\View\OwnerView\fonts\Poppins-Light.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -395,10 +459,148 @@
     <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\mann.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\queen.png" />
+    <Resource Include="Resources\Data\renovations.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Data\renovations.txt" />
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\gueen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\3d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\repair-tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\love.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\favourite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\review.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\healthcare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hand-gesture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\positive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\positive-review.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\like.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\planet-earth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\abstract-shape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\circle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hammer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\cwoman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\cman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\calendarq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\koliba.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hotel1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hotel2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hotel3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hotel5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hotel6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hotel7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\calendarbeige.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\editbeige.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\binbeige.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hammerbeige.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hearrtbeige1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\statbeige.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\heartbeige2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\statw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\editw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\lovew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\binw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hammerw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\calendarw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

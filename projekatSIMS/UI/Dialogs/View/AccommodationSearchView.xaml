@@ -56,8 +56,6 @@
                 <Button x:Name="SearchByGuestNumber" Content="Search Guest Number" Width="150" Height="18" Margin="0 10 0 0"
                         Click="SearchByGuestNumber_Click"/>
 
-                <Button x:Name="GoToReservationButton" Content="Go To Reservation" Width="150" Height="18" Margin="0 10 0 0"
-                        Click="GoToToReservationButton_Click"/>
 
                 <Button x:Name="GoToMainWindowButton" Content="Go To Main Guest View" Width="150" Height="18" Margin="0 10 0 0"
                         Click="GoToMainWindowButton_Click"/>

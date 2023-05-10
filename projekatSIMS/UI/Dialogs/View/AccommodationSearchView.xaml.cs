@@ -222,11 +222,7 @@ namespace projekatSIMS.UI.Dialogs.View
                   MessageBox.Show("Invalid input! Please enter a valid number.", "Input error", MessageBoxButton.OK, MessageBoxImage.Error);
               }
           }
-        private void GoToToReservationButton_Click(object sender, RoutedEventArgs e){
-            AccommodationReservationView win = new AccommodationReservationView();
-            win.Show();
-        }
-
+      
         private void GoToMainWindowButton_Click(object sender, RoutedEventArgs e)
         {
             GuestMainView win = new GuestMainView();

@@ -9,7 +9,8 @@ namespace projekatSIMS.Model
 {
     public class AccommodationOwnerRating : Entity
     {
-        private int reservationId;
+        private string accommodationName;
+        private int guestId;
         private int cleanliness;
         private int ownerPoliteness;
         private string comment;
@@ -19,21 +20,33 @@ namespace projekatSIMS.Model
         {
 
         }
-            public AccommodationOwnerRating(int reservationId, int cleanliness, int ownerPoliteness, string comment)
+            public AccommodationOwnerRating(int guestId,string accommodationName, int cleanliness, int ownerPoliteness, string comment)
         {
-            this.reservationId = reservationId;
+            this.guestId = guestId;
+            this.accommodationName = accommodationName;
             this.cleanliness = cleanliness;
             this.ownerPoliteness = ownerPoliteness;
             this.comment = comment;
         }
 
-        public int ReservationId
+        public string AccommodationName
         {
-            get { return reservationId; }
+            get { return accommodationName; }
             set 
             { 
-                reservationId = value; 
-                OnPropertyChanged(nameof(ReservationId));
+                accommodationName = value; 
+                OnPropertyChanged(nameof(AccommodationName));
+            }
+
+        }
+
+        public int GuestId
+        {
+            get { return guestId; }
+            set
+            {
+                guestId = value;
+                OnPropertyChanged(nameof(GuestId));
             }
 
         }
@@ -80,17 +93,18 @@ namespace projekatSIMS.Model
 
         public override string ExportToString()
         {
-            return id + "|" + reservationId + "|" + cleanliness + "|" + ownerPoliteness + "|" + comment + "|" + imageUrl;
+            return id + "|" + accommodationName + "|" + guestId + "|" + cleanliness + "|" + ownerPoliteness + "|" + comment + "|" + imageUrl;
         }
 
         public override void ImportFromString(string[] parts)
         {
             base.ImportFromString(parts);
-            reservationId = int.Parse(parts[1]);
-            cleanliness = int.Parse(parts[2]);
-            ownerPoliteness = int.Parse(parts[3]);
-            comment = parts[4];
-            imageUrl = parts[5];
+            AccommodationName = parts[1];
+            GuestId = int.Parse(parts[2]);
+            Cleanliness = int.Parse(parts[3]);
+            OwnerPoliteness = int.Parse(parts[4]);
+            Comment = parts[5];
+            ImageUrl = parts[6];
         }
     }
 }

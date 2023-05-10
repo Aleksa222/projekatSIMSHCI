@@ -14,7 +14,8 @@ namespace projekatSIMS.Repository
             Entity accommodationOwnerRating = base.Get(entity.Id);
 
             ((AccommodationOwnerRating)accommodationOwnerRating).Id = ((AccommodationOwnerRating)entity).Id;
-            ((AccommodationOwnerRating)accommodationOwnerRating).ReservationId = ((AccommodationOwnerRating)entity).ReservationId;
+            ((AccommodationOwnerRating)accommodationOwnerRating).AccommodationName = ((AccommodationOwnerRating)entity).AccommodationName;
+            ((AccommodationOwnerRating)accommodationOwnerRating).GuestId = ((AccommodationOwnerRating)entity).GuestId;
             ((AccommodationOwnerRating)accommodationOwnerRating).Cleanliness = ((AccommodationOwnerRating)entity).Cleanliness;
             ((AccommodationOwnerRating)accommodationOwnerRating).OwnerPoliteness = ((AccommodationOwnerRating)entity).OwnerPoliteness;
             ((AccommodationOwnerRating)accommodationOwnerRating).Comment = ((AccommodationOwnerRating)entity).Comment;
@@ -25,5 +26,7 @@ namespace projekatSIMS.Repository
         {
             return base.Search(term);
         }
+
+      
     }
 }

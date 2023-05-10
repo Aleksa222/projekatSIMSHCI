@@ -1,28 +1,97 @@
 ﻿<Page x:Class="projekatSIMS.UI.Dialogs.View.OwnerView.OwnerHomeView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
-      mc:Ignorable="d" 
+
+      mc:Ignorable="d"
       Background="Transparent"
-      d:DesignHeight="768" d:DesignWidth="1366" 
+      d:DesignHeight="768" d:DesignWidth="1366"
       Title="OwnerHomeView">
 
     <Border CornerRadius="30" Padding="30" >
         <Border CornerRadius="30" ClipToBounds="True">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                    <GradientStop Color="#051a2d" Offset="0"/>
-                    <GradientStop Color="#21535B" Offset="1"/>
+                    <GradientStop Color="#ededed" Offset="0"/>
+                    <GradientStop Color="#dce5ed" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-
             <Grid>
-                <local:NavigationBar/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Width="100"/>
+                    <local:NavigationBar/>
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140"/>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Accommodations" Foreground="#051a2d" Margin="0,32,0,10" HorizontalAlignment="Center" FontFamily="Poppins SemiBold" FontSize="36"  Grid.Row="0" Width="354" FontWeight="Bold">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    
+
+
+                </Grid>
+
+                <Grid HorizontalAlignment="Left" Height="541" Margin="125,108,0,0" VerticalAlignment="Top" Width="1111">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="400"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Grid.ZIndex="1" Opacity="0.9" >
+                        <Border CornerRadius="30" Margin="0,0,-25,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="#d2b48c" />
+                                    <GradientStop Offset="1" Color="#876553" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="20" BlurRadius="50" Color="#32435f" Opacity="40" />
+                            </Border.Effect>
+                            <TextBlock Grid.Column="0" Text="Hotel Beograd" Foreground="AntiqueWhite" Margin="0,52,0,435" HorizontalAlignment="Center" FontFamily="Poppins SemiBold" FontSize="26"  Grid.Row="0" Width="206" FontWeight="Bold">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                        </Border>
+
+                        <local:AccommodationMenu Margin="0,94,-25,93"></local:AccommodationMenu>
+                    </Grid>
+
+
+                    <Grid Grid.Column="1" Margin="0,-22,-401,-22" >
+                        <Border CornerRadius="0 30 30 0" Margin="10,44,0,37">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="#e1dddd" />
+                                    <GradientStop Offset="1" Color="#ffffff" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="10" BlurRadius="50" Color="#746553" Opacity="40" />
+                            </Border.Effect>
+                        </Border>
+                    </Grid>
+                </Grid>
+
 
             </Grid>
-            
+
 
         </Border>
 

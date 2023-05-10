@@ -18,8 +18,8 @@
             <Border Style ="{StaticResource ColumnGlowEffect}" CornerRadius="20" Margin="20" >
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#21535B" Offset="0.3"/>
-                                <GradientStop Color="#051a2d" Offset="0.7"/>
+                        <GradientStop Color="#383637" Offset="0.3"/>
+                        <GradientStop Color="#181717" Offset="0.7"/>
                     </LinearGradientBrush>
                 </Border.Background>
 
@@ -40,7 +40,7 @@
                             <Image Source="ownerpics/user.png" Width="20" Height="50"/>
                         </Button>
 
-                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                        <Button Style="{StaticResource homeButton}" Margin="0,20" Command="{Binding GoToAccommodationPageCommand}">
                             <Image Source="ownerpics/bed.png" Width="20" Height="50"/>
                         </Button>
 

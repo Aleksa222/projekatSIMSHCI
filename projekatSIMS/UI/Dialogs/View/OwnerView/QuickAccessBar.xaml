@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="projekatSIMS.UI.Dialogs.View.OwnerView.QuickAccessBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
+             mc:Ignorable="d" 
+             Height="50" Width="250" >
+    <Grid Height="50" Width="250">
+        <Border>
+            
+            <Grid>
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="0,0,190,0" >
+                    <Image Source="ownerpics/editbeige.png" Width="20" Height="50"/>
+                </Button>
+
+                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="30,0,160,0">
+                    <Image Source="ownerpics/statbeige.png" Width="20" Height="50"/>
+                </Button>
+
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="70,0,120,0">
+                    <Image Source="ownerpics/calendarbeige.png" Width="20" Height="50"/>
+                </Button>
+
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="107,0,83,0">
+                    <Image Source="ownerpics/hammerbeige.png" Width="20" Height="50"/>
+                </Button>
+
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="147,0,43,0">
+                    <Image Source="ownerpics/heartbeige2.png" Width="20" Height="50"/>
+                </Button>
+
+                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="190,0,0,0">
+                    <Image Source="ownerpics/binbeige.png" Width="20" Height="50"/>
+                </Button>
+
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

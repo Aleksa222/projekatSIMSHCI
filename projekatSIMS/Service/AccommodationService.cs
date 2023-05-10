@@ -2,6 +2,7 @@
 using projekatSIMS.Repository;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +70,22 @@ namespace projekatSIMS.Service
             }
             return result;
         }
+
+        public ObservableCollection<Accommodation> GetAccommodationsByOwnerId(int id)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            ObservableCollection<Accommodation> result = new ObservableCollection<Accommodation>();
+            foreach (Accommodation it in unitOfWork.Accommodations.GetAll())
+            {
+                if (it.OwnerId == id)
+                {
+                    result.Add(it);
+                }
+            }
+            return result;
+        }
+
+
 
         public void RegisterAccommodation(Accommodation accommodation)
         {

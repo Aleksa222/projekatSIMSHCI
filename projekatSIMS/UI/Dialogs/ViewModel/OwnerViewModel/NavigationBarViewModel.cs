@@ -60,6 +60,18 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             }
         }
 
+        public RelayCommand GoToAccommodationCommand
+        {
+            get
+            {
+                if (goToAccommodationsPageCommand == null)
+                {
+                    goToAccommodationsPageCommand = new RelayCommand(GoToAccommodationPage);
+                }
+                return goToAccommodationsPageCommand;
+            }
+        }
+
         private void LogOutPage(object parameter)
         {
             OwnerMainWindow.navigationService.Navigate(
@@ -76,6 +88,12 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
         {
             OwnerMainWindow.navigationService.Navigate(
                 new Uri("UI/Dialogs/View/OwnerView/OwnerUserAccountView.xaml", UriKind.Relative));
+        }
+
+        private void GoToAccommodationPage(object parameter)
+        {
+            OwnerMainWindow.navigationService.Navigate(
+                new Uri("/UI/Dialogs/View/OwnerView/OwnerAccommodationPage.xaml", UriKind.Relative));
         }
 
         public RelayCommand GoToHomePageCommand
@@ -99,6 +117,14 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             get
             {
                 return logOutCommand ?? (logOutCommand = new RelayCommand(LogOutPage));
+            }
+        }
+
+        public RelayCommand GoToAccommodationPageCommand
+        {
+            get
+            {
+                return goToAccommodationsPageCommand ?? (goToAccommodationsPageCommand = new RelayCommand(GoToAccommodationPage));
             }
         }
 
