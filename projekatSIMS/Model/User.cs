@@ -15,6 +15,7 @@ namespace projekatSIMS.Model
         private string password;
 
         private UserType userType;
+        private string imageUrl;
         private int reviewCount;
         private double averageRating;
         private bool superStatus;
@@ -44,6 +45,18 @@ namespace projekatSIMS.Model
                 OnPropertyChanged(nameof(FirstName));
             }
         }
+
+        public string ImageUrl
+        {
+            get { return imageUrl; }
+            set
+            {
+                imageUrl = value;
+                OnPropertyChanged(nameof(ImageUrl));
+            }
+        }
+
+
         public string LastName
         {
             get { return lastName; }
@@ -137,7 +150,7 @@ namespace projekatSIMS.Model
 
         public override string ExportToString()
         {
-            return id + "|" + firstName + "|" + lastName + "|" + email + "|" + password + "|" + userType.ToString() + "|" + reviewCount + "|" + averageRating + "|" + superStatus;
+            return id + "|" + firstName + "|" + lastName + "|" + email + "|" + password + "|" + userType.ToString() + "|" + reviewCount + "|" + averageRating + "|" + superStatus + "|" + imageUrl;
         }
 
         public override void ImportFromString(string[] parts)
@@ -151,6 +164,7 @@ namespace projekatSIMS.Model
             ReviewCount = int.Parse(parts[6]);
             AverageRating = double.Parse(parts[7]);
             SuperStatus = bool.Parse(parts[8]);
+            ImageUrl = parts[9];
         }
     }
 }

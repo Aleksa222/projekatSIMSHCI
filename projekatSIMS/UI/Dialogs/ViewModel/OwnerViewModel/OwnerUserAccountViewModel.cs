@@ -37,13 +37,13 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
                 // kreiranje novog DTO objekta i dodavanje u listu
                 ownerRatings.Add(new OwnerRatingDto
                 {
-                    GuestName = guest.FirstName,
-                    GuestSurname = guest.LastName,
-                    Comment = rating.Comment,
+                    GuestName = guest.FirstName + " " + guest.LastName,
+                    GuestImageUrl = guest.ImageUrl,
+                    Comment = "Comment : " + rating.Comment,
                     OwnerPoliteness = rating.OwnerPoliteness
 
-                  
-                });
+
+                }); ;
             }
 
         }

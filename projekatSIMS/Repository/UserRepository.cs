@@ -22,6 +22,7 @@ namespace projekatSIMS.Repository
             ((User)user).AverageRating = ((User)entity).AverageRating;
             ((User)user).ReviewCount = ((User)entity).ReviewCount;
             ((User)user).SuperStatus = ((User)entity).SuperStatus;
+            ((User)user).ImageUrl = ((User)entity).ImageUrl;
         }
 
         public void SetLoginUser(User user)

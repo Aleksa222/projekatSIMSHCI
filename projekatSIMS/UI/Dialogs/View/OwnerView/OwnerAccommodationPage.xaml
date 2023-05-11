@@ -23,17 +23,82 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+
                     <Border Width="100"/>
                     <local:NavigationBar/>
                 </Grid>
 
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="140"/>
-                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="180"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <local:AccommodationNavigationBar Margin="56,164,0,0" Grid.RowSpan="2" Grid.Row="1"/>
+                    <Grid Height="300" Grid.Row="2" Margin="153,34,137,34" >
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="1" Grid.ZIndex="1" Opacity="0.9" >
+                                <Border  Panel.ZIndex="0" CornerRadius="30" Margin="0,0,109,-20">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#d2b48c" />
+                                            <GradientStop Offset="1" Color="#876553" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="20" BlurRadius="50" Color="#32435f" Opacity="40" />
+                                    </Border.Effect>
+                                </Border>
+                            </Grid>
+
+
+                            <Grid Grid.Column="2" >
+                                <Border CornerRadius="0 30 30 0" Margin="-99,35,0,-4">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#e1dddd" />
+                                            <GradientStop Offset="1" Color="#ffffff" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="10" BlurRadius="50" Color="#746553" Opacity="40" />
+                                    </Border.Effect>
+                                </Border>
+                            </Grid>
+                            <Button Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="10,21,10,210" >
+                                <Image Source="ownerpics/hammerf.png" Width="35" Height="70">
+                                    <Image.Effect>
+                                        <DropShadowEffect Color="#525448" ShadowDepth="10" BlurRadius="30" Opacity="1" />
+                                    </Image.Effect>
+                                </Image>
+                            </Button>
+
+                            <Button Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="10,128,10,102">
+                                <Image Source="ownerpics/3df.png" Width="35" Height="70">
+                                    <Image.Effect>
+                                        <DropShadowEffect Color="#525448" ShadowDepth="10" BlurRadius="30" Opacity="1" />
+                                    </Image.Effect>
+                                </Image>
+                            </Button>
+
+                            <Button Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="15,232,5,0">
+                                <Image Source="ownerpics/lovef.png" Width="35" Height="70">
+                                    <Image.Effect>
+                                        <DropShadowEffect Color="#525448" ShadowDepth="10" BlurRadius="30" Opacity="1" />
+                                    </Image.Effect>
+                                </Image>
+                            </Button>
+                        </Grid>
+
+
+
+
+                    </Grid>
                     <TextBlock Text="Accommodations" Foreground="#383637" Margin="536,10,0,32" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="30"  Grid.Row="0" Width="354" FontWeight="Bold">
                         <TextBlock.Effect>
                             <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
@@ -48,36 +113,48 @@
 
                 </Grid>
 
-                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden" Background="#E6E6E6" Padding="0" Margin="180,58,74,380" >
-                    
-                    <WrapPanel Height="242" Width="1129">
-                        <ItemsControl ItemsSource="{Binding OwnerAccommodationsDto}" Height="280" Width="1165">
+                <ScrollViewer Background="Transparent" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden"  Padding="0" Margin="180,86,74,400" >
+
+                    <WrapPanel Height="200" Width="1129" Background="Transparent">
+
+                        <ItemsControl ItemsSource="{Binding OwnerAccommodationsDto}" Height="232" Width="1165">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid Height="200" Width="216">
+                                    <Grid HorizontalAlignment="Left" Height="190" Width="300"  VerticalAlignment="Top" >
+
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="120" />
-                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="110" />
+                                            <RowDefinition Height="50" />
                                         </Grid.RowDefinitions>
-                                        <Border Grid.Row="0" Background="Transparent" CornerRadius="10" Margin="0,-9,0,9">
-                                            
-                                              
+                                        <Border Grid.Row="0" Background="#d2b48c"  Margin="0,20,0,9" Padding="30" Grid.ColumnSpan="2">
                                             <Border.Effect>
-                                                <DropShadowEffect ShadowDepth="5" BlurRadius="5" Opacity="0.5" />
+                                                <DropShadowEffect ShadowDepth="20" BlurRadius="50" Color="#32435f" Opacity="40" />
                                             </Border.Effect>
                                         </Border>
-                                        <TextBlock Text="{Binding Name}" Foreground="#383637" Grid.Row="0" FontFamily="Poppins Light" FontSize="19" Margin="0,-10,0,0" HorizontalAlignment="Center">
+                                        <TextBlock  Text="{Binding Name}" Foreground="AntiqueWhite" Panel.ZIndex="2" Grid.Row="0" FontFamily="Poppins Light" FontSize="20" Margin="20,8,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="2">
                                             <TextBlock.Effect>
-                                                <DropShadowEffect ShadowDepth="4" Color="Beige"/>
+                                                <DropShadowEffect ShadowDepth="10" BlurRadius="10" Color="#4f483f"/>
                                             </TextBlock.Effect>
                                         </TextBlock>
-                                        <Image Source="{Binding ImageUrl}" Grid.Row="1" Stretch="Fill" Opacity="0.8">
-                                            <Image.Effect>
-                                                <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="20" Opacity="1"/>
-                                            </Image.Effect>
-                                        </Image>
-                                        <local:QuickAccessBar Grid.Row="1" Margin="-17,90,-17,-10" Grid.RowSpan="2" />
+
+
+                                        <Border Grid.ColumnSpan="2">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="10" BlurRadius="20" Color="#4f483f" />
+
+                                            </Border.Effect>
+                                            <Image Source="{Binding ImageUrl}" Grid.Row="1" Stretch="Fill" Opacity="0.5" Margin="0,0,0,-107" HorizontalAlignment="Center" Width="300" >
+                                                <Image.Effect>
+                                                    <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="#4f483f" Opacity="0.9" />
+                                                </Image.Effect>
+
+                                            </Image>
+                                        </Border>
+
+                                        <local:QuickAccessBar Grid.Row="2" Margin="20,0,20,0"  />
+
+
                                     </Grid>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
@@ -89,12 +166,212 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemContainerStyle>
                                 <Style>
-                                    <Setter Property="FrameworkElement.Margin" Value="14,14,14,14" />
+                                    <Setter Property="FrameworkElement.Margin" Value="0,0,0,0" />
                                 </Style>
                             </ItemsControl.ItemContainerStyle>
                         </ItemsControl>
                     </WrapPanel>
                 </ScrollViewer>
+
+                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="322" Width="978" Margin="254,0,0,32">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="897*"/>
+                        <ColumnDefinition Width="82*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="AntiqueWhite" Margin="58,10,0,278" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="20" Width="236" FontWeight="Bold" Text="Accommodation ">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                        </TextBlock.Effect></TextBlock>
+
+                    <Grid Height="96" Width="235" Margin="122,120,538,106">
+                        <TextBlock Foreground="#312c28" Height="28" TextWrapping="Wrap" Text="Choose accommodation:" VerticalAlignment="Top" FontFamily="Poppins SemiBold" FontSize="15" Margin="-74,-32,93,0">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+                    <TextBlock Foreground="AntiqueWhite" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="20"  Width="118" FontWeight="Bold" Text="Ratings" Margin="104,39,0,231">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                        </TextBlock.Effect></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Foreground="#876553" TextWrapping="Wrap" Text="Koliba Vrdnik" FontFamily="Poppins SemiBold" FontSize="20" Width="179" Margin="758,39,0,223" Grid.ColumnSpan="2">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Foreground="#312c28" Height="70"  TextWrapping="Wrap" Text="9.4" VerticalAlignment="Bottom" FontFamily="Poppins SemiBold" FontSize="50" Width="82" Margin="783,0,0,84">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="8"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Foreground="#312c28" Height="77" TextWrapping="Wrap" Text="9.2" VerticalAlignment="Top" FontFamily="Poppins SemiBold" FontSize="50" Width="84" Margin="783,78,0,0">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="8"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Foreground="#4f483f" Height="22"  TextWrapping="Wrap" Text="cleanliness" VerticalAlignment="Top" FontFamily="Poppins SemiBold" FontSize="10"  Width="72" TextAlignment="Center" RenderTransformOrigin="0.5,0.071" Margin="788,236,0,0">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock  TextAlignment="Center" HorizontalAlignment="Left" Foreground="#4f483f" Height="14" TextWrapping="Wrap" Text="politeness" VerticalAlignment="Top" FontFamily="Poppins SemiBold" FontSize="10" Width="72" Margin="788,144,0,0">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <ComboBox ItemsSource="{Binding AccommodationNames}" SelectedItem="{Binding SelectedAccommodation, Mode=TwoWay}" 
+          HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="217" Margin="41,113,0,0">
+                        <ComboBox.Template>
+                            <ControlTemplate TargetType="ComboBox">
+                                <Grid>
+                                    <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="20">
+                                        <StackPanel Orientation="Horizontal">
+                                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                                            <ToggleButton x:Name="ToggleButton" Margin="-1,-1,0,-1" VerticalAlignment="Center" Width="20" Height="20"
+                                    Focusable="false" IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                    ClickMode="Press">
+                                                <Path x:Name="Arrow" Fill="Black" StrokeThickness="0" Data="M 0 0 L 4 4 L 8 0 Z"/>
+                                            </ToggleButton>
+                                        </StackPanel>
+                                    </Border>
+                                    <Popup x:Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                        <Grid x:Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                            <Border x:Name="DropDownBorder" Background="White" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="20">
+                                                <ScrollViewer>
+                                                    <ItemsPresenter />
+                                                </ScrollViewer>
+                                            </Border>
+                                        </Grid>
+                                    </Popup>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter TargetName="Border" Property="Background" Value="LightGray" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="Gray" />
+                                        <Setter Property="Foreground" Value="DarkGray"/>
+                                    </Trigger>
+                                    <Trigger Property="IsDropDownOpen" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="White"/>
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+                                        <Setter TargetName="Arrow" Property="Fill" Value="Black"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </ComboBox.Template>
+                    </ComboBox>
+
+
+                </Grid>
+
+                <Grid HorizontalAlignment="Left" Height="264" Width="682" Margin="572,412,0,0" VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="55*"/>
+                        <RowDefinition Height="212*"/>
+                    </Grid.RowDefinitions>
+                    <Border Panel.ZIndex="0" CornerRadius ="20" Margin="0,10,254,46" Grid.RowSpan="2" >
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Offset="0" Color="Transparent" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                        </Border.Effect>
+                    </Border>
+                    <ScrollViewer  Grid.RowSpan="2" Margin="10,-38,254,46"  >
+                        <ItemsControl ItemsSource="{Binding OwnerRatings}" Width="408" Height="262">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border  BorderThickness="1" BorderBrush="Transparent" CornerRadius="35" Background="Transparent" Margin="0,0,-16,34">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="#bdbdbd" ShadowDepth="20" BlurRadius="40" Opacity="1"/>
+                                        </Border.Effect>
+                                        <Grid Height="76" Width="376">
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="90" />
+                                                <ColumnDefinition Width="200" />
+
+                                            </Grid.ColumnDefinitions>
+                                            <Image Panel.ZIndex="1" Source ="{Binding GuestImageUrl}"  Grid.Row="0" HorizontalAlignment="Left" Width="104" Grid.ColumnSpan="2" Margin="7,0,0,0" />
+
+
+
+                                            <Border BorderBrush="Transparent" BorderThickness="1" CornerRadius="30" Margin="23,0,-60,0" Background="#ffffff" Grid.ColumnSpan="2"/>
+                                            <TextBlock TextAlignment="Left" Foreground="#181717" Text="{Binding GuestName}"  FontFamily="Poppins SemiBold" FontSize="17" Grid.Column="1" Margin="0,11,0,-11" >
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" Color="#181717" BlurRadius="2"/>
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock TextAlignment="Left" Text="{Binding Comment}" FontFamily="Poppins SemiBold" FontSize="8" Margin="88,45,55,0" Grid.ColumnSpan="2" >
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <Border BorderThickness="1" CornerRadius="0 30 30 0" Margin="156,0,-60,0"  Grid.Column="1">
+                                                <Border.Background>
+                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                        <GradientStop Offset="0" Color="#d2b48c" />
+                                                        <GradientStop Offset="1" Color="#876553" />
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                            </Border>
+                                            <TextBlock TextAlignment="Center" Text="Politeness" Margin="156,16,-18,46" FontFamily="Poppins SemiBold" FontSize="9" Grid.Column="1" RenderTransformOrigin="0.419,0.643" >
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock TextAlignment="Center" Text="Cleanliness" Margin="160,44,-18,18" FontFamily="Poppins SemiBold" FontSize="9" Grid.Column="1" >
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock Foreground="#312c28" TextAlignment="Center" Text="{Binding OwnerPoliteness}" Margin="223,12,-45,40" FontFamily="Poppins SemiBold" FontSize="15" Grid.Column="1" >
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="8"/>
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock Foreground="#312c28" TextAlignment="Center" Text="{Binding Cleanliness}" Margin="223,41,-45,11" FontFamily="Poppins SemiBold" FontSize="15" Grid.Column="1" >
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="8"/>
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemContainerStyle>
+                                <Style>
+                                    <Setter Property="FrameworkElement.Margin" Value="0,0,0,0" />
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+
+
+
+
+
+
+
+
+
 
 
             </Grid>

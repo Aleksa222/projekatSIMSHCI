@@ -1,6 +1,5 @@
 ﻿using projekatSIMS.CompositeComon;
 using projekatSIMS.UI.Dialogs.View.OwnerView;
-using projekatSIMS.UI.Dialogs.View.TouristView;
 using System;
 using System.Collections.Generic;
 using System.Linq;

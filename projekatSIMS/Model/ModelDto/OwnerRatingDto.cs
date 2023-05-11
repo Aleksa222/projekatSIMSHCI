@@ -14,6 +14,7 @@ namespace projekatSIMS.Model.ModelDto
     {
         public int Id { get; set; }
         public string AccommodationName { get; set; }
+        public string GuestImageUrl { get; set; }
         public string GuestName { get; set; }
         public string GuestSurname { get; set; }
         public int Cleanliness { get; set; }

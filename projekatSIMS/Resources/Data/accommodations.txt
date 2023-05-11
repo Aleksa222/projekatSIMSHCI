@@ -1,7 +1,7 @@
-1|3|Hotel Belgrade1|APARTMENT|Belgrade|Serbia|100|2|10|false|ownerpics/koliba.jpg
-23|3|Hotel Belgrade3|APARTMENT|Belgrade|Serbia|100|3|10|false|ownerpics/hotel1.jpg
+1|3|Hotel Belgrade1|APARTMENT|Belgrade|Serbia|100|2|10|false|ownerpics/hotel3.jpg
+23|3|Hotel Belgrade3|APARTMENT|Belgrade|Serbia|100|3|10|false|ownerpics/koliba.jpg
 2|3|Grand Hotel Sofia|HOUSE|Sofia|Bulgaria|150|3|10|false|ownerpics/hotel2.jpg
-22|3|Grand Hotel Sofia2|HOUSE|Sofia|Bulgaria|150|3|10|false|ownerpics/hotel3.jpg
+22|3|Grand Hotel Sofia2|HOUSE|Sofia|Bulgaria|150|3|10|false|ownerpics/hotel1.jpg
 3|3|Hotel Berlin|COTTAGE|Berlin|Germany|200|3|10|false|ownerpics/hotel6.jpg
 4|3|Resort Paris|COTTAGE|Paris|France|120|3|10|false|ownerpics/hotel1.jpg
 5|3|Hotel Amsterdam|HOUSE|Amsterdam|Netherlands|80|3|10|false|ownerpics/hotel7.jpg

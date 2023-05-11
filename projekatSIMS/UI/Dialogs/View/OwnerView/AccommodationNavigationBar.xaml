@@ -44,7 +44,7 @@
                 </Border>
             </Grid>
             <Button Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="10,10,10,221">
-                <Image Source="ownerpics/hammer.png" Width="35" Height="70">
+                <Image Source="ownerpics/hammerf.png" Width="35" Height="70">
                     <Image.Effect>
                         <DropShadowEffect Color="#525448" ShadowDepth="10" BlurRadius="30" Opacity="1" />
                     </Image.Effect>
@@ -52,7 +52,7 @@
             </Button>
 
             <Button Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="10,115,10,115">
-                <Image Source="ownerpics/statistics.png" Width="35" Height="70">
+                <Image Source="ownerpics/3df.png" Width="35" Height="70">
                 <Image.Effect>
                         <DropShadowEffect Color="#525448" ShadowDepth="10" BlurRadius="30" Opacity="1" />
                 </Image.Effect>
@@ -60,7 +60,7 @@
             </Button>
 
             <Button Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="10,221,10,10">
-                <Image Source="ownerpics/heart.png" Width="35" Height="70">
+                <Image Source="ownerpics/lovef.png" Width="35" Height="70">
                     <Image.Effect>
                         <DropShadowEffect Color="#525448" ShadowDepth="10" BlurRadius="30" Opacity="1" />
                     </Image.Effect>

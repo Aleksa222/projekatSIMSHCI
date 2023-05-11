@@ -5,33 +5,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
              mc:Ignorable="d" 
-             Height="50" Width="250" >
-    <Grid Height="50" Width="250">
+             Height="50" Width="260" >
+    <Grid Height="50" Width="260">
         <Border>
             
             <Grid>
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="0,0,190,0" >
-                    <Image Source="ownerpics/editbeige.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="0,0,200,0"  >
+                    <Image Source="ownerpics/editf.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="30,0,160,0">
-                    <Image Source="ownerpics/statbeige.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="48,0,162,0">
+                    <Image Source="ownerpics/3df.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="70,0,120,0">
-                    <Image Source="ownerpics/calendarbeige.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="98,0,112,0" >
+                    <Image Source="ownerpics/calendarf.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="107,0,83,0">
-                    <Image Source="ownerpics/hammerbeige.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="140,0,70,0" >
+                    <Image Source="ownerpics/hammerf.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="147,0,43,0">
-                    <Image Source="ownerpics/heartbeige2.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="182,0,28,0" >
+                    <Image Source="ownerpics/lovef.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="190,0,0,0">
-                    <Image Source="ownerpics/binbeige.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="219,0,-9,0">
+                    <Image Source="ownerpics/deletef.png" Width="20" Height="50"/>
                 </Button>
 
 

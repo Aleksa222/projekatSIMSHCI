@@ -45,6 +45,7 @@
                             <DropShadowEffect Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
                         </Border.Effect>
 
+
                     </Border>
                     <Polygon Stroke="Transparent" StrokeThickness="1" Fill="#d2b48c"
          Points="150,80 270,150 150,220 30,150" Margin="558,51,431,43" RenderTransformOrigin="0.5,0.5"  >
@@ -87,6 +88,75 @@
                         </Image.Triggers>
                     </Image>
 
+                    <Image Source="ownerpics/star1.png" Margin="1100,129,124,205">
+                        <Image.Effect>
+                            <DropShadowEffect x:Name="Glow" ShadowDepth="8" BlurRadius="8" Opacity="1" Color="#edcb9d"/>
+                        </Image.Effect>
+                        <Image.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="50" Duration="0:0:2" RepeatBehavior="Forever" AutoReverse="True" Storyboard.TargetName="Glow" Storyboard.TargetProperty="BlurRadius"/>
+                                        <DoubleAnimation From="0" To="1" Duration="0:0:2" RepeatBehavior="Forever" AutoReverse="True" Storyboard.TargetName="Glow" Storyboard.TargetProperty="Opacity"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                    <Border CornerRadius ="50" Margin="798,291,47,10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Offset="0" Color="White" />
+                                <GradientStop Offset="1" Color="WhiteSmoke" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                        </Border.Effect>
+
+
+                    </Border>
+                    <Border CornerRadius ="50" Margin="171,291,911,257" Grid.RowSpan="2">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Offset="0" Color="White" />
+                                <GradientStop Offset="1" Color="WhiteSmoke" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                        </Border.Effect>
+                        <TextBlock TextAlignment="Center" Text ="10" Foreground ="#383637" HorizontalAlignment="Center" Height="78" FontFamily="Poppins SemiBold" FontSize="60" VerticalAlignment="Top" Width="132" Margin="0,14,0,0">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
+                            </TextBlock.Effect>
+
+                        </TextBlock>
+
+
+                    </Border>
+                    <Border CornerRadius ="50" Margin="412,291,671,257" Grid.RowSpan="2">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Offset="0" Color="White" />
+                                <GradientStop Offset="1" Color="WhiteSmoke" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                        </Border.Effect>
+                        <TextBlock TextAlignment="Center" Text ="68%" Foreground ="#383637" HorizontalAlignment="Center" Height="78" FontFamily="Poppins SemiBold" FontSize="60" VerticalAlignment="Top" Width="136" Margin="0,14,0,0">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
+                            </TextBlock.Effect>
+
+                        </TextBlock>
+
+
+                    </Border>
+                    <Image Source="ownerpics/trophyy.png" Margin="1122,291,-1,10">
+
+                    </Image>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="267" Width="634" Margin="620,409,0,0" VerticalAlignment="Top">
                     <Grid.RowDefinitions>
@@ -96,8 +166,8 @@
                     <Border CornerRadius ="20" Margin="174,40,0,0" Grid.RowSpan="2" >
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                <GradientStop Offset="0" Color="White" />
-                                <GradientStop Offset="1" Color="WhiteSmoke" />
+                                <GradientStop Offset="0" Color="Transparent" />
+                                <GradientStop Offset="1" Color="Transparent" />
                             </LinearGradientBrush>
                         </Border.Background>
                         <Border.Effect>
@@ -108,7 +178,7 @@
                         <ItemsControl ItemsSource="{Binding OwnerRatings}" Width="448" Height="245">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border  BorderThickness="1" BorderBrush="#ffffff" CornerRadius="20" Background="#ffffff">
+                                    <Border  BorderThickness="1" BorderBrush="#ffffff" CornerRadius="35" Background="#ffffff" Grid.RowSpan="2">
                                         <Border.Effect>
                                             <DropShadowEffect Color="#bdbdbd" ShadowDepth="20" BlurRadius="40" Opacity="1"/>
                                         </Border.Effect>
@@ -117,43 +187,46 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="90" />
                                                 <ColumnDefinition Width="200" />
-                                                <ColumnDefinition Width="100" />
-                                                <ColumnDefinition Width="*" />
+
                                             </Grid.ColumnDefinitions>
-                                            <Image Source="ownerpics/cman.png" Grid.Row="0" Margin="25,18,25,18" />
-                                            <TextBlock Text="{Binding GuestName}" Grid.Column="1" Margin="0,8,148,46" FontFamily="Poppins SemiBold" FontSize="15" >
+                                            <Image Source ="{Binding GuestImageUrl}"  Grid.Row="0" Margin="0,6,0,8" HorizontalAlignment="Center" />
+
+
+
+                                            <Border BorderBrush="Transparent" BorderThickness="1" CornerRadius="30" Margin="83,12,-76,13" Background="#FFE0E0E0" Grid.ColumnSpan="2"/>
+                                            <TextBlock TextAlignment="Left" Foreground="#181717" Text="{Binding GuestName}" Margin="14,16,18,38" FontFamily="Poppins SemiBold" FontSize="17" Grid.Column="1" >
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" Color="#181717" BlurRadius="2"/>
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+                                            <TextBlock TextAlignment="Left" Text="{Binding Comment}" Margin="14,41,-17,7" FontFamily="Poppins SemiBold" FontSize="9" Grid.Column="1" >
                                                 <TextBlock.Effect>
                                                     <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
                                                 </TextBlock.Effect>
 
                                             </TextBlock>
-
-                                            <TextBlock Text="{Binding GuestSurname}" Grid.Column="1" Margin="0,8,0,46" FontFamily="Poppins SemiBold" FontSize="15" HorizontalAlignment="Center" Width="86" >
-                                                <TextBlock.Effect>
-                                                    <DropShadowEffect ShadowDepth="1" Color="White"/>
-                                                </TextBlock.Effect>
-
-                                            </TextBlock>
-
-
-
-                                            <TextBlock Text="{Binding Comment}" Margin="0,40,0,10" FontFamily="Poppins SemiBold" FontSize="6" Grid.Column="1" Background="#FFE0E0E0" >
-                                                <TextBlock.Effect>
-                                                    <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
-                                                </TextBlock.Effect>
-                                            </TextBlock>
-
-
-                                            <TextBlock Text ="Comment:" Grid.Column="1" HorizontalAlignment="Left" Height="13" Margin="0,25,0,0" FontFamily="Poppins SemiBold" FontSize="7" VerticalAlignment="Top" Width="68"/>
-
-                                            <Border BorderThickness="2" Background="#d2b48c" BorderBrush="#d2b48c" CornerRadius="10" Margin="21,20,41,18" Grid.Column="2">
-                                                <TextBlock Text="{Binding OwnerPoliteness}" Foreground="#746553" FontFamily="Poppins SemiBold" FontSize="25" Margin="8,-2,8,2">
+                                            <Border BorderThickness="1" CornerRadius="30" Margin="224,12,-76,12"  Grid.Column="1">
+                                                <Border.Background>
+                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                        <GradientStop Offset="0" Color="#d2b48c" />
+                                                        <GradientStop Offset="1" Color="#876553" />
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                                <TextBlock TextAlignment="Center" Text="{Binding OwnerPoliteness}" Margin="7,2,7,2" FontFamily="Poppins SemiBold" FontSize="25" >
                                                     <TextBlock.Effect>
-                                                        <DropShadowEffect ShadowDepth="1" Color="FloralWhite"/>
+                                                        <DropShadowEffect ShadowDepth="1" Color="#181717" BlurRadius="2"/>
                                                     </TextBlock.Effect>
+
                                                 </TextBlock>
                                             </Border>
-                                            <TextBlock Text ="Rating" Grid.Column="2" HorizontalAlignment="Left" Height="13" Margin="23,5,0,0" FontFamily="Poppins SemiBold" FontSize="10" VerticalAlignment="Top" Width="36"/>
+                                            <TextBlock TextAlignment="Center" Text="Rate" Margin="235,45,-65,17" FontFamily="Poppins SemiBold" FontSize="9" Grid.Column="1" >
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                                </TextBlock.Effect>
+
+                                            </TextBlock>
+
                                         </Grid>
                                     </Border>
                                 </DataTemplate>
@@ -174,21 +247,52 @@
 
 
 
+
+
+
                 </Grid>
 
                 <TextBlock Text ="Guest Reviews" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="804,409,0,0" FontFamily="Poppins SemiBold" FontSize="20" VerticalAlignment="Top" Width="156"/>
-                <TextBlock Text ="{Binding Owner.FirstName}" Foreground ="#383637" HorizontalAlignment="Left" Height="91" Margin="242,142,0,0" FontFamily="Poppins SemiBold" FontSize="50" VerticalAlignment="Top" Width="166"/>
-                <TextBlock Text ="{Binding Owner.LastName}" Foreground ="#383637" HorizontalAlignment="Left" Height="56" Margin="422,142,0,0" FontFamily="Poppins SemiBold" FontSize="50" VerticalAlignment="Top" Width="194" />
+                <TextBlock  Foreground ="#383637" HorizontalAlignment="Left" Height="91" Margin="280,142,0,0" FontFamily="Poppins SemiBold" FontSize="40" VerticalAlignment="Top" Width="346">
+                     <Run Text="{Binding Owner.FirstName}" />
+                     <Run Text=" " />
+                     <Run Text="{Binding Owner.LastName}" />
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock TextAlignment="Center" Text ="Average Rating" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="859,200,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="111"/>
+                <TextBlock TextAlignment="Center" Text ="Review Count" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="978,200,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.518,0.357"/>
+                <TextBlock TextAlignment="Center" Text ="Super - Owner" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="1093,200,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="110"/>
+                <TextBlock TextAlignment="Center" Text ="9.4" Foreground ="#383637" HorizontalAlignment="Left" Height="78" Margin="859,136,0,0" FontFamily="Poppins SemiBold" FontSize="45" VerticalAlignment="Top" Width="111">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
+                    </TextBlock.Effect>
 
-                <Grid Margin="168,464,604,32">
-                    <ContentControl Content="{Binding GuestReviewChartViewModel}" />
+                </TextBlock>
+                <TextBlock TextAlignment="Center" Text ="60" Foreground ="#383637" HorizontalAlignment="Left" Height="78" Margin="977,136,0,0" FontFamily="Poppins SemiBold" FontSize="45" VerticalAlignment="Top" Width="111">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
+                    </TextBlock.Effect>
 
-                </Grid>
+                </TextBlock>
+                <TextBlock TextAlignment="Center" Text ="Accommodation" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="208,388,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.518,0.357"/>
+                <TextBlock TextAlignment="Center" Foreground ="#383637" HorizontalAlignment="Left" Height="42" Margin="453,388,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="136" ><Run Text="Accommodation"/><LineBreak/><Run Text=" Occupancy"/></TextBlock>
+                <TextBlock TextAlignment="Center" Text ="Best Accommodation" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="914,346,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="216" RenderTransformOrigin="0.518,0.357"/>
+                <TextBlock TextAlignment="Center" Text ="Koliba Vrdnik" Foreground ="#383637" HorizontalAlignment="Left" Height="60" Margin="879,300,0,0" FontFamily="Poppins SemiBold" FontSize="30" VerticalAlignment="Top" Width="269" RenderTransformOrigin="0.518,0.357">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
+                    </TextBlock.Effect>
+
+                </TextBlock>
+
 
 
             </Grid>
 
+
         </Border>
 
     </Border>
+
 </Page>
