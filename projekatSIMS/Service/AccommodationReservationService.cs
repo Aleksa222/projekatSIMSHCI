@@ -3,6 +3,7 @@ using projekatSIMS.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -87,5 +88,26 @@ namespace projekatSIMS.Service
                 }
             return retList;
         }
+
+        public ObservableCollection<AccommodationReservation> GetReservationsByAccommodationAndDateRange(DateTime startDate, DateTime endDate, string accommodationName)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            ObservableCollection<AccommodationReservation> retList = new ObservableCollection<AccommodationReservation>();
+            foreach (AccommodationReservation r in unitOfWork.AccommodationReservations.GetAll())
+            {
+                if (r.AccommodationName == accommodationName && r.StartDate >= startDate && r.EndDate <= endDate)
+                {
+                    retList.Add(r);
+                }
+
+
+            }
+
+            return retList;
+        }
+
+
+
+       
     }
 }

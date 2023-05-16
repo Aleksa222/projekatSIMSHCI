@@ -5,12 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
       xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="projekatSIMS.UI.Dialogs.View.OwnerView.AccommodationRatingsView"
+      xmlns:converters="clr-namespace:projekatSIMS.UI.Converter"
       Background="Transparent"
       Height="768" Width="1366"
       Title="AccommodationRatingsView">
 
-    <Border CornerRadius="30" Padding="30" >
-        <Border CornerRadius="30" ClipToBounds="True">
+    <Page.Resources>
+        <converters:StringToIntConverter x:Key="StringToIntConverter" />
+        <converters:DateRangeConverter x:Key="DateRangeConverter"/>
+    </Page.Resources>
+    <Border CornerRadius="30" Padding="30" Background="#181717">
+        <Border CornerRadius="30" ClipToBounds="True" Margin="0,0,0,6">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Color="#ededed" Offset="0"/>
@@ -31,7 +36,7 @@
 
                     <TextBlock Text="Accommodations" Foreground="#051a2d" Margin="0,32,0,627" HorizontalAlignment="Center" FontFamily="Poppins SemiBold" FontSize="36"  Grid.Row="0" Width="354" FontWeight="Bold">
                         <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
+                            <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
                         </TextBlock.Effect>
                     </TextBlock>
 
@@ -39,6 +44,8 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="300"/>
                             <ColumnDefinition Width="400"/>
+                            <ColumnDefinition Width="135*"/>
+                            <ColumnDefinition Width="2*"/>
 
                         </Grid.ColumnDefinitions>
 
@@ -53,19 +60,19 @@
                                 <Border.Effect>
                                     <DropShadowEffect ShadowDepth="20" BlurRadius="50" Color="#32435f" Opacity="40" />
                                 </Border.Effect>
-                                <TextBlock Grid.Column="0" Text="Hotel Beograd" Foreground="AntiqueWhite" Margin="40,55,0,432" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="35"  Grid.Row="0" Width="318" FontWeight="Bold">
-                                    <TextBlock.Effect>
-                                        <DropShadowEffect ShadowDepth="1" Color="AntiqueWhite" BlurRadius="0"/>
-                                    </TextBlock.Effect>
-                                </TextBlock>
                             </Border>
-
-                            <local:AccommodationMenu Margin="0,94,-25,93"/>
                         </Grid>
+                        <TextBlock TextAlignment="Center" Panel.ZIndex="1" Foreground="AntiqueWhite" Margin="28,101,0,307" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="25"  Grid.Row="0" Width="256" FontWeight="Bold">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
+                            </TextBlock.Effect>
+                            
+                            <Run Text="Choose "/><LineBreak/><Run Text="accommodation"/><LineBreak/><Run/></TextBlock>
 
 
-                        <Grid Margin="10,-22,-401,-22" Grid.Column="1" >
-                            <Border CornerRadius="0 30 30 0" Margin="10,44,0,37">
+
+                        <Grid Margin="10,-22,4,-22" Grid.Column="1" Grid.ColumnSpan="2" >
+                            <Border CornerRadius="0 30 30 0" Margin="10,134,0,124">
                                 <Border.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                         <GradientStop Offset="0" Color="#e1dddd" />
@@ -75,13 +82,380 @@
                                 <Border.Effect>
                                     <DropShadowEffect ShadowDepth="10" BlurRadius="50" Color="#746553" Opacity="40" />
                                 </Border.Effect>
+                                <Grid HorizontalAlignment="Left" Height="92" Margin="405,402,0,0" VerticalAlignment="Top" Width="326"/>
                             </Border>
 
+                            <Grid HorizontalAlignment="Left" Height="484" Margin="10,0,0,0" VerticalAlignment="Center" Width="357">
+                                <Border CornerRadius="0 30 30 0" Margin="0,48,-426,20">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#e1dddd" />
+                                            <GradientStop Offset="1" Color="#ffffff" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="10" BlurRadius="50" Color="#746553" Opacity="40" />
+                                    </Border.Effect>
+                                    <TextBox Visibility="{Binding TextBoxVisibility}" Text="{Binding Description}" HorizontalAlignment="Left" Height="58" Margin="104,317,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="226" >
+                                        <TextBox.Effect>
+                                            <DropShadowEffect ShadowDepth="10" BlurRadius="50" Color="#32435f" Opacity="40" />
+                                        </TextBox.Effect>
 
-                            <syncfusion:SfChart HorizontalAlignment="Left" Height="223" Margin="56,73,0,0" VerticalAlignment="Top" Width="369"/>
+                                    </TextBox>
+                                </Border>
+                                <DatePicker SelectedDate="{Binding SelectedStartDate}" x:Name="StartDatePicker"  HorizontalAlignment="Left" Height="26" Margin="194,80,0,0" VerticalAlignment="Top" Width="140"/>
+                                <DatePicker  SelectedDate="{Binding SelectedEndDate}" x:Name="EndDatePicker"  HorizontalAlignment="Left" Height="25" Margin="195,114,0,0" VerticalAlignment="Top" Width="139"/>
+                                <TextBlock  Foreground="#4f483f" Margin="112,150,0,298" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="12" Width="66" FontWeight="Bold" Text="Duration">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <TextBlock Foreground="#4f483f" Margin="112,114,0,329" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="12" Width="66" FontWeight="Bold" Text="End Date">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <TextBlock Foreground="#4f483f" Margin="105,80,0,373" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="12" Width="66" FontWeight="Bold" Text="Start Date">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <ListBox SelectedItem="{Binding SelectedAvailableRange}" Visibility="{Binding ListBoxVisibility}" ItemsSource="{Binding AvailableRangeList}" HorizontalAlignment="Left" Height="84" Margin="105,258,0,0" VerticalAlignment="Top" Width="226" >
+                                    <ListBox.Effect>
+                                        <DropShadowEffect ShadowDepth="10" BlurRadius="50" Color="#32435f" Opacity="40" />
+
+                                    </ListBox.Effect>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock>
+                                                    <Run Text="{Binding StartDate, StringFormat='dd.MM.yyyy'}" />
+                                                    <Run Text=" - " />
+                                                    <Run Text="{Binding EndDate, StringFormat='dd.MM.yyyy'}" />
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <Button Panel.ZIndex="1" Command="{Binding ShowAvailableDatesCommand}"  Content="Find Dates" HorizontalAlignment="Left" Height="21" Margin="222,195,0,0" VerticalAlignment="Top" Width="112">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+
+                                            <!-- Gradijentna pozadina -->
+                                            <Setter Property="Foreground" Value="White" />
+                                            <!-- Boja teksta -->
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border x:Name="ButtonBorder"    CornerRadius="10">
+                                                            <Border.Background>
+                                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                    <!-- Linearni gradijent -->
+                                                                    <GradientStop Offset="0" Color="#d2b48c" />
+                                                                    <GradientStop Offset="1" Color="#876553" />
+                                                                </LinearGradientBrush>
+                                                            </Border.Background>
+
+                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="ButtonBorder" Property="Effect">
+                                                                    <Setter.Value>
+                                                                        <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="10" Opacity="0.8" />
+                                                                        <!-- Efekat sjaja -->
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                                <TextBox BorderBrush="Transparent" Text="{Binding Duration}"  HorizontalAlignment="Left" Height="30" Margin="195,153,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="139">
+                                    <TextBox.Effect>
+                                        <DropShadowEffect ShadowDepth="10" BlurRadius="50" Color="#32435f" Opacity="40" />
+                                    </TextBox.Effect>
+                                </TextBox>
+                                <Border CornerRadius="10 10 0 0" Visibility="{Binding LabelVisibility}"  Margin="105,239,0,226" HorizontalAlignment="Left" Width="126">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#e1dddd" />
+                                            <GradientStop Offset="1" Color="#ffffff" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50" />
+                                    </Border.Effect>
+                                    <TextBlock Foreground="#4f483f" FontFamily="Poppins SemiBold" FontSize="10" FontWeight="Bold" Text="Available Dates" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,0,0,0" ></TextBlock>
+                                </Border>
+                                <Button Command="{Binding SaveRenovationWithCommand}"  Visibility="{Binding ButtonVisibility}"  Content="Finish" HorizontalAlignment="Left" Height="20" Margin="222,432,0,0" VerticalAlignment="Top" Width="112">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+
+                                            <!-- Gradijentna pozadina -->
+                                            <Setter Property="Foreground" Value="White" />
+                                            <!-- Boja teksta -->
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border x:Name="ButtonBorder" CornerRadius="10">
+                                                            <Border.Background>
+                                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                    <!-- Linearni gradijent -->
+                                                                    <GradientStop Offset="0" Color="#d2b48c" />
+                                                                    <GradientStop Offset="1" Color="#876553" />
+                                                                </LinearGradientBrush>
+                                                            </Border.Background>
+
+                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="ButtonBorder" Property="Effect">
+                                                                    <Setter.Value>
+                                                                        <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="10" Opacity="0.8" />
+                                                                        <!-- Efekat sjaja -->
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+
+                                <Button  Foreground="#ffffff"  Content="History" Command="{Binding ShowRenovationsWithIsDoneTrueCommand}" FontFamily="Poppins SemiBold" FontSize="20" Margin="401,13,-198,429" Background="Transparent" BorderBrush="Transparent">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+
+                                            <!-- Gradijentna pozadina -->
+                                            <Setter Property="Foreground" Value="White" />
+                                            <!-- Boja teksta -->
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border x:Name="ButtonBorder"    CornerRadius="10 10 0 0" Margin="0,0,0,8">
+                                                            <Border.Background>
+                                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                    <!-- Linearni gradijent -->
+                                                                    <GradientStop Offset="0" Color="#d2b48c" />
+                                                                    <GradientStop Offset="1" Color="#876553" />
+                                                                </LinearGradientBrush>
+                                                            </Border.Background>
+
+                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="ClickMode" Value="Press">
+                                                                <Setter TargetName="ButtonBorder" Property="Effect">
+                                                                    <Setter.Value>
+                                                                        <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="10" Opacity="0.8" />
+                                                                        <!-- Efekat sjaja -->
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                                <Button  Foreground="#FFFFFF" Content="Booked" Command="{Binding ShowRenovationsWithIsDoneFalseCommand}" Margin="555,13,-366,429" FontFamily="Poppins SemiBold" FontSize="20" Background="Transparent" BorderBrush="Transparent" >
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+
+                                            <!-- Gradijentna pozadina -->
+                                            <Setter Property="Foreground" Value="White" />
+                                            <!-- Boja teksta -->
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border x:Name="ButtonBorder"    CornerRadius="10 10 0 0" Margin="0,0,0,8">
+                                                            <Border.Background>
+                                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                    <!-- Linearni gradijent -->
+                                                                    <GradientStop Offset="0" Color="#d2b48c" />
+                                                                    <GradientStop Offset="1" Color="#876553" />
+                                                                </LinearGradientBrush>
+                                                            </Border.Background>
+
+                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="ClickMode" Value="Press">
+                                                                <Setter TargetName="ButtonBorder" Property="Effect">
+                                                                    <Setter.Value>
+                                                                        <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="10" Opacity="0.8" />
+                                                                        <!-- Efekat sjaja -->
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+
+                                <ScrollViewer Margin="396,48,-396,20"  >
+                                    <ItemsControl ItemsSource="{Binding AllRenovations}" Width="347" Height="564">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid HorizontalAlignment="Left" Height="80"  Grid.Row="2" VerticalAlignment="Top" Width="293">
+                                                    <Border  BorderThickness="1" BorderBrush="#ffffff" CornerRadius="35" Background="#ffffff">
+                                                        <Border.Effect>
+                                                            <DropShadowEffect Color="#bdbdbd" ShadowDepth="20" BlurRadius="40" Opacity="1"/>
+                                                        </Border.Effect>
+                                                        <Grid Height="76" Width="376">
+
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="70" />
+                                                                <ColumnDefinition Width="220" />
+
+                                                            </Grid.ColumnDefinitions>
+                                                            <Image Source ="ownerpics/hammerbeige.png" Panel.ZIndex="1"  HorizontalAlignment="Left" Margin="21,12,0,13" Width="39" />
+
+
+
+                                                            <Border BorderBrush="Transparent" BorderThickness="1" CornerRadius="30" Background="#FFE0E0E0" Margin="5,5,5,5" Grid.ColumnSpan="2"/>
+                                                            <TextBlock TextAlignment="Left" Foreground="#181717" Text="{Binding AccommodationName}" FontFamily="Poppins SemiBold" FontSize="12" Grid.Column="1" Margin="10,6,54,38" >
+                                                                <TextBlock.Effect>
+                                                                    <DropShadowEffect ShadowDepth="1" Color="#181717" BlurRadius="2"/>
+                                                                </TextBlock.Effect>
+
+                                                            </TextBlock>
+                                                            <Border BorderThickness="1" CornerRadius="0 30 30 0"   Grid.Column="1" Margin="171,5,5,5">
+                                                                <Border.Background>
+                                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                        <GradientStop Offset="0" Color="#d2b48c" />
+                                                                        <GradientStop Offset="1" Color="#876553" />
+                                                                    </LinearGradientBrush>
+                                                                </Border.Background>
+                                                                <TextBlock TextAlignment="Center" Text="ucitava"  FontFamily="Poppins SemiBold" FontSize="10" Margin="87,19,32,19" >
+                                                                    <TextBlock.Effect>
+                                                                        <DropShadowEffect ShadowDepth="1" Color="#181717" BlurRadius="2"/>
+                                                                    </TextBlock.Effect>
+
+                                                                </TextBlock>
+                                                            </Border>
+                                                            <TextBlock Panel.ZIndex="1" TextAlignment="Left" Text="{Binding StartDate}"  FontFamily="Poppins SemiBold" FontSize="8" Margin="10,24,152,38" Grid.Column="1" >
+                                                                <TextBlock.Effect>
+                                                                    <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                                                </TextBlock.Effect>
+
+                                                            </TextBlock>
+                                                            <TextBlock Panel.ZIndex="1" TextAlignment="Left" Text="{Binding EndDate}"  FontFamily="Poppins SemiBold" FontSize="8" Margin="83,24,73,38" Grid.Column="1" >
+                                                                <TextBlock.Effect>
+                                                                    <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                                                </TextBlock.Effect>
+
+                                                            </TextBlock>
+                                                            <TextBlock  Background="Transparent" TextAlignment="Left" Text="{Binding Description}"  FontFamily="Poppins SemiBold" FontSize="8" Margin="10,40,64,10" Grid.Column="1" >
+                                                                <TextBlock.Effect>
+                                                                    <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="0"/>
+                                                                </TextBlock.Effect>
+
+                                                            </TextBlock>
+                                                            <Button Command="{Binding CancelRenovationWithCommand}" CommandParameter="{Binding}" FontFamily="Poppins SemiBold" FontSize="7"  Background="Transparent" Grid.Column="1" Content="Cancel" HorizontalAlignment="Left" Height="17" Margin="174,0,0,0" VerticalAlignment="Center" Width="38" BorderBrush="Transparent"/>
+                                                            <Border Panel.ZIndex="0" BorderThickness="1" CornerRadius="10"   Grid.Column="1" Margin="73,24,77,38">
+                                                                <Border.Background>
+                                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                        <GradientStop Offset="0" Color="#d2b48c" />
+                                                                        <GradientStop Offset="1" Color="#876553" />
+                                                                    </LinearGradientBrush>
+                                                                </Border.Background>
+                                                                <TextBlock TextAlignment="Center" Text="ucitava"  FontFamily="Poppins SemiBold" FontSize="10" Margin="87,19,32,19" >
+                                                                    <TextBlock.Effect>
+                                                                        <DropShadowEffect ShadowDepth="1" Color="#181717" BlurRadius="2"/>
+                                                                    </TextBlock.Effect>
+
+                                                                </TextBlock>
+                                                            </Border>
+                                                            <Border Panel.ZIndex="0" BorderThickness="1" CornerRadius="10" Margin="3,24,150,38" Grid.Column="1">
+                                                                <Border.Background>
+                                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                                        <GradientStop Offset="0" Color="#d2b48c" />
+                                                                        <GradientStop Offset="1" Color="#876553" />
+                                                                    </LinearGradientBrush>
+                                                                </Border.Background>
+                                                                <TextBlock TextAlignment="Center" Text="ucitava"  FontFamily="Poppins SemiBold" FontSize="10" Margin="87,19,32,19" >
+                                                                    <TextBlock.Effect>
+                                                                        <DropShadowEffect ShadowDepth="1" Color="#181717" BlurRadius="2"/>
+                                                                    </TextBlock.Effect>
+
+                                                                </TextBlock>
+                                                            </Border>
+
+                                                        </Grid>
+                                                    </Border>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <VirtualizingStackPanel />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemContainerStyle>
+                                            <Style>
+                                                <Setter Property="FrameworkElement.Margin" Value="10,10,10,10" />
+                                            </Style>
+                                        </ItemsControl.ItemContainerStyle>
+                                    </ItemsControl>
+
+
+                                </ScrollViewer>
+                                <Border CornerRadius="10 10 0 0" Visibility="{Binding LabelVisibility}"  Margin="105,347,0,119" HorizontalAlignment="Left" Width="126">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#e1dddd" />
+                                            <GradientStop Offset="1" Color="#ffffff" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50" />
+                                    </Border.Effect>
+                                    <TextBlock Foreground="#4f483f" FontFamily="Poppins SemiBold" FontSize="10" FontWeight="Bold" Text="Description" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" />
+                                </Border>
+
+
+
+
+
+
+
+
+
+                            </Grid>
+
+
+
+
 
 
                         </Grid>
+                        <ComboBox ItemsSource="{Binding Accommodations}"
+          SelectedValue="{Binding SelectedAccommodation}"
+          DisplayMemberPath="Name"  x:Name="AccommodationComboBox" Panel.ZIndex="1" Grid.Column="0" HorizontalAlignment="Left" Height="56" Margin="43,188,0,0" VerticalAlignment="Top" Width="226"/>
+                        <Border CornerRadius="10 10 0 0" Visibility="{Binding LabelVisibility}"  Margin="45,223,0,242" HorizontalAlignment="Left" Width="126">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Offset="0" Color="#e1dddd" />
+                                    <GradientStop Offset="1" Color="#ffffff" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50" />
+                            </Border.Effect>
+                            <TextBlock Foreground="#4f483f" FontFamily="Poppins SemiBold" FontSize="10" FontWeight="Bold" Text="Available Dates" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,0,0,0" />
+                        </Border>
 
 
 

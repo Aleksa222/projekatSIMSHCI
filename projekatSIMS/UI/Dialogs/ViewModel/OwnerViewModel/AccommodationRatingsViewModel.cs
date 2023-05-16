@@ -71,5 +71,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
         }
 
 
+
+
     }
 }

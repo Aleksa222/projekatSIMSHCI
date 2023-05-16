@@ -80,7 +80,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
         private void GoToHomePage(object parameter)
         {
             OwnerMainWindow.navigationService.Navigate(
-                new Uri("UI/Dialogs/View/OwnerView/OwnerHomeView.xaml", UriKind.Relative));
+                new Uri("UI/Dialogs/View/OwnerView/AccommodationRatingsView.xaml", UriKind.Relative));
         }
 
         private void GoToUserAccountPage(object parameter)

@@ -26,9 +26,9 @@
 
                 <Grid>
                     <Grid VerticalAlignment="Top">
-                        <Button Background="Transparent" BorderBrush="Transparent" >
+                        <Grid Background="Transparent"  >
                             <Image Source="ownerpics/logo2.png" Width="20" Height="50"/>
-                        </Button>
+                        </Grid>
                     </Grid>
                     <StackPanel VerticalAlignment="Center">
 

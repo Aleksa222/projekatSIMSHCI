@@ -27,7 +27,7 @@ namespace projekatSIMS.Repository
         }
 
         public UserRepository Users { get; private set; }
-        public AccommodationRepository Accommodations { get; private set; }
+        public IAccommodationRepository Accommodations { get; private set; }
         public TourRepository Tours { get; private set; }
         public KeyPointsRepository KeyPoint { get; private set; }
         public TourReservationRepository TourReservations { get; private set; }

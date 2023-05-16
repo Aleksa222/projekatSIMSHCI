@@ -1,4 +1,6 @@
-﻿using projekatSIMS.CompositeComon;
+﻿using LiveCharts;
+using LiveCharts.Wpf;
+using projekatSIMS.CompositeComon;
 using projekatSIMS.Model;
 using projekatSIMS.Model.ModelDto;
 using projekatSIMS.Service;
@@ -8,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
 {
@@ -16,8 +19,17 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
         private AccommodationOwnerRatingService accommodationOwnerRatingService;
         private UserService userService;
         private ObservableCollection<AccommodationOwnerRating>ratings;
+        private List<int> _dataPoints;
+        public SeriesCollection ChartSeries { get; set; }
+
+        
+
+
 
         private ObservableCollection<OwnerRatingDto> ownerRatings;
+        public SeriesCollection DataSeries { get; set; }
+        public List<string> Labels { get; set; }
+
 
         private User owner;
 
@@ -27,8 +39,10 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             accommodationOwnerRatingService = new AccommodationOwnerRatingService();
             userService = new UserService();
 
+
             owner = userService.GetLoginUser();
             ratings = accommodationOwnerRatingService.GetOwnerRatingsById(owner.Id);
+            _dataPoints = accommodationOwnerRatingService.GetOwnerRatings(ratings);
             ownerRatings = new ObservableCollection<OwnerRatingDto>();
             foreach (var rating in ratings)
             {
@@ -44,9 +58,22 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
 
 
                 }); ;
-            }
+
+                var series = new LineSeries
+                {
+                    Title = "Series 1",
+                    Values = new ChartValues<int>(DataPoints),
+                    PointGeometry = null,
+                    StrokeThickness = 2,
+                    Fill = Brushes.Transparent
+                };
+
+                ChartSeries = new SeriesCollection { series };
+            
 
         }
+
+    }
         public ObservableCollection<AccommodationOwnerRating> Ratings
         {
             get { return ratings; }
@@ -80,6 +107,14 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             }
         }
 
-
+        public List<int> DataPoints
+        {
+            get { return _dataPoints; }
+            set
+            {
+                _dataPoints = value;
+                OnPropertyChanged(nameof(DataPoints));
+            }
+        }
     }
 }

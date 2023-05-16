@@ -29,8 +29,28 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        
+        
 
-       
+        <Style x:Key="SelectedButtonStyle" TargetType="Button">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Gold"/>
+            <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderThickness" Value="4"/>
+                    <Setter Property="BitmapEffect">
+                        <Setter.Value>
+                            <OuterGlowBitmapEffect GlowColor="Gold" GlowSize="20" />
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+
+
 
         <!-- Stil za efekat svetlucanja oko grid kolone -->
         <Style x:Key="ColumnGlowEffect" TargetType="Border">
@@ -42,8 +62,16 @@
             <Setter Property="BorderBrush" Value= "#21535B" />
             <Setter Property="BorderThickness" Value="0" />
         </Style>
-        
-        
+
+        <DataTemplate x:Key="HappySmiley">
+            <Image Source="ownerpics/happy.png" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="SadSmiley">
+            <Image Source="ownerpics/sad.png" />
+        </DataTemplate>
+
+
 
         <Storyboard x:Key="ImageAnimation" RepeatBehavior="Forever">
             <DoubleAnimation From="1" To="1.05" Duration="0:0:1" AutoReverse="True" Storyboard.TargetProperty="RenderTransform.ScaleX" />

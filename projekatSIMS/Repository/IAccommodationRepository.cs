@@ -12,9 +12,10 @@ namespace projekatSIMS.Repository
     {
         Accommodation GetAccommodationByType(AccommodationType type);
 
-        void GetAccommodationById(int id);
+        Accommodation GetAccommodationById(int id);
 
         Accommodation GetAccommodationByName(string name);
+        List<Accommodation> GetAccommodationsByOwner(int id);
 
         Accommodation GetAccommodationByLocation(Location location);
 

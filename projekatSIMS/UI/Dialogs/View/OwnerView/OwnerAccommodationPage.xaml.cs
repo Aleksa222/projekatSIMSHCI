@@ -28,6 +28,5 @@ namespace projekatSIMS.UI.Dialogs.View.OwnerView
             DataContext = new OwnerAccommodationsViewModel();
         }
 
-      
     }
 }

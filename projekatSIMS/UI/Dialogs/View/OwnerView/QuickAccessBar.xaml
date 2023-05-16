@@ -10,29 +10,22 @@
         <Border>
             
             <Grid>
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="0,0,200,0"  >
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="27,0,183,0"  >
                     <Image Source="ownerpics/editf.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="48,0,162,0">
+                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="77,0,133,0">
                     <Image Source="ownerpics/3df.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="98,0,112,0" >
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="127,0,83,0" >
                     <Image Source="ownerpics/calendarf.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="140,0,70,0" >
-                    <Image Source="ownerpics/hammerf.png" Width="20" Height="50"/>
-                </Button>
-
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="182,0,28,0" >
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="177,0,33,0" >
                     <Image Source="ownerpics/lovef.png" Width="20" Height="50"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="219,0,-9,0">
-                    <Image Source="ownerpics/deletef.png" Width="20" Height="50"/>
-                </Button>
 
 
             </Grid>

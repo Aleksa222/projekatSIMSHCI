@@ -113,10 +113,13 @@
     <Compile Include="Service\TourReservationService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\VoucherService.cs" />
+    <Compile Include="UI\Converter\BooleanToVisibilityConverter.cs" />
+    <Compile Include="UI\Converter\DateRangeConverter.cs" />
+    <Compile Include="UI\Converter\StringToIntConverter.cs" />
     <Compile Include="UI\Dialogs\Model\ComboBoxData.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\AccommodationInformationViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\AccommodationMenuViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\AccommodationRatingsViewModel.cs" />
-    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\GuestReviewChartViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerAccommodationsViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerUserAccountViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\NavigationBarViewModel.cs" />
@@ -149,9 +152,6 @@
     <Compile Include="UI\Dialogs\View\OwnerView\AccommodationRatingsView.xaml.cs">
       <DependentUpon>AccommodationRatingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dialogs\View\OwnerView\GuestReviewChart.xaml.cs">
-      <DependentUpon>GuestReviewChart.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
@@ -172,9 +172,6 @@
     </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\QuickAccessBar.xaml.cs">
       <DependentUpon>QuickAccessBar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Dialogs\View\OwnerView\SuperOwnerView.xaml.cs">
-      <DependentUpon>SuperOwnerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\TourGuideView\TourGuideHomeView.xaml.cs">
       <DependentUpon>TourGuideHomeView.xaml</DependentUpon>
@@ -253,10 +250,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Dialogs\View\OwnerView\GuestReviewChart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -282,10 +275,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\OwnerView\QuickAccessBar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Dialogs\View\OwnerView\SuperOwnerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -659,6 +648,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\trophyy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\sad.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

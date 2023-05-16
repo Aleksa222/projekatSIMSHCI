@@ -2,6 +2,7 @@
 using projekatSIMS.Repository;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace projekatSIMS.Service
 {
-    internal class RenovationService
+    public class RenovationService
     {
         private readonly IRepository<Renovation> renovationRepository;
         AccommodationReservationService reservationService = new AccommodationReservationService();
@@ -68,43 +69,87 @@ namespace projekatSIMS.Service
             return unitOfWork.Renovations.GenerateId();
         }
 
-        public IEnumerable<DateTime> GetFreeTerms(string accommodationName, DateTime startDate, DateTime endDate, int renovationDuration)
+        public ObservableCollection<Renovation> GetRenovationsByAccommodation(string accommodationName)
         {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            List<Entity> renovations = new List<Entity>();
+            renovations = (List<Entity>)unitOfWork.Renovations.GetAll();
+            ObservableCollection<Renovation> retList = new ObservableCollection<Renovation>();
+
+            foreach (Renovation it in renovations)
+            {
+                if (it.AccommodationName == accommodationName)
+                {
+                    retList.Add(it);
+                }
+            }
+            return retList;
+        }
+
+        public ObservableCollection<Renovation> GetRenovationsByOwner(int ownerId)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+
+            ObservableCollection<Renovation> retList = new ObservableCollection<Renovation>();
+            List<Accommodation> accommodations = new List<Accommodation>();
+            accommodations = unitOfWork.Accommodations.GetAccommodationsByOwner(ownerId);
+
+
+
+            foreach (Accommodation accommodation in accommodations)
+            {
+                ObservableCollection<Renovation> renovations = GetRenovationsByAccommodation(accommodation.Name);
+
+                if (renovations != null)
+                {
+                    foreach (var renovation in renovations)
+                    {
+                        retList.Add(renovation);
+                    }
+                }
+            }
+
+            return retList;
+        }
+
+
+
+        public List<(DateTime, DateTime)> FindAvailableDates(DateTime startDate, DateTime endDate, int duration, ObservableCollection<AccommodationReservation> reservations)
+        {
+            List<(DateTime, DateTime)> availableDateRanges = new List<(DateTime, DateTime)>();
             List<DateTime> availableDates = new List<DateTime>();
 
-            // Izvučemo sve rezervacije koje se preklapaju sa zadatim opsegom datuma
-            var overlappingReservations = reservationService.GetOverlappingReservations(accommodationName, startDate, endDate);
-
-            // Napravimo listu datuma koje pokriva period renoviranja
-            List<DateTime> renovationDates = new List<DateTime>();
+            // Generišite listu svih datuma u opsegu
             for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
             {
-                renovationDates.Add(date);
+                availableDates.Add(date);
             }
-            renovationDates.RemoveAll(date => overlappingReservations.Any(reservation => reservation.StartDate <= date && date <= reservation.EndDate));
 
-            // Prođemo kroz sve uzastopne grupe od 'renovationDuration' dana u periodu između startDate i endDate
-            for (DateTime date = startDate; date.AddDays(renovationDuration - 1) <= endDate; date = date.AddDays(1))
+            int maxIndex = availableDates.Count - duration; // Maksimalni indeks za koji možemo formirati validan opseg datuma
+
+
+            for (int i = 0; i <= maxIndex; i++)
             {
-                // Proverimo da li postoje slobodni termini unutar ove grupe datuma
-                bool isAvailable = true;
-                for (int i = 0; i < renovationDuration; i++)
+                bool isRangeAvailable = true;
+                DateTime startDate1 = availableDates[i];
+                DateTime endDate1 = startDate.AddDays(duration - 1);
+
+                for (int j = i; j <= i + duration - 1; j++)
                 {
-                    if (!renovationDates.Contains(date.AddDays(i)))
+                    if (reservations.Any(r => availableDates[j] >= r.StartDate && availableDates[j] <= r.EndDate))
                     {
-                        isAvailable = false;
+                        isRangeAvailable = false;
                         break;
                     }
                 }
 
-                // Ako postoji slobodan termin, dodamo ga u listu slobodnih termina
-                if (isAvailable)
+                if (isRangeAvailable)
                 {
-                    availableDates.Add(date);
+                    availableDateRanges.Add((startDate1, endDate1));
                 }
             }
 
-            return availableDates;
+            return availableDateRanges;
         }
     }
 }

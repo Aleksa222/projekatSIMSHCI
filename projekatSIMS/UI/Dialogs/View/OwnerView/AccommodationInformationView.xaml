@@ -76,6 +76,23 @@
                                     <DropShadowEffect ShadowDepth="10" BlurRadius="50" Color="#746553" Opacity="40" />
                                 </Border.Effect>
                             </Border>
+                            <Grid Grid.Column="1" x:Name="Renovations" HorizontalAlignment="Left" Height="504" Margin="27,44,0,0" VerticalAlignment="Top" Width="764">
+                                <TextBlock Foreground="#4f483f" Margin="62,32,0,432" HorizontalAlignment="Left" FontFamily="Poppins SemiBold" FontSize="20" Width="236" FontWeight="Bold" Text="Schedule a renovation">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="1" Color="White" BlurRadius="50"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <DatePicker HorizontalAlignment="Left" Height="37" Margin="180,124,0,0" VerticalAlignment="Top" Width="118"/>
+                                <DatePicker HorizontalAlignment="Left" Height="37" Margin="180,176,0,0" VerticalAlignment="Top" Width="118"/>
+
+
+
+
+
+
+                            </Grid>
+
+
                         </Grid>
 
 

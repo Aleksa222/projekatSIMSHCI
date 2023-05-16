@@ -14,12 +14,13 @@ namespace projekatSIMS.Repository
         {
             Entity renovation = base.Get(entity.Id);
 
-            ((Renovation)renovation).AccommodationId = ((Renovation)entity).AccommodationId;
+            ((Renovation)renovation).AccommodationName = ((Renovation)entity).AccommodationName;
             ((Renovation)renovation).StartDate = ((Renovation)entity).StartDate;
             ((Renovation)renovation).EndDate = ((Renovation)entity).EndDate;
             ((Renovation)renovation).Description = ((Renovation)entity).Description;
             ((Renovation)renovation).Description = ((Renovation)entity).Description;
             ((Renovation)renovation).IsDone = ((Renovation)entity).IsDone;
+            ((Renovation)renovation).IsCanceled = ((Renovation)entity).IsCanceled;
 
 
         }

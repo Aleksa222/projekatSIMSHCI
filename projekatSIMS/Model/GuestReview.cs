@@ -75,7 +75,7 @@ namespace projekatSIMS.Model
             base.ImportFromString(parts);
             ReservationId = int.Parse(parts[1]);
             Cleanliness = int.Parse(parts[2]);
-            respectingRules = int.Parse(parts[3]);
+            RespectingRules = int.Parse(parts[3]);
             Comment = parts[4];
         }
     }

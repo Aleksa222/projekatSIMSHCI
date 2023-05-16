@@ -1,4 +1,5 @@
 ﻿using projekatSIMS.CompositeComon;
+
 using System;
 using projekatSIMS.Model;
 using projekatSIMS.Service;
@@ -8,16 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using projekatSIMS.Model.ModelDto;
+using System.Windows.Input;
+using System.ComponentModel;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
 {
     public class OwnerAccommodationsViewModel : ViewModelBase
     {
+        private ICommand _showGridCommand;
+
         AccommodationService accommodationService;
         private AccommodationOwnerRatingService accommodationOwnerRatingService;
         private ObservableCollection<string> accommodationNames;
         private AccommodationDto selectedAccommodation;
-
+        private bool _isGridVisible;
 
 
         UserService userService;
@@ -34,6 +39,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
 
         public OwnerAccommodationsViewModel() : base()
         {
+           
+
             accommodations = new ObservableCollection<Accommodation>();
             accommodationService = new AccommodationService();
             userService = new UserService();
@@ -146,7 +153,24 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
                 OnPropertyChanged(nameof(SelectedAccommodation));
             }
         }
+        public bool IsGridVisible
+        {
+            get { return _isGridVisible; }
+            set
+            {
+                if (_isGridVisible != value)
+                {
+                    _isGridVisible = value;
+                    OnPropertyChanged(nameof(IsGridVisible));
+                }
+            }
+        }
 
+        public void ShowGrid()
+        {
+            IsGridVisible = true;
+        }
+       
 
     }
 }

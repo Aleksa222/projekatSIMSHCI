@@ -10,33 +10,35 @@ namespace projekatSIMS.Model
 {
     public class Renovation : Entity
     {
-        int accommodationId;
-        DateTime startDate;
-        DateTime endDate;
-        string description;
+        private string accommodationName;
+        private DateTime startDate;
+        private DateTime endDate;
+        private string description;
 
-        bool isDone;
+        private bool isDone;
+        private bool isCanceled;
 
         public Renovation() { }
 
 
-        public Renovation(int accommmodationId, DateTime startDate, DateTime endDate, string description, bool isDone = false)
+        public Renovation(string accommmodationName, DateTime startDate, DateTime endDate, string description, bool isDone = false, bool isCanceled = false)
         {
-            this.accommodationId = accommmodationId;
+            this.accommodationName = accommmodationName;
             this.startDate = startDate;
             this.endDate = endDate;
             this.description = description;
             this.isDone = isDone;
+            this.IsCanceled = isCanceled;
         }
 
 
-        public int AccommodationId
+        public string AccommodationName
         {
-            get { return accommodationId; }
+            get { return accommodationName; }
             set
             {
-                accommodationId = value;
-                OnPropertyChanged(nameof(AccommodationId));
+                accommodationName = value;
+                OnPropertyChanged(nameof(AccommodationName));
             }
         }
         public DateTime StartDate
@@ -80,9 +82,19 @@ namespace projekatSIMS.Model
             }
         }
 
+        public bool IsCanceled
+        {
+            get { return isCanceled; }
+            set
+            {
+                isCanceled = value;
+                OnPropertyChanged(nameof(IsCanceled));
+            }
+        }
+
         public override string ExportToString()
         {
-            return id + "|" + accommodationId + "|" + startDate + "|" + endDate + "|" + description + "|"  + isDone;
+            return id + "|" + accommodationName + "|" + startDate + "|" + endDate + "|" + description + "|"  + isDone + "|" + isCanceled;
         }
 
         public override void ImportFromString(string[] parts)
@@ -90,11 +102,12 @@ namespace projekatSIMS.Model
             base.ImportFromString(parts);
 
 
-            accommodationId = int.Parse(parts[1]);
+            AccommodationName = parts[1];
             StartDate = DateTime.Parse(parts[2]);
             EndDate = DateTime.Parse(parts[3]);
             Description = parts[4];
             IsDone = bool.Parse(parts[5]);
+            IsCanceled = bool.Parse(parts[6]);
         }
     }
 }

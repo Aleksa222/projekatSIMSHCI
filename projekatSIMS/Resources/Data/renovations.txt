@@ -1,1 +1,11 @@
-﻿
+1|Grand Hotel Sofia|11-Apr-23 00:00:00|11-Apr-23 00:00:00|popravak kupatila|False|False
+2|Hotel Budapest|11-Apr-23 00:00:00|11-Apr-23 00:00:00|krecenje|False|False
+3|Hotel Copenhagen|11-Apr-23 00:00:00|11-Apr-23 00:00:00|parrket|True|False
+4|Hotel Moscow|11-Apr-23 00:00:00|11-Apr-23 00:00:00|popravak kupatila|True|False
+5|Hotel Vienna|11-Apr-23 00:00:00|11-Apr-23 00:00:00|popravak kupatila|True|False
+6|Hotel Berlin|11-Apr-23 00:00:00|11-Apr-23 00:00:00|popravak kupatila|False|False
+7|Hotel Amsterdam|11-Apr-23 00:00:00|11-Apr-23 00:00:00|popravak kupatila|True|False
+8|Hotel Stockholm|11-Apr-23 00:00:00|11-Apr-23 00:00:00|popravak kupatila|True|False
+0|Resort Paris|01-Jun-23 00:00:00|02-Jun-23 00:00:00|dd|False|False
+0|Hotel Madrid|02-Jun-23 00:00:00|04-Jun-23 00:00:00|ddd|False|False
+0|Hotel Amsterdam|02-Dec-23 00:00:00|06-Dec-23 00:00:00|ssss|False|False
