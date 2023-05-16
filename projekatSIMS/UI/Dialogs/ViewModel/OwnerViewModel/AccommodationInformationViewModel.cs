@@ -155,11 +155,11 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
         {
             if (description == null)
             {
-                ErrorMessage = "Please enter a description!";
+                MessageBox.Show("Please enter descripton!");
             }
             if (selectedAvailableRange == null)
             {
-                ErrorMessage = "Selecet date range!";
+                MessageBox.Show("Select date range!");
             }
 
             Accommodation accommodation = accommodationService.GetAccommodationByName(selectedAccommodation.Name);
