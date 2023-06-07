@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.TourGuideView"
       xmlns:system="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Height="450" Width="800"
       Title="TourGuideHomeView">
 
     <Border CornerRadius="12">

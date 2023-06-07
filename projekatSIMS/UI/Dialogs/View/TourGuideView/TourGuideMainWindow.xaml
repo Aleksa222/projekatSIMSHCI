@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.TourGuideView"
         mc:Ignorable="d"
-        Title="TourGuideMainWindow" Height="450" Width="800">
+        Title="TourGuideMainWindow" Height="810" Width="1040">
     <Grid>
         <Frame NavigationUIVisibility="Hidden" x:Name="frame" Source="TourGuideHomePageView.xaml"/>
     </Grid>

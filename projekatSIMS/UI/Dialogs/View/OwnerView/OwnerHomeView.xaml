@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
       mc:Ignorable="d" 
       Background="Transparent"
-      d:DesignHeight="760" d:DesignWidth="1280" 
+      Height="760" Width="1280" 
       Title="OwnerHomeView">
     <Border Background="#3C474F" CornerRadius="30 0 0 30">
         <Grid>

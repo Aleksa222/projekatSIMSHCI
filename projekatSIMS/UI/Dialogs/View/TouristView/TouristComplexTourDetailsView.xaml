@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:Icon="http://schemas.fontawesome.io/icons/"
-      d:DesignHeight="720" d:DesignWidth="1280"
+      Height="720" Width="1280"
       Title="TouristComplexTourDetailsView">
 
     <Grid>

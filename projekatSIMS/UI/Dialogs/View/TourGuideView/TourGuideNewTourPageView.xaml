@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.TourGuideView"
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1024"
+      Height="768" Width="1024"
       Title="TourGuideNewTourPageView">
 
     <Page.Resources>
@@ -108,7 +108,7 @@
                 <TextBox Grid.Column="1" Height="40" Width="200" Margin="455,500,125,224" FontSize="16" FontWeight="Bold" Background="{DynamicResource TextBoxColor}" Foreground="{DynamicResource TextColor}" Text="{Binding Description}"/>
                 <TextBox Grid.Column="1" Height="40" Width="200" Margin="455,550,125,174" FontSize="16" FontWeight="Bold" Background="{DynamicResource TextBoxColor}" Foreground="{DynamicResource TextColor}" Text="{Binding KeyPointId}"/>
                 <TextBox Grid.Column="1" Height="40" Width="200" Margin="455,600,125,124" FontSize="16" FontWeight="Bold" Background="{DynamicResource TextBoxColor}" Foreground="{DynamicResource TextColor}" Text="{Binding KeyPointName}"/>
-                <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="455,250,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource TextColor}"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="455,250,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="16" FontWeight="Bold" Background="{DynamicResource TextBoxColor}" Foreground="{DynamicResource TextColor}"/>
 
             </Grid>
         </Border>

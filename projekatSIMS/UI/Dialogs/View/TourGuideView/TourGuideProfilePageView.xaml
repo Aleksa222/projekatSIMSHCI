@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.TourGuideView"
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1024"
+      Height="768" Width="1024"
       Title="TourGuideProfilePageView">
 
     <Page.Resources>

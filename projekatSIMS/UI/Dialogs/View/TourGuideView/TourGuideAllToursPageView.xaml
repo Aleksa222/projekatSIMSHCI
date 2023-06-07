@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.TourGuideView" 
       
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1024"
+      Height="768" Width="1024"
       Title="TourGuideAllToursPageView">
 
     <Page.Resources>
@@ -50,7 +50,7 @@
                                                 <Border BorderThickness="2" BorderBrush="White" Height="200" Width="200" HorizontalAlignment="Left" Margin="50,0,0,20" >
                                                     <Image Source="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-512.png" />
                                                 </Border>
-                                                <Button Foreground="{DynamicResource TextColor}" Content="Proceed" Background="{DynamicResource TextBoxColor}" Margin="566,260,10,10"  Command="{Binding DataContext.TourButtonCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding}" />
+                                                <Button Foreground="{DynamicResource TextColor}" Content="Proceed" Background="{DynamicResource TextBoxColor}" Margin="566,260,80,10"  Command="{Binding DataContext.TourButtonCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding}" />
                                                 <Label HorizontalAlignment="Left" Margin="50,220,0,0" Width="200" Height="30" Content="{Binding Name}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="Bold" />
 
                                                 <Label Width="200" Height="30" Content="Short Description about tour:" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="320,40,288,229" />

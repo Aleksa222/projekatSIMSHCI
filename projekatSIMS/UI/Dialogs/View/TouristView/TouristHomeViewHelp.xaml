@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.TouristView"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="1280"
+      Height="720" Width="1280"
       xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:Icon="http://schemas.fontawesome.io/icons/"
       Title="TouristHomeViewHelp">
