@@ -2,12 +2,15 @@
 using projekatSIMS.Model;
 using projekatSIMS.Service;
 using projekatSIMS.UI.Dialogs.View.TourGuideView;
+using projekatSIMS.UI.Dialogs.View.TouristView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel.TourGuideViewModel
 {
@@ -191,6 +194,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TourGuideViewModel
 
         public TourGuideHomePageModel()
         {
+            GeneratePdf = new RelayCommand(PrintPdf);
             SetService();
             var tours = tourService.GetAll();
             var tourR = tourRatingService.GetAll();
@@ -284,6 +288,18 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TourGuideViewModel
 
 
 
+        }
+
+        public ICommand GeneratePdf { get; }
+        public void PrintPdf(object obj)
+        {
+            TourPdf report = new TourPdf();
+
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(report, "Report");
+            }
         }
 
         public void SetService()

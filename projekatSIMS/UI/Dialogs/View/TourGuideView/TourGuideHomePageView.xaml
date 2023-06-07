@@ -65,9 +65,10 @@
                             <Grid Background="{DynamicResource TextBoxColor}">
                                 <Label Content="Working Status: Active" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="10,241,9,9"/>
                                 <Button Background="{DynamicResource TextBoxColor}" Command="{Binding QuitCommand}" Margin="308,241,9,9"  >
-                                <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Quit" Foreground="{DynamicResource TextColor}" FontSize="26" FontWeight="Bold"/>
-                            </Button>
-                        </Grid>
+
+                                    <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Quit" Foreground="{DynamicResource TextColor}" FontSize="26" FontWeight="Bold"/>
+                                </Button>
+                            </Grid>
                         </Border>
 
                         <Border Background="{DynamicResource TextBoxColor}" BorderThickness="1,1,1,1" BorderBrush="Black" Margin="100,429,520,183" CornerRadius="10" >
@@ -137,6 +138,9 @@
                     <Button Content="Tours Today" HorizontalAlignment="Left" Margin="90,430,0,0" VerticalAlignment="Top" Height="40" Width="90" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Foreground="{DynamicResource TextColor}" Background="{DynamicResource ButtonColor}" Command="{Binding ToursTodayPageCommand}" Style="{StaticResource Button1}" />
 
                     <Button Content="Tour Requests" HorizontalAlignment="Left" Margin="90,490,0,0" VerticalAlignment="Top" Height="40" Width="90" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Foreground="{DynamicResource TextColor}" Background="{DynamicResource ButtonColor}" Command="{Binding TourRequestsPageCommand}" Style="{StaticResource Button1}"/>
+
+                    <Button Content="Generate Pdf" HorizontalAlignment="Left" Margin="140,44,0,0" VerticalAlignment="Top" Height="30" Width="90" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Foreground="{DynamicResource TextColor}" Background="{DynamicResource ButtonColor}" Command="{Binding GeneratePdf}" Style="{StaticResource Button1}" Grid.Row="6" Grid.ColumnSpan="2" />
+
 
                     <Image Source="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-512.png" Margin="40,550,106,90" Width="40" Height="40" />
 

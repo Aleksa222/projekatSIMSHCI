@@ -293,6 +293,9 @@
     <Compile Include="UI\Dialogs\View\TourGuideView\TourGuideToursTodayPageView.xaml.cs">
       <DependentUpon>TourGuideToursTodayPageView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\View\TourGuideView\TourPdf.xaml.cs">
+      <DependentUpon>TourPdf.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\TouristView\TouristActiveToursView.xaml.cs">
       <DependentUpon>TouristActiveToursView.xaml</DependentUpon>
     </Compile>
@@ -526,6 +529,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\TourGuideView\TourGuideToursTodayPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\TourGuideView\TourPdf.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
