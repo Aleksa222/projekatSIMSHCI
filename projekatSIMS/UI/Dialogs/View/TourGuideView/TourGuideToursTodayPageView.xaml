@@ -38,6 +38,7 @@
 
                     <ScrollViewer HorizontalScrollBarVisibility="Hidden">
                         <StackPanel>
+                            <Label HorizontalAlignment="Left" Margin="50,5,0,5" Width="200" Height="30" Content="Tours Today Page" Foreground="{DynamicResource TextColor}" FontStyle="Italic" FontFamily="Pacifico" FontSize="16" FontWeight="SemiBold" Grid.Column="1" />
 
                             <ListBox ItemsSource="{Binding Tours}" SelectedItem="{Binding SelectedTour}" ScrollViewer.CanContentScroll="True" Background="{DynamicResource BackgroundColor3}">
                                 <ListBox.ItemTemplate>
@@ -62,12 +63,12 @@
                                                     <Label Width="200" Height="30" Content="Maximum number of guests" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="320,220,288,49" />
 
 
-                                                    <Label Width="200" Height="30" Content="{Binding Name}" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="525,70,51,199" />
-                                                    <Label Width="200" Height="30" Content="{Binding Location.Country}" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="525,100,51,169" />
-                                                    <Label Width="200" Height="30" Content="{Binding Location.City}" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="525,130,51,139" />
-                                                    <Label Width="200" Height="30" Content="{Binding StartingDate, StringFormat={}{dd.mm.yyyy}}" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="525,160,51,109" />
-                                                    <Label Width="200" Height="30" Content="{Binding Duration}" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="525,190,51,79" />
-                                                    <Label Width="200" Height="30" Content="{Binding MaxNumberOfGuests}" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="525,220,51,49" />
+                                                <Label Width="200" Height="30" Content="{Binding Name}" Foreground="{DynamicResource TextColor}"  FontWeight="SemiBold" FontStyle="Italic" FontSize="12" Margin="525,70,51,199" />
+                                                <Label Width="200" Height="30" Content="{Binding Location.Country}" Foreground="{DynamicResource TextColor}"  FontWeight="SemiBold" FontStyle="Italic" FontSize="12" Margin="525,100,51,169" />
+                                                <Label Width="200" Height="30" Content="{Binding Location.City}" Foreground="{DynamicResource TextColor}"  FontWeight="SemiBold" FontStyle="Italic" FontSize="12" Margin="525,130,51,139" />
+                                                <Label Width="200" Height="30" Content="{Binding StartingDate, StringFormat={}{dd.mm.yyyy}}"  Foreground="{DynamicResource TextColor}"  FontWeight="SemiBold" FontStyle="Italic" FontSize="12" Margin="525,160,51,109" />
+                                                <Label Width="200" Height="30" Content="{Binding Duration}" Foreground="{DynamicResource TextColor}"  FontWeight="SemiBold" FontStyle="Italic" FontSize="12" Margin="525,190,51,79" />
+                                                <Label Width="200" Height="30" Content="{Binding MaxNumberOfGuests}" Foreground="{DynamicResource TextColor}"  FontWeight="SemiBold" FontStyle="Italic" FontSize="12" Margin="525,220,51,49" />
                                                 </Grid>
 
 

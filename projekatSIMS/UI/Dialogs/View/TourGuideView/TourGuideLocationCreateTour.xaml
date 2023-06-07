@@ -34,6 +34,8 @@
                     <ColumnDefinition Width="240"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
+                <Label HorizontalAlignment="Left" Margin="50,5,0,729" Width="278" Height="30" Content="Create Tour Based On Requests Page" Foreground="{DynamicResource TextColor}" FontStyle="Italic" FontFamily="Pacifico" FontSize="16" FontWeight="SemiBold" Grid.Column="1" />
+
                 <Border Grid.Column="1" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Left" Width="780" Height="764" VerticalAlignment="Center" >
                     <Button  Content="Create Tour" Margin="654,696,32,24" Height="40" Width="90" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Foreground="{DynamicResource TextColor}" Background="{DynamicResource ButtonColor}" Command="{Binding CreateTour}" Style="{StaticResource Button1}"/>
 

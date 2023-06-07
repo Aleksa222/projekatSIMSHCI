@@ -33,7 +33,7 @@
                     <ColumnDefinition Width="240"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-
+                
                 <Border Grid.Column="1" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Left" Width="780" Height="764" VerticalAlignment="Center" Background="{DynamicResource BackgroundColor3}">
                     
                     <ListBox ItemsSource="{Binding Tours}" SelectedItem="{Binding SelectedTour}" Background="{DynamicResource BackgroundColor3}">
@@ -57,12 +57,12 @@
                                             <Label Width="200" Height="30" Content="Maximum number of guests" Foreground="{DynamicResource TextColor}" FontSize="16" Margin="320,220,288,49" />
 
 
-                                            <Label Width="200" Height="30" Content="{Binding Name}" Foreground="{DynamicResource TextColor}" FontSize="16" Margin="525,70,51,199" />
-                                            <Label Width="200" Height="30" Content="{Binding Location.Country}" Foreground="{DynamicResource TextColor}" FontSize="16" Margin="525,100,51,169" />
-                                            <Label Width="200" Height="30" Content="{Binding Location.City}" Foreground="{DynamicResource TextColor}" FontSize="16" Margin="525,130,51,139" />
-                                            <Label Width="200" Height="30" Content="{Binding StartingDate, StringFormat={}{dd.mm.yyyy}}" Foreground="{DynamicResource TextColor}" FontSize="16" Margin="525,160,51,109" />
-                                            <Label Width="200" Height="30" Content="{Binding Duration}" Foreground="{DynamicResource TextColor}" FontSize="16" Margin="525,190,51,79" />
-                                            <Label Width="200" Height="35" Content="{Binding MaxNumberOfGuests}" Foreground="{DynamicResource TextColor}" FontSize="16" Margin="525,220,51,49" />
+                                            <Label Width="200" Height="30" Content="{Binding Name}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="SemiBold" FontStyle="Italic"  Margin="525,70,51,199" />
+                                            <Label Width="200" Height="30" Content="{Binding Location.Country}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="SemiBold" FontStyle="Italic"  Margin="525,100,51,169" />
+                                            <Label Width="200" Height="30" Content="{Binding Location.City}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="SemiBold" FontStyle="Italic"  Margin="525,130,51,139" />
+                                            <Label Width="200" Height="30" Content="{Binding StartingDate, StringFormat={}{dd.mm.yyyy}}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="SemiBold" FontStyle="Italic"  Margin="525,160,51,109" />
+                                            <Label Width="200" Height="30" Content="{Binding Duration}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="SemiBold" FontStyle="Italic"  Margin="525,190,51,79" />
+                                            <Label Width="200" Height="35" Content="{Binding MaxNumberOfGuests}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="SemiBold" FontStyle="Italic"  Margin="525,220,51,49" />
 
                                         <Label Width="200" Height="45" Content="Tour Guide:" Foreground="{DynamicResource TextColor}" FontSize="20" FontWeight="Bold" Margin="50,350,0,0"  HorizontalAlignment="Left" />
                                         <Label Width="200" Height="45" Content="Uros Lohinski" Foreground="{DynamicResource TextColor}" FontSize="20" FontWeight="Bold" Margin="250,350,0,0"  HorizontalAlignment="Left" />

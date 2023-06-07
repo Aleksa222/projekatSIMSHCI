@@ -34,6 +34,8 @@
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="1" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Left" Width="780" Height="764" VerticalAlignment="Center" >
                     <Grid>
+                        <Label HorizontalAlignment="Left" Margin="50,0,0,720" Width="200" Height="30" Content="Home Page" Foreground="{DynamicResource TextColor}" FontStyle="Italic" FontFamily="Pacifico" FontSize="16" FontWeight="SemiBold" />
+
                         <Rectangle Fill="{DynamicResource TextBoxColor}" Stroke="Black" Margin="102,123,524,489" RadiusX="10" RadiusY="10">
 
                         </Rectangle>
