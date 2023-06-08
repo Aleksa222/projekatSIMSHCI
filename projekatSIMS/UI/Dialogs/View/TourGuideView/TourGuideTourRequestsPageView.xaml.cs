@@ -57,7 +57,7 @@ namespace projekatSIMS.UI.Dialogs.View.TourGuideView
             openDialog.Filter = "Image files|*.bmp;*.jpg;*.png";
             openDialog.FilterIndex = 1;
 
-            string destinationFolder = "C:\\Users\\Korisnik\\OneDrive - Univerzitet u Novom Sadu\\Desktop\\simshci\\projekatSIMSHCI\\projekatSIMS\\Resources\\Images\\";
+            string destinationFolder = "C:\\Users\\Korisnik\\OneDrive - Univerzitet u Novom Sadu\\Desktop\\simshci\\projekatSIMSHCI\\projekatSIMS\\Resources\\Images\\TouristImages\\";
 
             if (openDialog.ShowDialog() == true)
             {
