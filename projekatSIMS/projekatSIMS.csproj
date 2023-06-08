@@ -725,8 +725,5 @@
   <ItemGroup>
     <Resource Include="Resources\Images\TouristImages\hciUpload5.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\TouristImages\Screenshot %281%29.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
