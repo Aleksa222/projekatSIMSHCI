@@ -710,5 +710,20 @@
     <Resource Include="Resources\Images\TouristImages\hciSlika6.jpg" />
     <Resource Include="Resources\Images\TouristImages\hciSlika7.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\TouristImages\hciUpload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\TouristImages\hciUpload2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\TouristImages\hciUpload3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\TouristImages\hciUpload4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\TouristImages\hciUpload5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

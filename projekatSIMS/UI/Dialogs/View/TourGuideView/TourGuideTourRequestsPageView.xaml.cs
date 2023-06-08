@@ -1,4 +1,5 @@
-﻿using projekatSIMS.UI.Dialogs.ViewModel.TourGuideViewModel;
+﻿using Microsoft.Win32;
+using projekatSIMS.UI.Dialogs.ViewModel.TourGuideViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,17 @@ namespace projekatSIMS.UI.Dialogs.View.TourGuideView
         {
             InitializeComponent();
             DataContext = new TourGuideTourRequestsPageModel();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Image files|*.bmp;*.jpg;*.png";
+            openDialog.FilterIndex = 1;
+            if(openDialog.ShowDialog()==true)
+            {
+                
+            }
         }
     }
 }
