@@ -33,8 +33,8 @@ namespace projekatSIMS.UI.Dialogs.View.TourGuideView
 
 
 
-        private ImageSource _imageSource;
-        public ImageSource ImageSource
+        private string _imageSource;
+        public string ImageSource
         {
             get { return _imageSource; }
             set
@@ -66,7 +66,7 @@ namespace projekatSIMS.UI.Dialogs.View.TourGuideView
                     string imagePath = openDialog.FileName;
                     string fileName = System.IO.Path.GetFileName(imagePath);
                     string destinationPath = System.IO.Path.Combine(destinationFolder, fileName);
-
+                    ImageSource = imagePath;
                     // Copy the image file to the destination folder
                     File.Copy(imagePath, destinationPath, true);
                     
