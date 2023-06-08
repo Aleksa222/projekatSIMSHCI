@@ -106,8 +106,46 @@ namespace projekatSIMS.Service
             return retList;
         }
 
+        public ObservableCollection<AccommodationReservation> GetReservationsByAccommodation( string accommodationName)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork();
+            ObservableCollection<AccommodationReservation> retList = new ObservableCollection<AccommodationReservation>();
+            foreach (AccommodationReservation r in unitOfWork.AccommodationReservations.GetAll())
+            {
+                if (r.AccommodationName == accommodationName )
+                {
+                    retList.Add(r);
+                }
 
 
-       
+            }
+
+            return retList;
+        }
+
+        public ObservableCollection<AccommodationReservation> GetReservationsByOwner(ObservableCollection<Accommodation> accommodations)
+        {
+            ObservableCollection<AccommodationReservation> reservations = new ObservableCollection<AccommodationReservation>();
+
+            foreach (Accommodation accommodation in accommodations)
+            {
+                // Simuliramo dobijanje rezervacija iz baze podataka ili nekog izvora podataka
+                ObservableCollection<AccommodationReservation> reservationsForAccommodation = GetReservationsByAccommodation(accommodation.Name);
+
+                // Dodajemo rezervacije u listu ukoliko su vezane za smeštaj vlasnika
+                foreach (AccommodationReservation reservation in reservationsForAccommodation)
+                {
+                    if (reservation.AccommodationName == accommodation.Name)
+                    {
+                        reservations.Add(reservation);
+                    }
+                }
+            }
+
+            return reservations;
+        }
+
+
+
     }
 }

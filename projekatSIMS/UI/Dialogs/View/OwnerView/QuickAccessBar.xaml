@@ -10,20 +10,20 @@
         <Border>
             
             <Grid>
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="27,0,183,0"  >
-                    <Image Source="ownerpics/editf.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="35,0,175,0"  >
+                    <Image Source="ownerpics/editf.png" Width="15" Height="30"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="77,0,133,0">
-                    <Image Source="ownerpics/3df.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}"  Command="{Binding GoToUserAccountPageCommand}" Margin="72,0,138,0">
+                    <Image Source="ownerpics/3df.png" Width="15" Height="30"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="127,0,83,0" >
-                    <Image Source="ownerpics/calendarf.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="118,0,92,0" >
+                    <Image Source="ownerpics/calendarf.png" Width="15" Height="30"/>
                 </Button>
 
-                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="177,0,33,0" >
-                    <Image Source="ownerpics/lovef.png" Width="20" Height="50"/>
+                <Button Style="{StaticResource homeButton}" Command="{Binding GoToUserAccountPageCommand}" Margin="164,0,46,0" >
+                    <Image Source="ownerpics/lovef.png" Width="15" Height="30"/>
                 </Button>
 
 

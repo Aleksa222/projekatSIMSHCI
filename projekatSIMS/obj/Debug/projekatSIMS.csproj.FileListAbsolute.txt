@@ -311,3 +311,9 @@ C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerAccommodationPageRatings.baml
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerAccommodationsView.g.cs
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\OwnerAccommodationsView.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\AccommodationRenovationView.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\AccommodationRenovationView.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\ReservationsPage.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\ReservationsPage.baml
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\RescheduleRequestPage.g.cs
+C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\OwnerView\RescheduleRequestPage.baml

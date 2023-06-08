@@ -125,6 +125,8 @@
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\NavigationBarViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerHomeModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerMainWindowModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\RescheduleRequestViewModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\ReservationsViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TourGuideViewModel\TourGuideHomeModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TourGuideViewModel\TourGuideMainWindowModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TourGuideViewModel\TourGuideToursTodayModel.cs" />
@@ -152,6 +154,9 @@
     <Compile Include="UI\Dialogs\View\OwnerView\AccommodationRatingsView.xaml.cs">
       <DependentUpon>AccommodationRatingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\AccommodationRenovationView.xaml.cs">
+      <DependentUpon>AccommodationRenovationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
@@ -172,6 +177,12 @@
     </Compile>
     <Compile Include="UI\Dialogs\View\OwnerView\QuickAccessBar.xaml.cs">
       <DependentUpon>QuickAccessBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\RescheduleRequestPage.xaml.cs">
+      <DependentUpon>RescheduleRequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\OwnerView\ReservationsPage.xaml.cs">
+      <DependentUpon>ReservationsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\TourGuideView\TourGuideHomeView.xaml.cs">
       <DependentUpon>TourGuideHomeView.xaml</DependentUpon>
@@ -250,6 +261,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\AccommodationRenovationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\View\OwnerView\NavigationBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -275,6 +290,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\OwnerView\QuickAccessBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\RescheduleRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\OwnerView\ReservationsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -650,10 +673,124 @@
     <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\trophyy.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\appreciation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\stars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\womanwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\manwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\cleaning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\circlegray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\info-center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\about-us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\paint-roller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\kanta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\bucket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\spanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\roller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\span.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\sparkles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\angry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\inlove.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\happy.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\sad.png" />
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\thinking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\meh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\wu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\sparkle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\shinee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\booking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\hotel-bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\reservation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\calendarr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\calendarblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\decision-making.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\not.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\refuse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Dialogs\View\OwnerView\ownerpics\accept.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

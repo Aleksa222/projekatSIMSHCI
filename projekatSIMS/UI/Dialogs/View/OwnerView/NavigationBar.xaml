@@ -44,11 +44,11 @@
                             <Image Source="ownerpics/bed.png" Width="20" Height="50"/>
                         </Button>
 
-                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                        <Button Style="{StaticResource homeButton}" Command="{Binding GoToReservationsPageCommand}" Margin="0,20">
                             <Image Source="ownerpics/calendar.png" Width="20" Height="50"/>
                         </Button>
 
-                        <Button Style="{StaticResource homeButton}" Margin="0,20">
+                        <Button Style="{StaticResource homeButton}" Margin="0,20" Command="{Binding GoToInboxPageCommand}">
                             <Image Source="ownerpics/chat.png" Width="20" Height="50"/>
                         </Button>
 

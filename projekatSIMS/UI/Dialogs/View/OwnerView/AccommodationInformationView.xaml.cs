@@ -23,6 +23,9 @@ namespace projekatSIMS.UI.Dialogs.View.OwnerView
         public AccommodationInformationView()
         {
             InitializeComponent();
+            
         }
+
+      
     }
 }

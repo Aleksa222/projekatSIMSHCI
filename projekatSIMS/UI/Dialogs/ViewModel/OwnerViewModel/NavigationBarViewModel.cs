@@ -35,6 +35,18 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             }
         }
 
+        public RelayCommand GoToReservationsCommand
+        {
+            get
+            {
+                if (goToReservationsPageCommand == null)
+                {
+                    goToReservationsPageCommand = new RelayCommand(GoToReservationsPage);
+                }
+                return goToHomePageCommand;
+            }
+        }
+
         public RelayCommand GoToUserAccountCommand
         {
             get
@@ -70,17 +82,40 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
                 return goToAccommodationsPageCommand;
             }
         }
-
+        public RelayCommand GoToInboxCommand
+        {
+            get
+            {
+                if (goToInboxPageCommand == null)
+                {
+                    goToInboxPageCommand = new RelayCommand(GoToInboxPage);
+                }
+                return goToInboxPageCommand;
+            }
+        }
         private void LogOutPage(object parameter)
         {
             OwnerMainWindow.navigationService.Navigate(
                 new Uri("/projekatSIMS;component/MainWindow.xaml", UriKind.Relative));
         }
 
+
+
         private void GoToHomePage(object parameter)
         {
             OwnerMainWindow.navigationService.Navigate(
                 new Uri("UI/Dialogs/View/OwnerView/AccommodationRatingsView.xaml", UriKind.Relative));
+        }
+
+        private void GoToReservationsPage(object parameter)
+        {
+            OwnerMainWindow.navigationService.Navigate(
+                new Uri("UI/Dialogs/View/OwnerView/ReservationsPage.xaml", UriKind.Relative));
+        }
+        private void GoToInboxPage(object parameter)
+        {
+            OwnerMainWindow.navigationService.Navigate(
+                new Uri("UI/Dialogs/View/OwnerView/AccommodationRenovationView.xaml", UriKind.Relative));
         }
 
         private void GoToUserAccountPage(object parameter)
@@ -103,11 +138,27 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             }
         }
 
+        public RelayCommand GoToReservationsPageCommand
+        {
+            get
+            {
+                return goToReservationsPageCommand ?? (goToReservationsPageCommand = new RelayCommand(GoToReservationsPage));
+            }
+        }
+
         public RelayCommand GoToUserAccountPageCommand
         {
             get
             {
                 return goToUserAccountPageCommand ?? (goToUserAccountPageCommand = new RelayCommand(GoToUserAccountPage));
+            }
+        }
+
+        public RelayCommand GoToInboxPageCommand
+        {
+            get
+            {
+                return goToInboxPageCommand ?? (goToInboxPageCommand = new RelayCommand(GoToInboxPage));
             }
         }
 

@@ -6,98 +6,48 @@
              xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.OwnerView"
              mc:Ignorable="d" 
              Height="Auto" Width="Auto">
-    <Grid>
-        <Button Background="Transparent"  Content="Information" FontFamily="Poppins SemiBold" Foreground="AntiqueWhite" FontSize="17"  HorizontalAlignment="Center" Height="42" Margin="0,76,0,0" VerticalAlignment="Top" Width="238" Command="{Binding GoToAccommodationInfoCommand}">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Effect">
-                        <Setter.Value>
-                            <DropShadowEffect Color="#eeeae3" ShadowDepth="0" BlurRadius="8"/>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="BorderBrush" Value="#876553"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
+    <Grid Height="150" Width="500">
+        <Button Background="Transparent" BorderBrush="Transparent" Panel.ZIndex="1" Margin="408,38,10,38" >
+            <Image Source="ownerpics/lovef.png" Width="40" Height="75">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                </Image.Effect>
+            </Image>
         </Button>
-        <Button Content="Statistics" Background="Transparent"  FontFamily="Poppins SemiBold" FontSize="17" Foreground="AntiqueWhite"  HorizontalAlignment="Center" Height="42" Margin="0,123,0,0" VerticalAlignment="Top" Width="238" Command="{Binding GoToAccommodationStatisticsCommand}">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Effect">
-                        <Setter.Value>
-                            <DropShadowEffect Color="#eeeae3" ShadowDepth="0" BlurRadius="8"/>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="BorderBrush" Value="#876553"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-        <Button Content="Reservations" Background="Transparent" FontFamily="Poppins SemiBold" FontSize="17" Foreground="AntiqueWhite"   HorizontalAlignment="Center" Height="42" Margin="0,217,0,0" VerticalAlignment="Top" Width="238" Command="{Binding GoToAccommodationReservationsCommand}">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Effect">
-                        <Setter.Value>
-                            <DropShadowEffect Color="#eeeae3" ShadowDepth="0" BlurRadius="8"/>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="BorderBrush" Value="#876553"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-        <Button Content="Renovations" Background="Transparent" FontFamily="Poppins SemiBold" FontSize="17" Foreground="AntiqueWhite"   HorizontalAlignment="Center" Height="42" Margin="0,170,0,0" VerticalAlignment="Top" Width="238" Command="{Binding GoToAccommodationRenovationsCommand}">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Effect">
-                        <Setter.Value>
-                            <DropShadowEffect Color="#eeeae3" ShadowDepth="0" BlurRadius="8"/>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="BorderBrush" Value="#876553"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-        <Button Content="Ratings" Background="Transparent"  FontFamily="Poppins SemiBold" FontSize="17" Foreground="AntiqueWhite"  HorizontalAlignment="Center" Height="42" Margin="0,264,0,0" VerticalAlignment="Top" Width="238" Command="{Binding GoToAccommodationRatingsCommand}">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Effect">
-                        <Setter.Value>
-                            <DropShadowEffect Color="#eeeae3" ShadowDepth="0" BlurRadius="8"/>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="BorderBrush" Value="#876553"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
 
+        <Button Background="Transparent" BorderBrush="Transparent" Panel.ZIndex="1" Margin="311,42,116,38"  >
+            <Image Source="ownerpics/hammerf.png" Width="40" Height="75">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                </Image.Effect>
+            </Image>
         </Button>
+
+        <Button Background="Transparent" BorderBrush="Transparent" Panel.ZIndex="1" Margin="5,42,412,31" >
+            <Image Source="ownerpics/info-center.png" Width="40" Height="75">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+
+        <Button Background="Transparent" BorderBrush="Transparent" Panel.ZIndex="1" Margin="88,36,306,36"  >
+            <Image Source="ownerpics/statistics.png" Width="40" Height="75">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+
+        <Button Background="Transparent" BorderBrush="Transparent" Panel.ZIndex="1" Margin="199,42,210,35"  >
+            <Image Source="ownerpics/calendarf.png" Width="40" Height="75">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
+                </Image.Effect>
+            </Image>
+        </Button>
+
 
     </Grid>
+    
 </UserControl>

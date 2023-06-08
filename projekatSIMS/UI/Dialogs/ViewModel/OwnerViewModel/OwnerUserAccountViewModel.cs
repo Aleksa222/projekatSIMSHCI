@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
@@ -17,6 +18,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
     public class OwnerUserAccountViewModel : ViewModelBase
     {
         private AccommodationOwnerRatingService accommodationOwnerRatingService;
+        private double averageRating;
         private UserService userService;
         private ObservableCollection<AccommodationOwnerRating>ratings;
         private List<int> _dataPoints;
@@ -69,6 +71,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
                 };
 
                 ChartSeries = new SeriesCollection { series };
+                CalculateAverageRating();
             
 
         }
@@ -92,6 +95,39 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
                 ownerRatings = value;
                 OnPropertyChanged(nameof(ownerRatings));
             }
+        }
+
+
+        public double AverageRating
+        {
+            get { return averageRating; }
+            set
+            {
+                averageRating = value;
+                OnPropertyChanged(nameof(averageRating));
+            }
+        }
+
+
+
+
+        public void CalculateAverageRating()
+        {
+            if (owner == null)
+                MessageBox.Show("Error");
+
+            if (ratings == null || ratings.Count == 0)
+                AverageRating =  0;
+
+            int sum = 0;
+            foreach (var rating in ratings)
+            {
+                sum += rating.OwnerPoliteness;
+            }
+
+            double average = (double)sum / ratings.Count;
+            double roundedAverage = Math.Round(average, 1);
+            AverageRating =  roundedAverage;
         }
 
 

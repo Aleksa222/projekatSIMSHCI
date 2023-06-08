@@ -35,7 +35,7 @@
                         <RowDefinition Height="400"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Border CornerRadius ="80" Margin="171,109,47,149">
+                    <Border CornerRadius ="80" Margin="138,84,52,174">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <GradientStop Offset="0" Color="White" />
@@ -49,7 +49,7 @@
 
                     </Border>
                     <Polygon Stroke="Transparent" StrokeThickness="1" Fill="#d2b48c"
-         Points="150,80 270,150 150,220 30,150" Margin="558,51,431,43" RenderTransformOrigin="0.5,0.5"  >
+         Points="150,80 270,150 150,220 30,150" Margin="530,49,459,45" RenderTransformOrigin="0.5,0.5"  >
 
                         <Polygon.RenderTransform>
                             <TransformGroup>
@@ -78,7 +78,7 @@
                         </Polygon.Triggers>
                     </Polygon>
 
-                    <Image Source="ownerpics/gueen.png" Canvas.Left="50" Canvas.Top="50" Margin="544,109,413,134">
+                    <Image Source="ownerpics/gueen.png" Canvas.Left="50" Canvas.Top="50" Margin="532,106,446,145">
                         <Image.RenderTransform>
                             <ScaleTransform ScaleX="1" ScaleY="1" />
                         </Image.RenderTransform>
@@ -89,7 +89,7 @@
                         </Image.Triggers>
                     </Image>
 
-                    <Image Source="ownerpics/star1.png" Margin="1100,129,124,205">
+                    <Image Source="ownerpics/star1.png" Margin="1096,106,128,228">
                         <Image.Effect>
                             <DropShadowEffect x:Name="Glow" ShadowDepth="8" BlurRadius="8" Opacity="1" Color="#edcb9d"/>
                         </Image.Effect>
@@ -104,7 +104,7 @@
                             </EventTrigger>
                         </Image.Triggers>
                     </Image>
-                    <Border CornerRadius ="50" Margin="798,291,47,10">
+                    <Border CornerRadius ="50" Margin="758,260,52,41">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <GradientStop Offset="0" Color="White" />
@@ -117,7 +117,7 @@
 
 
                     </Border>
-                    <Border CornerRadius ="50" Margin="171,291,911,257" Grid.RowSpan="2">
+                    <Border CornerRadius ="50" Margin="153,255,929,293" Grid.RowSpan="2">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <GradientStop Offset="0" Color="White" />
@@ -136,7 +136,7 @@
 
 
                     </Border>
-                    <Border CornerRadius ="50" Margin="412,291,671,257" Grid.RowSpan="2">
+                    <Border CornerRadius ="50" Margin="398,255,684,293" Grid.RowSpan="2">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <GradientStop Offset="0" Color="White" />
@@ -155,9 +155,9 @@
 
 
                     </Border>
-                    <Image Source="ownerpics/trophyy.png" Margin="1122,291,-1,10"/>
+                    <Image Source="ownerpics/trophyy.png" Margin="1112,246,9,46"/>
                 </Grid>
-                <Grid HorizontalAlignment="Left" Height="267" Width="634" Margin="620,409,0,0" VerticalAlignment="Top">
+                <Grid HorizontalAlignment="Left" Height="300" Width="634" Margin="620,376,0,0" VerticalAlignment="Top">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="59*"/>
                         <RowDefinition Height="208*"/>
@@ -173,8 +173,8 @@
                             <DropShadowEffect Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
                         </Border.Effect>
                     </Border>
-                    <ScrollViewer Margin="174,40,0,0" Grid.RowSpan="2"  >
-                        <ItemsControl ItemsSource="{Binding OwnerRatings}" Width="448" Height="245">
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="139,40,-10,-38" Grid.RowSpan="2"  >
+                        <ItemsControl ItemsSource="{Binding OwnerRatings}" Width="488" Height="307">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border  BorderThickness="1" BorderBrush="#ffffff" CornerRadius="35" Background="#ffffff" Grid.RowSpan="2">
@@ -209,12 +209,12 @@
                                                 <Border.Background>
                                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                                         <GradientStop Offset="0" Color="#d2b48c" />
-                                                        <GradientStop Offset="1" Color="#876553" />
+                                                        <GradientStop Offset="1" Color="#d2b48c" />
                                                     </LinearGradientBrush>
                                                 </Border.Background>
                                                 <TextBlock TextAlignment="Center" Text="{Binding OwnerPoliteness}" Margin="7,2,7,2" FontFamily="Poppins SemiBold" FontSize="25" >
                                                     <TextBlock.Effect>
-                                                        <DropShadowEffect ShadowDepth="1" Color="#181717" BlurRadius="2"/>
+                                                        <DropShadowEffect Color="#dadada" Direction="320" ShadowDepth="10" Opacity="0.5"/>
                                                     </TextBlock.Effect>
 
                                                 </TextBlock>
@@ -251,30 +251,30 @@
 
                 </Grid>
 
-                <TextBlock Text ="Guest Reviews" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="804,409,0,0" FontFamily="Poppins SemiBold" FontSize="20" VerticalAlignment="Top" Width="156"/>
-                <TextBlock  Foreground ="#383637" HorizontalAlignment="Left" Height="91" Margin="280,142,0,0" FontFamily="Poppins SemiBold" FontSize="40" VerticalAlignment="Top" Width="346">
+                <TextBlock Text ="Guest Reviews" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="804,377,0,0" FontFamily="Poppins SemiBold" FontSize="20" VerticalAlignment="Top" Width="156"/>
+                <TextBlock  Foreground ="#383637" HorizontalAlignment="Left" Height="90" Margin="228,120,0,0" FontFamily="Poppins SemiBold" FontSize="40" VerticalAlignment="Top" Width="346">
                     <TextBlock.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
                     </TextBlock.Effect><Run Text="{Binding Owner.FirstName}" /><Run Text=" "/><Run Text=" " /><Run Text=" "/><Run Text="{Binding Owner.LastName}" /></TextBlock>
-                <TextBlock TextAlignment="Center" Text ="Average Rating" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="859,200,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="111"/>
-                <TextBlock TextAlignment="Center" Text ="Review Count" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="978,200,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.518,0.357"/>
-                <TextBlock TextAlignment="Center" Text ="Super - Owner" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="1093,200,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="110"/>
-                <TextBlock TextAlignment="Center" Text ="9.4" Foreground ="#383637" HorizontalAlignment="Left" Height="78" Margin="859,136,0,0" FontFamily="Poppins SemiBold" FontSize="45" VerticalAlignment="Top" Width="111">
+                <TextBlock TextAlignment="Center" Text ="Average Rating" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="826,178,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="111"/>
+                <TextBlock TextAlignment="Center" Text ="Review Count" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="958,178,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.518,0.357"/>
+                <TextBlock TextAlignment="Center" Text ="Super - Owner" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="1087,178,0,0" FontFamily="Poppins SemiBold" FontSize="13" VerticalAlignment="Top" Width="110"/>
+                <TextBlock Text ="{Binding AverageRating}"  TextAlignment="Center" Foreground ="#383637" HorizontalAlignment="Left" Height="78" Margin="826,114,0,0" FontFamily="Poppins SemiBold" FontSize="45" VerticalAlignment="Top" Width="112">
                     <TextBlock.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
                     </TextBlock.Effect>
 
                 </TextBlock>
-                <TextBlock TextAlignment="Center" Text ="60" Foreground ="#383637" HorizontalAlignment="Left" Height="78" Margin="977,136,0,0" FontFamily="Poppins SemiBold" FontSize="45" VerticalAlignment="Top" Width="111">
+                <TextBlock TextAlignment="Center" Text ="60" Foreground ="#383637" HorizontalAlignment="Left" Height="78" Margin="958,114,0,0" FontFamily="Poppins SemiBold" FontSize="45" VerticalAlignment="Top" Width="111">
                     <TextBlock.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
                     </TextBlock.Effect>
 
                 </TextBlock>
-                <TextBlock TextAlignment="Center" Text ="Accommodation" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="208,388,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.518,0.357"/>
-                <TextBlock TextAlignment="Center" Foreground ="#383637" HorizontalAlignment="Left" Height="42" Margin="453,388,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="136" ><Run Text="Accommodation"/><LineBreak/><Run Text=" Occupancy"/></TextBlock>
-                <TextBlock TextAlignment="Center" Text ="Best Accommodation" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="914,346,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="216" RenderTransformOrigin="0.518,0.357"/>
-                <TextBlock TextAlignment="Center" Text ="Koliba Vrdnik" Foreground ="#383637" HorizontalAlignment="Left" Height="60" Margin="879,300,0,0" FontFamily="Poppins SemiBold" FontSize="30" VerticalAlignment="Top" Width="269" RenderTransformOrigin="0.518,0.357">
+                <TextBlock TextAlignment="Center" Text ="Accommodation" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="198,354,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.518,0.357"/>
+                <TextBlock TextAlignment="Center" Foreground ="#383637" HorizontalAlignment="Left" Height="42" Margin="438,354,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="136" ><Run Text="Accommodation"/><LineBreak/><Run Text=" Occupancy"/></TextBlock>
+                <TextBlock TextAlignment="Center" Text ="Best Accommodation" Foreground ="#383637" HorizontalAlignment="Left" Height="28" Margin="888,310,0,0" FontFamily="Poppins SemiBold" FontSize="15" VerticalAlignment="Top" Width="216" RenderTransformOrigin="0.518,0.357"/>
+                <TextBlock TextAlignment="Center" Text ="Koliba Vrdnik" Foreground ="#383637" HorizontalAlignment="Left" Height="60" Margin="861,266,0,0" FontFamily="Poppins SemiBold" FontSize="30" VerticalAlignment="Top" Width="269" RenderTransformOrigin="0.518,0.357">
                     <TextBlock.Effect>
                         <DropShadowEffect ShadowDepth="3" Color="#4f483f" BlurRadius="1"/>
                     </TextBlock.Effect>
@@ -283,7 +283,7 @@
 
 
 
-                <lvc:CartesianChart Series="{Binding ChartSeries}"  HorizontalAlignment="Left" Height="248" Margin="162,460,0,0" VerticalAlignment="Top" Width="491">
+                <lvc:CartesianChart Series="{Binding ChartSeries}"  HorizontalAlignment="Left" Height="266" Margin="162,442,0,0" VerticalAlignment="Top" Width="527">
                     <lvc:CartesianChart.AxisX>
                         <lvc:Axis Title="X Axis Title" Labels="{Binding Labels}"/>
                     </lvc:CartesianChart.AxisX>

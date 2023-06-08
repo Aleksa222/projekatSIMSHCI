@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Korisnik\Desktop\SIMS\projekatSIMSHCI\projekatSIMS\App.xaml
-27-1502967273
+30-1166344727
 
-100-974480893
+106-1972347093
 171802372237
-MainWindow.xaml;Styles\UIColors.xaml;UI\Dialogs\View\AccommodationSearchView.xaml;UI\Dialogs\View\GuestView\GuestMainView.xaml;UI\Dialogs\View\OwnerView\AccommodationInformationView.xaml;UI\Dialogs\View\OwnerView\AccommodationMenu.xaml;UI\Dialogs\View\OwnerView\AccommodationNavigationBar.xaml;UI\Dialogs\View\OwnerView\AccommodationRatingsView.xaml;UI\Dialogs\View\OwnerView\NavigationBar.xaml;UI\Dialogs\View\OwnerView\OwnerAccommodationPage.xaml;UI\Dialogs\View\OwnerView\OwnerAccommodationPageRatings.xaml;UI\Dialogs\View\OwnerView\OwnerHomeView.xaml;UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml;UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml;UI\Dialogs\View\OwnerView\QuickAccessBar.xaml;UI\Dialogs\View\TourGuideView\TourGuideHomeView.xaml;UI\Dialogs\View\TourGuideView\TourGuideMainWindow.xaml;UI\Dialogs\View\TourGuideView\TourGuideToursToday.xaml;UI\Dialogs\View\GuestView\GuestPageView.xaml;UI\Dialogs\View\GuestView\RescheduleReservationNotificationView.xaml;UI\Dialogs\View\GuestReviewView.xaml;UI\Dialogs\View\TouristView\TouristHomeView.xaml;UI\Dialogs\View\TouristView\TouristMainWindow.xaml;UI\Dialogs\View\TouristView\TouristReservationView.xaml;UI\Dialogs\View\TouristView\TouristSearchTourView.xaml;UI\Dialogs\View\Vlasnik.xaml;UI\Dialogs\View\Vodic.xaml;
+MainWindow.xaml;Styles\UIColors.xaml;UI\Dialogs\View\AccommodationSearchView.xaml;UI\Dialogs\View\GuestView\GuestMainView.xaml;UI\Dialogs\View\OwnerView\AccommodationInformationView.xaml;UI\Dialogs\View\OwnerView\AccommodationMenu.xaml;UI\Dialogs\View\OwnerView\AccommodationNavigationBar.xaml;UI\Dialogs\View\OwnerView\AccommodationRatingsView.xaml;UI\Dialogs\View\OwnerView\AccommodationRenovationView.xaml;UI\Dialogs\View\OwnerView\NavigationBar.xaml;UI\Dialogs\View\OwnerView\OwnerAccommodationPage.xaml;UI\Dialogs\View\OwnerView\OwnerAccommodationPageRatings.xaml;UI\Dialogs\View\OwnerView\OwnerHomeView.xaml;UI\Dialogs\View\OwnerView\OwnerMainWindowView.xaml;UI\Dialogs\View\OwnerView\OwnerUserAccountView.xaml;UI\Dialogs\View\OwnerView\QuickAccessBar.xaml;UI\Dialogs\View\OwnerView\RescheduleRequestPage.xaml;UI\Dialogs\View\OwnerView\ReservationsPage.xaml;UI\Dialogs\View\TourGuideView\TourGuideHomeView.xaml;UI\Dialogs\View\TourGuideView\TourGuideMainWindow.xaml;UI\Dialogs\View\TourGuideView\TourGuideToursToday.xaml;UI\Dialogs\View\GuestView\GuestPageView.xaml;UI\Dialogs\View\GuestView\RescheduleReservationNotificationView.xaml;UI\Dialogs\View\GuestReviewView.xaml;UI\Dialogs\View\TouristView\TouristHomeView.xaml;UI\Dialogs\View\TouristView\TouristMainWindow.xaml;UI\Dialogs\View\TouristView\TouristReservationView.xaml;UI\Dialogs\View\TouristView\TouristSearchTourView.xaml;UI\Dialogs\View\Vlasnik.xaml;UI\Dialogs\View\Vodic.xaml;
 
 True
 

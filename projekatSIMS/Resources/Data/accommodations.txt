@@ -7,7 +7,7 @@
 5|3|Hotel Amsterdam|HOUSE|Amsterdam|Netherlands|80|3|10|True|ownerpics/hotel7.jpg
 6|5|Hotel London|HOUSE|London|United Kingdom|250|3|10|False|ownerpics/hotel1.jpg
 7|3|Hotel Madrid|APARTMENT|Madrid|Spain|180|3|10|False|ownerpics/hotel2.jpg
-8|3|Resort Roma|APARTMENT|Rome|Italy|90|3|10|False|ownerpics/koliba.jpg
+8|3|Resort Roma|APARTMENT|Rome|Italy|90|3|10|True|ownerpics/koliba.jpg
 9|3|Hotel Athens|HOUSE|Athens|Greece|130|2|10|False|ownerpics/koliba.jpg
 10|5|Hotel Vienna|APARTMENT|Vienna|Austria|100|1|10|False|ownerpics/koliba.jpg
 11|5|Hotel Moscow|COTTAGE|Moscow|Russia|220|3|10|False|ownerpics/koliba.jpg

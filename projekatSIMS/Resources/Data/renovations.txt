@@ -9,3 +9,5 @@
 0|Resort Paris|01-Jun-23 00:00:00|02-Jun-23 00:00:00|dd|False|False
 0|Hotel Madrid|02-Jun-23 00:00:00|04-Jun-23 00:00:00|ddd|False|False
 0|Hotel Amsterdam|02-Dec-23 00:00:00|06-Dec-23 00:00:00|ssss|False|False
+0|Resort Roma|03-Jun-23 00:00:00|06-Jun-23 00:00:00|ndiddk|False|False
+0|Hotel Amsterdam|05-Jun-23 00:00:00|07-Jun-23 00:00:00|jdnddw|False|False

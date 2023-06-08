@@ -12,6 +12,10 @@ using System.Windows;
 using System.Windows.Input;
 using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Data;
+using LiveCharts;
+using LiveCharts.Wpf;
+using System.Windows.Media;
+using LiveCharts.Defaults;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
 {
@@ -39,6 +43,11 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
         private ObservableCollection<Renovation> filterNotStartedrenovations;
         private Accommodation selectedAccommodation;
 
+        public SeriesCollection LevelData { get; set; }
+        public List<string> LevelLabels { get; set; }
+        public List<double> XAxisLabels { get; set; }
+
+
 
 
 
@@ -53,6 +62,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
 
         public AccommodationInformationViewModel() : base()
         {
+            
 
             accommodations = new ObservableCollection<Accommodation>();
             accommodationService = new AccommodationService();
@@ -70,7 +80,34 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             renovations = renovationService.GetRenovationsByOwner(owner.Id);
             LoadAccommodations();
             ShowAllRenovations();
-           
+            LevelData = new SeriesCollection();
+            LevelLabels = new List<string> { "Level 1", "Level 2", "Level 3", "Level 4", "Level 5" };
+            XAxisLabels = new List<double> { 5, 10, 15, 20 };
+
+
+            var values = new ObservableCollection<ObservableValue>
+        {
+            new ObservableValue(5),
+            new ObservableValue(8),
+            new ObservableValue(1),
+            new ObservableValue(11),
+            new ObservableValue(2)
+        };
+
+            string hexColor = "#d2b48c"; // Beige - heksadecimalni zapis boje
+
+            Color color = (Color)ColorConverter.ConvertFromString(hexColor);
+            SolidColorBrush brush = new SolidColorBrush(color);
+
+            LevelData.Add(new RowSeries
+            {
+                Title = "Level",
+                Values = new ChartValues<ObservableValue>(values),
+                Fill = brush,
+                
+                
+            });
+
 
 
 
@@ -574,6 +611,18 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             }
         }
 
+        private Visibility imageVisibility;
+        public Visibility ImageVisibility
+        {
+            get { return imageVisibility; }
+            set
+            {
+                imageVisibility = value;
+                OnPropertyChanged(nameof(ImageVisibility));
+            }
+        }
+
+
         public ICommand ShowElementsCommand { get; private set; }
 
        
@@ -585,6 +634,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             ListBoxVisibility = Visibility.Visible;
             TextBoxVisibility = Visibility.Visible;
             ButtonVisibility = Visibility.Visible;
+            ImageVisibility = Visibility.Hidden;
+
         }
 
         private void HideElements()
@@ -594,6 +645,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
             ListBoxVisibility = Visibility.Hidden;
             TextBoxVisibility = Visibility.Hidden;
             ButtonVisibility = Visibility.Hidden;
+            ImageVisibility = Visibility.Visible;
         }
 
         private string errorMessage;
@@ -606,6 +658,9 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.OwnerViewModel
                 OnPropertyChanged(nameof(ErrorMessage));
             }
         }
+
+
+
 
 
         /*
