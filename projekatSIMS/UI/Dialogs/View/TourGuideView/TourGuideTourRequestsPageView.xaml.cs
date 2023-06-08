@@ -28,6 +28,8 @@ namespace projekatSIMS.UI.Dialogs.View.TourGuideView
             DataContext = new TourGuideTourRequestsPageModel();
         }
 
+        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
@@ -35,7 +37,7 @@ namespace projekatSIMS.UI.Dialogs.View.TourGuideView
             openDialog.FilterIndex = 1;
             if(openDialog.ShowDialog()==true)
             {
-                
+                //imagePicture.Source = new BitmapImage(new Uri(openDialog.FileName));
             }
         }
     }
