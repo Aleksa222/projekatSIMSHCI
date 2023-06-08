@@ -5,12 +5,54 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.TourGuideView"
       mc:Ignorable="d" 
-      d:DesignHeight="2200" d:DesignWidth="1700"
+      d:DesignHeight="1190" d:DesignWidth="800"
       Title="TourPdf">
 
-    <Grid Background="White">
-        <Border BorderBrush="Black" BorderThickness="10">
+    <Grid Background="White" Margin="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Statistika o turama" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" HorizontalAlignment="Center" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Broj gostiju ispod 18 godina: " FontSize="16" Margin="0 0 10 0"/>
+            <TextBlock Text="35" FontSize="16" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="0 30 0 0">
+            <TextBlock Text="Grafikon posećenosti po starosnim grupama" FontSize="24" FontWeight="Bold" Margin="0 0 0 20"/>
+
+            <!-- Ovde možete dodati kod za prikaz grafikona posećenosti po starosnim grupama -->
             
-        </Border>
+
+            <TextBlock Text="Tabela rezultata" FontSize="24" FontWeight="Bold" Margin="0 30 0 20"/>
+
+            <!-- Ovde možete dodati kod za prikaz tabele sa rezultatima -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Redni broj" FontSize="16" FontWeight="Bold" Margin="0 0 10 0" />
+                <TextBlock Text="Ime" FontSize="16" FontWeight="Bold" Margin="10 0" Grid.Column="1" />
+                <TextBlock Text="Prezime" FontSize="16" FontWeight="Bold" Margin="10 0" Grid.Column="2" />
+
+                <TextBlock Text="1" FontSize="16" Margin="0 10 10 0" />
+                <TextBlock Text="Marko" FontSize="16" Margin="10 10 0 0" Grid.Column="1" />
+                <TextBlock Text="Petrović" FontSize="16" Margin="10 10 0 0" Grid.Column="2" />
+
+                <TextBlock Text="2" FontSize="16" Margin="0 10 10 0" />
+                <TextBlock Text="Ana" FontSize="16" Margin="10 10 0 0" Grid.Column="1" />
+                <TextBlock Text="Janković" FontSize="16" Margin="10 10 0 0" Grid.Column="2" />
+
+                <!-- Dodajte ostale redove tabele prema potrebi -->
+
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>
