@@ -55,11 +55,11 @@
 
                                             <Grid>
                                                 <Border BorderThickness="2" BorderBrush="White" Height="200" Width="200" HorizontalAlignment="Left" Margin="50,0,0,20" >
-                                                    <Image Source="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-512.png" />
+                                                    <Image Source="C:\Users\Korisnik\OneDrive - Univerzitet u Novom Sadu\Desktop\simshci\projekatSIMSHCI\projekatSIMS\Resources\Images\TouristImages\hciSlika6.jpg" />
                                                 </Border>
                                                 <Button Foreground="{DynamicResource TextColor}" Content="Proceed" Background="{DynamicResource TextBoxColor}" Margin="566,260,80,10"  Command="{Binding DataContext.TourButtonCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding}" />
 
-                                                <Label HorizontalAlignment="Left" Margin="50,220,0,0" Width="200" Height="30" Content="{Binding Name}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="Bold" />
+                                                <Label HorizontalAlignment="Left" Margin="50,195,0,0" Width="200" Height="30" Content="{Binding Name}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="Bold" />
 
                                                 <Label Width="200" Height="30" Content="Short Description about tour:" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="320,40,288,229" />
                                                 <Label Width="200" Height="30" Content="Tour Name" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="320,70,288,199" />
@@ -77,7 +77,13 @@
                                                 <Label Width="200" Height="30" Content="{Binding Duration}" Foreground="{DynamicResource TextColor}"  FontWeight="SemiBold" FontStyle="Italic" FontSize="12" Margin="525,190,51,79" />
                                                 <Label Width="200" Height="30" Content="{Binding MaxNumberOfGuests}" Foreground="{DynamicResource TextColor}"  FontWeight="SemiBold" FontStyle="Italic" FontSize="12" Margin="525,220,51,49" />
 
-                                                <Label Width="200" Height="30" HorizontalAlignment="Left" Content="Enter exact date:" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="200,260,10,10" />
+                                                <Label Width="200" Height="30" HorizontalAlignment="Left" Content="Enter exact date:" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="220,260,10,10" />
+                                                
+                                                <Label Width="200" Height="30" HorizontalAlignment="Left" Content="Upload image:" Foreground="{DynamicResource TextColor}" FontSize="12" Margin="10,260,10,10" />
+
+                                                <Button Foreground="{DynamicResource TextColor}"  Background="{DynamicResource TextBoxColor}" Margin="120,247,610,10"  Command="{Binding DataContext.TourButtonCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding}" >
+                                                    <Image Source="C:\Users\Korisnik\OneDrive - Univerzitet u Novom Sadu\Desktop\simshci\projekatSIMSHCI\projekatSIMS\Resources\Images\TouristImages\NF.png"/>
+                                                </Button>
 
                                                 <TextBox Width="200"   Height="25" Margin="320,260,10,10" Foreground="{DynamicResource TextColor}" HorizontalAlignment="Left" Background="{DynamicResource TextBoxColor}" Text="{Binding DataContext.FDate, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
 

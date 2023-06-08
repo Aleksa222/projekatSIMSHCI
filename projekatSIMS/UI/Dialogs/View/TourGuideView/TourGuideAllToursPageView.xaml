@@ -49,7 +49,7 @@
 
                                             <Grid>
                                                 <Border BorderThickness="2" BorderBrush="White" Height="200" Width="200" HorizontalAlignment="Left" Margin="50,0,0,20" >
-                                                    <Image Source="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-512.png" />
+                                                    <Image Source="C:\Users\Korisnik\OneDrive - Univerzitet u Novom Sadu\Desktop\simshci\projekatSIMSHCI\projekatSIMS\Resources\Images\TouristImages\hciSlika6.jpg" />
                                                 </Border>
                                                 <Button Foreground="{DynamicResource TextColor}" Content="Proceed" Background="{DynamicResource TextBoxColor}" Margin="566,260,80,10"  Command="{Binding DataContext.TourButtonCommand, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding}" />
                                                 <Label HorizontalAlignment="Left" Margin="50,220,0,0" Width="200" Height="30" Content="{Binding Name}" Foreground="{DynamicResource TextColor}" FontSize="16" FontWeight="Bold" />
