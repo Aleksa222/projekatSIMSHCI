@@ -168,13 +168,6 @@
                 </Grid>
 
 
-                <CheckBox  Foreground="White" HorizontalAlignment="Left" Margin="18,730,0,0" VerticalAlignment="Top" Content="Switch Theme" IsChecked="{Binding IsDarkTheme}">
-                    <CheckBox.Command>
-                        <Binding Path="ToggleThemeCommand"/>
-                    </CheckBox.Command>
-                </CheckBox>
-
-
             </Grid>
         </Border>
     </Border>

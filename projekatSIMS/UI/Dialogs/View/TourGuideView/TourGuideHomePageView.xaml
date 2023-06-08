@@ -50,10 +50,11 @@
                         </Rectangle>
                         <Label Content="Best Tour"  FontFamily="Oswald" FontWeight="Bold" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="140,280,0,0" VerticalAlignment="Top" Height="34"/>
 
-                        <Label Content="{Binding Name}"  FontFamily="Oswald" FontWeight="Bold" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="154,304,0,0" VerticalAlignment="Top" Height="34" Width="52"/>
+                        <Label Content="NFSTR"  FontFamily="Oswald" FontWeight="Bold" FontStyle="Italic" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="150,314,0,0" VerticalAlignment="Top" Height="40" Width="60"/>
 
-                        <Label Content="Number of Guests"  FontFamily="Oswald" FontWeight="Bold" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="105,331,0,0" VerticalAlignment="Top" Height="34"/>
-                        <Label Content="{Binding MaximumNumberOfGuests}"  FontFamily="Oswald" FontWeight="Bold"  Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="162,0,0,0" VerticalAlignment="Center" Height="34" Width="30"/>
+                        <Label Content="Number of Guests"  FontFamily="Oswald" FontWeight="Bold" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="107,344,0,0" VerticalAlignment="Top" Height="34"/>
+                        <Label Content="50"  FontFamily="Oswald" FontWeight="Bold" FontStyle="Italic"  Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="162,378,0,0" VerticalAlignment="Top" Height="34" Width="30"/>
+
 
 
                         <Rectangle Fill="{DynamicResource TextBoxColor}"  Stroke="Black" Margin="102,429,524,183" RadiusX="10" RadiusY="10">
