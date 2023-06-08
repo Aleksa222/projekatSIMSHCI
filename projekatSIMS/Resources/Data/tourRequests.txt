@@ -1,4 +1,4 @@
-0|1|Norway|Oslo|ENGLISH|14.06.2023|17.07.2023|Nice tour|1|PENDING|0|False
+0|1|Norway|Oslo|ENGLISH|14.06.2023|17.07.2023|Nice tour|1|ACCEPTED||False
 1|1|Norway|Alesund|ENGLISH|03.07.2023|06.07.2023|Very nice|5|PENDING|0|False
 2|1|Spain|Barcelona|ENGLISH|03.07.2023|06.07.2023|So good|3|PENDING|0|False
 3|1|Norway|Oslo|SERBIAN|15.08.2023|23.08.2023|Wooow|2|ACCEPTED|0|False
