@@ -64,10 +64,21 @@
                         <Border  Background="{DynamicResource TextBoxColor}" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="256,123,119,336" CornerRadius="10">
                             <Grid Background="{DynamicResource TextBoxColor}">
                                 <Label Content="Working Status: Active" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="10,241,9,9"/>
-                                <Button Background="{DynamicResource TextBoxColor}" Command="{Binding QuitCommand}" Margin="308,241,9,9"  >
+                                
+                                <Button Background="{DynamicResource TextBoxColor}" Command="{Binding QuitCommand}" Margin="327,247,9,9"  >
 
-                                    <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Quit" Foreground="{DynamicResource TextColor}" FontSize="26" FontWeight="Bold"/>
+                                    <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Edit" Foreground="{DynamicResource TextColor}" FontSize="24" FontWeight="Bold"/>
                                 </Button>
+                                <Label Content="My Rating" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,74,218,190"/>
+                                <Label Content="Years Of Expirience" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,117,218,145"/>
+                                <Label Content="Avarage Capacity" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,161,218,103"/>
+                                <Label Content="124" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,25,26,232"/>
+                                <Label Content="9.2" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,74,26,190"/>
+                                <Label Content="7" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,117,26,145"/>
+                                <Label Content="76%" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,161,26,103"/>
+                                <Label Content="Avarage Tour Rating" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,201,218,63"/>
+                                <Label Content="8.6" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,201,22,63"/>
+                                <Label Content="Tours Guided" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,25,218,232"/>
                             </Grid>
                         </Border>
 

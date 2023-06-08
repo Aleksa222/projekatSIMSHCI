@@ -9,7 +9,7 @@
       Title="TourGuideProfilePageView">
 
     <Page.Resources>
-        <ResourceDictionary Source="Theme/Light.xaml"/>
+        <ResourceDictionary Source="Theme/Dark.xaml"/>
     </Page.Resources>
 
     <Border>
@@ -33,10 +33,86 @@
                     <ColumnDefinition Width="240"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Label HorizontalAlignment="Left" Margin="50,0,0,724" Width="200" Height="30" Content="Profile Page" Foreground="{DynamicResource TextColor}" FontStyle="Italic" FontFamily="Pacifico" FontSize="16" FontWeight="SemiBold" Grid.Column="1" />
-
                 <Border Grid.Column="1" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Left" Width="780" Height="764" VerticalAlignment="Center" >
+                    <Grid>
+                        <Label HorizontalAlignment="Left" Margin="50,0,0,720" Width="200" Height="30" Content="Home Page" Foreground="{DynamicResource TextColor}" FontStyle="Italic" FontFamily="Pacifico" FontSize="16" FontWeight="SemiBold" />
 
+                        <Rectangle Fill="{DynamicResource TextBoxColor}" Stroke="Black" Margin="102,123,524,489" RadiusX="10" RadiusY="10">
+
+                        </Rectangle>
+                        <Ellipse HorizontalAlignment="Left" Height="100" Margin="127,134,0,0" Stroke="Black" VerticalAlignment="Top" Width="100">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-64.png" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Label Content="Uros Lohinski"  FontFamily="Oswald" FontWeight="Bold" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="121,239,0,0" VerticalAlignment="Top" Height="25"/>
+                        <Rectangle Fill="{DynamicResource TextBoxColor}"  Stroke="Black" Margin="102,276,524,336" RadiusX="10" RadiusY="10">
+
+                        </Rectangle>
+                        <Label Content="Best Tour"  FontFamily="Oswald" FontWeight="Bold" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="140,280,0,0" VerticalAlignment="Top" Height="34"/>
+
+                        <Label Content="{Binding Name}"  FontFamily="Oswald" FontWeight="Bold" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="154,304,0,0" VerticalAlignment="Top" Height="34" Width="52"/>
+
+                        <Label Content="Number of Guests"  FontFamily="Oswald" FontWeight="Bold" Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="105,331,0,0" VerticalAlignment="Top" Height="34"/>
+                        <Label Content="{Binding MaximumNumberOfGuests}"  FontFamily="Oswald" FontWeight="Bold"  Foreground="{DynamicResource TextColor}" FontSize="16" HorizontalAlignment="Left" Margin="162,0,0,0" VerticalAlignment="Center" Height="34" Width="30"/>
+
+
+                        <Rectangle Fill="{DynamicResource TextBoxColor}"  Stroke="Black" Margin="102,429,524,183" RadiusX="10" RadiusY="10">
+
+                        </Rectangle>
+
+
+                        <Border  Background="{DynamicResource TextBoxColor}" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="256,123,119,336" CornerRadius="10">
+                            <Grid Background="{DynamicResource TextBoxColor}">
+                                <Label Content="Working Status: Active" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="10,241,9,9"/>
+                                
+                                <Button Background="{DynamicResource TextBoxColor}" Command="{Binding QuitCommand}" Margin="327,247,9,9"  >
+
+                                    <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Edit" Foreground="{DynamicResource TextColor}" FontSize="26" FontWeight="Bold"/>
+                                </Button>
+                                <Label Content="Date Of Birth" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,74,218,190"/>
+                                <Label Content="Years Of Expirience" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,117,218,145"/>
+                                <Label Content="Phone" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,161,218,103"/>
+                                <Label Content="Uros Lohinski" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,25,26,232"/>
+                                <Label Content="21.12.2001." FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,74,26,190"/>
+                                <Label Content="7" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,117,26,145"/>
+                                <Label Content="+381 63 229 1312" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,161,26,103"/>
+                                <Label Content="Email" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,201,218,63"/>
+                                <Label Content="uros@gmail.com" FontStyle="Italic" FontWeight="SemiBold" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="223,201,22,63"/>
+                                <Label Content="Name" VerticalContentAlignment="Center" Foreground="{DynamicResource TextColor}" Margin="27,25,218,232"/>
+                            </Grid>
+                        </Border>
+
+                        <Border Background="{DynamicResource TextBoxColor}" BorderThickness="1,1,1,1" BorderBrush="Black" Margin="100,429,520,183" CornerRadius="10" >
+
+                            <Button Background="{DynamicResource TextBoxColor}" Command="{Binding StatsCommand}"  >
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Tour Stats" Foreground="{DynamicResource TextColor}" FontSize="26" FontWeight="Bold"/>
+                            </Button>
+                        </Border>
+
+
+                        <Border Background="{DynamicResource TextBoxColor}" BorderThickness="1,1,1,1" BorderBrush="Black" Margin="507,429,119,183" CornerRadius="10" >
+
+                            <Button Background="{DynamicResource TextBoxColor}" Command="{Binding MyToursCommand}"  >
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="My Tours" Foreground="{DynamicResource TextColor}" FontSize="26" FontWeight="Bold"/>
+                            </Button>
+                        </Border>
+
+                        <Border Background="{DynamicResource TextBoxColor}" BorderThickness="1,1,1,1" BorderBrush="Black" Margin="260,429,275,260" CornerRadius="10" >
+
+                            <Button Background="{DynamicResource TextBoxColor}" Command="{Binding LocationCommand}"  >
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Location" Foreground="{DynamicResource TextColor}" FontSize="26" FontWeight="Bold"/>
+                            </Button>
+                        </Border>
+
+                        <Border Background="{DynamicResource TextBoxColor}" BorderThickness="1,1,1,1" BorderBrush="Black" Margin="260,505,275,183" CornerRadius="10" >
+
+                            <Button Background="{DynamicResource TextBoxColor}" Command="{Binding LanguageCommand}"  >
+                                <Label HorizontalAlignment="Center" VerticalAlignment="Top" Content="Language" Foreground="{DynamicResource TextColor}" FontSize="26" FontWeight="Bold"/>
+                            </Button>
+                        </Border>
+
+                    </Grid>
                 </Border>
 
 
@@ -74,6 +150,9 @@
                     <Button Content="Tours Today" HorizontalAlignment="Left" Margin="90,430,0,0" VerticalAlignment="Top" Height="40" Width="90" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Foreground="{DynamicResource TextColor}" Background="{DynamicResource ButtonColor}" Command="{Binding ToursTodayPageCommand}" Style="{StaticResource Button1}" />
 
                     <Button Content="Tour Requests" HorizontalAlignment="Left" Margin="90,490,0,0" VerticalAlignment="Top" Height="40" Width="90" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Foreground="{DynamicResource TextColor}" Background="{DynamicResource ButtonColor}" Command="{Binding TourRequestsPageCommand}" Style="{StaticResource Button1}"/>
+
+                    <Button Content="Generate Pdf" HorizontalAlignment="Left" Margin="140,44,0,0" VerticalAlignment="Top" Height="30" Width="90" FontWeight="Bold" BorderThickness="2" BorderBrush="Black" Foreground="{DynamicResource TextColor}" Background="{DynamicResource ButtonColor}" Command="{Binding GeneratePdf}" Style="{StaticResource Button1}" Grid.Row="6" Grid.ColumnSpan="2" />
+
 
                     <Image Source="https://cdn2.iconfinder.com/data/icons/user-interface-169/32/about-512.png" Margin="40,550,106,90" Width="40" Height="40" />
 
