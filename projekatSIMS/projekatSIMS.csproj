@@ -157,6 +157,8 @@
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\GuestMainViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TourGuideViewModel\TourGuideToursTodayPageModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TourGuideViewModel\TourGuideTourStartSoonPageModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\HomeHelpModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\RateHelpModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristActiveToursModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristComplexTourDetailsModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristComplexTourRequestModel.cs" />
@@ -165,6 +167,7 @@
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristHomeModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristHomeNotificationModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristMainWindowModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristPDFModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristRatingToursModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristReservationModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristSearchTourHelpModel.cs" />
@@ -172,6 +175,7 @@
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristTourRequestModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristTourRequestStatisticModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\TouristVouchersModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\TouristViewModel\VoucherHelpModel.cs" />
     <Compile Include="UI\Dialogs\View\AccommodationReservationView.xaml.cs">
       <DependentUpon>AccommodationReservationView.xaml</DependentUpon>
     </Compile>
@@ -293,6 +297,12 @@
     <Compile Include="UI\Dialogs\View\TourGuideView\TourGuideToursTodayPageView.xaml.cs">
       <DependentUpon>TourGuideToursTodayPageView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\View\TouristView\HomeHelp.xaml.cs">
+      <DependentUpon>HomeHelp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\TouristView\RateHelp.xaml.cs">
+      <DependentUpon>RateHelp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\TouristView\TouristActiveToursView.xaml.cs">
       <DependentUpon>TouristActiveToursView.xaml</DependentUpon>
     </Compile>
@@ -317,6 +327,9 @@
     <Compile Include="UI\Dialogs\View\TouristView\TouristMainWindow.xaml.cs">
       <DependentUpon>TouristMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\View\TouristView\TouristPDF.xaml.cs">
+      <DependentUpon>TouristPDF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\TouristView\TouristRatingToursView.xaml.cs">
       <DependentUpon>TouristRatingToursView.xaml</DependentUpon>
     </Compile>
@@ -337,6 +350,9 @@
     </Compile>
     <Compile Include="UI\Dialogs\View\TouristView\TouristVouchersView.xaml.cs">
       <DependentUpon>TouristVouchersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\TouristView\VoucherHelp.xaml.cs">
+      <DependentUpon>VoucherHelp.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\Vlasnik.xaml.cs">
       <DependentUpon>Vlasnik.xaml</DependentUpon>
@@ -529,6 +545,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Dialogs\View\TouristView\HomeHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\TouristView\RateHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\View\TouristView\TouristActiveToursView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -561,6 +585,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Dialogs\View\TouristView\TouristPDF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\View\TouristView\TouristRatingToursView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -588,6 +616,10 @@
     <Page Include="UI\Dialogs\View\TouristView\TouristVouchersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dialogs\View\TouristView\VoucherHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\Vlasnik.xaml">
       <SubType>Designer</SubType>

@@ -8,7 +8,10 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows;
 using System.Windows.Navigation;
+using System.Windows.Input;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
 {
@@ -22,6 +25,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         private RelayCommand requestTourCommand;
         private RelayCommand requestsCommand;
         private RelayCommand complexRequestsCommand;
+        private RelayCommand requestCommand;
 
         private UserService userService;
         private TourRequestService requestService;
@@ -57,7 +61,6 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
                 }
             }
         }
-
         public List<TourRequest> GetPendingRequests()
         {
             List<TourRequest> pendingRequests = new List<TourRequest>();
@@ -76,6 +79,11 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             string currentUri = TouristMainWindow.navigationService?.CurrentSource?.ToString();
             return currentUri?.EndsWith("TouristHomeView.xaml", StringComparison.OrdinalIgnoreCase) == true;
         }
+        private void RequestCommandExecute()
+        {
+            TouristMainWindow.navigationService.Navigate(
+                new Uri("UI/Dialogs/View/TouristView/TouristHomeViewHelp.xaml", UriKind.Relative));
+        }
 
         private void ReserveCommandExecute()
         {
@@ -91,7 +99,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         private void HelpCommandExecute()
         {
             TouristMainWindow.navigationService.Navigate(
-                new Uri("UI/Dialogs/View/TouristView/TouristHomeViewHelp.xaml", UriKind.Relative));
+                new Uri("UI/Dialogs/View/TouristView/HomeHelp.xaml", UriKind.Relative));
         }
 
         private void ActiveToursCommandExecute()
@@ -152,6 +160,18 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             }
         }
 
+        public RelayCommand RequestCommand
+        {
+            get
+            {
+                if (requestCommand == null)
+                {
+                    requestCommand = new RelayCommand(param => RequestCommandExecute(), param => CanThisCommandExecute());
+                }
+
+                return requestCommand;
+            }
+        }
         public RelayCommand HelpCommand
         {
             get
@@ -213,7 +233,6 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
                 return complexRequestsCommand ?? (complexRequestsCommand = new RelayCommand(param => ComplexRequestsCommandExecute(), param => CanThisCommandExecute()));
             }
         }
-
 
     }
 }

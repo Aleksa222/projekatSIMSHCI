@@ -4,6 +4,7 @@ using projekatSIMS.CompositeComon;
 using projekatSIMS.Model;
 using projekatSIMS.Service;
 using projekatSIMS.UI.Dialogs.Model;
+using projekatSIMS.UI.Dialogs.View.TouristView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,6 +32,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         private Func<string, string> stateValues;
         private Func<string, string> cityValues;
 
+        private bool isYearComboboxOpened;
+        private RelayCommand openYearComboboxCommand;
 
         private TourRequestService tourRequestService;
         private UserService userService;
@@ -61,6 +64,15 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             years.Add(new ComboBoxData<string> { Name = "2024", Value = "2024" });
             years.Add(new ComboBoxData<string> { Name = "All time", Value = "All time" });
         }
+        private void OpenYearComboboxCommandExecute()
+        {
+            IsYearComboboxOpened = true;
+        }
+        private bool CanThisCommandExecute()
+        {
+            string currentUri = TouristMainWindow.navigationService?.CurrentSource?.ToString();
+            return currentUri?.EndsWith("TouristTourRequestStatisticsView.xaml", StringComparison.OrdinalIgnoreCase) == true;
+        }
 
         public void LoadStatistics(string selectedYear)
         {
@@ -74,6 +86,15 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             DrawLanguageGraph(selectedYear);
             DrawStateGraph(selectedYear);
             DrawCityGraph(selectedYear);
+            Items.Clear();
+            foreach (TourRequest entity in tourRequestService.GetAll())
+            {
+                if (entity.StartDate.ToString().Contains(selectedYear))
+                {
+                    Items.Add(entity);
+                }
+            }
+
         }
         #endregion
 
@@ -353,6 +374,22 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             {
                 declinedTours = value;
                 OnPropertyChanged(nameof(DeclinedTours));
+            }
+        }
+        public bool IsYearComboboxOpened
+        {
+            get { return isYearComboboxOpened; }
+            set
+            {
+                isYearComboboxOpened = value;
+                OnPropertyChanged(nameof(IsYearComboboxOpened));
+            }
+        }
+        public RelayCommand OpenYearComboboxCommand
+        {
+            get
+            {
+                return openYearComboboxCommand ?? (openYearComboboxCommand = new RelayCommand(param => OpenYearComboboxCommandExecute(), param => CanThisCommandExecute()));
             }
         }
         #endregion

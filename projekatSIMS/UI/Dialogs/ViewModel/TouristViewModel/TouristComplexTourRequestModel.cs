@@ -17,6 +17,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         private RelayCommand addCommand;
         private RelayCommand submitCommand;
         private ObservableCollection<TourRequest> items = new ObservableCollection<TourRequest>();
+        private RelayCommand openStartDatePicker;
+        private RelayCommand openEndDatePicker;
 
         private string state;
         private string city;
@@ -30,6 +32,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         private TourRequestService tourRequestService;
         private UserService userService;
         private ComplexTourRequestService complexTourRequestService;
+        private bool isStartDatePickerOpened;
+        private bool isEndDatePickerOpened;
 
         public TouristComplexTourRequestModel()
         {
@@ -46,6 +50,15 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         {
             string currentUri = TouristMainWindow.navigationService?.CurrentSource?.ToString();
             return currentUri?.EndsWith("TouristComplexTourRequestView.xaml", StringComparison.OrdinalIgnoreCase) == true;
+        }
+        public void OpenStartDatePickerExecute()
+        {
+            IsStartDatePickerOpened = true;
+        }
+
+        public void OpenEndDatePickerExecute()
+        {
+            IsEndDatePickerOpened = true;
         }
 
         public void AddCommandExecute()
@@ -206,6 +219,39 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             {
                 items = value;
                 OnPropertyChanged(nameof(Items));
+            }
+        }
+        public RelayCommand OpenStartDatePickerCommand
+        {
+            get
+            {
+                return openStartDatePicker ?? (openStartDatePicker = new RelayCommand(param => OpenStartDatePickerExecute(), param => CanThisCommandExecute()));
+            }
+        }
+
+        public RelayCommand OpenEndDatePickerCommand
+        {
+            get
+            {
+                return openEndDatePicker ?? (openEndDatePicker = new RelayCommand(param => OpenEndDatePickerExecute(), param => CanThisCommandExecute()));
+            }
+        }
+        public bool IsStartDatePickerOpened
+        {
+            get { return isStartDatePickerOpened; }
+            set
+            {
+                isStartDatePickerOpened = value;
+                OnPropertyChanged(nameof(IsStartDatePickerOpened));
+            }
+        }
+        public bool IsEndDatePickerOpened
+        {
+            get { return isEndDatePickerOpened; }
+            set
+            {
+                isEndDatePickerOpened = value;
+                OnPropertyChanged(nameof(IsEndDatePickerOpened));
             }
         }
     }

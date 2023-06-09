@@ -32,7 +32,16 @@ namespace projekatSIMS.Model
             this.comment = comment;
             this.imageUrl = imageUrl;
         }
-
+        public TourRating(int id, int tourId, int touristId, int knowledge, int language, int interest, string comment)
+        {
+            this.id = id;
+            this.tourId = tourId;
+            this.touristId = touristId;
+            this.tourGuideKnowledge = knowledge;
+            this.tourGuideLanguageProficiency = language;
+            this.interestLevel = interest;
+            this.comment = comment;
+        }
         public int TouristId
         {
             get { return touristId; }

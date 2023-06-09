@@ -344,7 +344,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ContentControl Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" Content="{Binding SelectedView}"/>
+        <ContentControl Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding SelectedView}" Margin="167,53,-167,-53"/>
     </Grid>
 
 </UserControl>

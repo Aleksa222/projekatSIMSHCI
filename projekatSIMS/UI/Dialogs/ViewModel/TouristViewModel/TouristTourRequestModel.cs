@@ -15,6 +15,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
     internal class TouristTourRequestModel : ViewModelBase
     {
         private RelayCommand submitCommand;
+        private RelayCommand openStartDatePicker;
+        private RelayCommand openEndDatePicker;
 
         private string state;
         private string city;
@@ -27,6 +29,10 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
 
         private TourRequestService tourRequestService;
         private UserService userService;
+
+        private bool isStartDatePickerOpened;
+        private bool isEndDatePickerOpened;
+
         public TouristTourRequestModel() {
             SetService();
         }
@@ -62,6 +68,15 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             CreateRequest();
         }
 
+        public void OpenStartDatePickerExecute()
+        {
+            IsStartDatePickerOpened = true;
+        }
+
+        public void OpenEndDatePickerExecute()
+        {
+            IsEndDatePickerOpened = true;
+        }
         public void CreateRequest()
         {
             Location location = new Location();
@@ -157,6 +172,22 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             }
         }
 
+        public RelayCommand OpenStartDatePickerCommand
+        {
+            get
+            {
+                return openStartDatePicker ?? (openStartDatePicker = new RelayCommand(param =>  OpenStartDatePickerExecute(), param => CanThisCommandExecute()));
+            }
+        }
+
+        public RelayCommand OpenEndDatePickerCommand
+        {
+            get
+            {
+                return openEndDatePicker ?? (openEndDatePicker = new RelayCommand(param => OpenEndDatePickerExecute(), param => CanThisCommandExecute()));
+            }
+        }
+
         public DateTime DefaultStartDate
         {
             get { return defaultStartDate; }
@@ -164,6 +195,24 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             {
                 defaultStartDate = value;
                 OnPropertyChanged(nameof(DefaultStartDate));
+            }
+        }
+        public bool IsStartDatePickerOpened
+        {
+            get { return isStartDatePickerOpened; }
+            set
+            {
+                isStartDatePickerOpened = value;
+                OnPropertyChanged(nameof(IsStartDatePickerOpened));
+            }
+        }
+        public bool IsEndDatePickerOpened
+        {
+            get { return isEndDatePickerOpened; }
+            set
+            {
+                isEndDatePickerOpened = value;
+                OnPropertyChanged(nameof(IsEndDatePickerOpened));
             }
         }
 

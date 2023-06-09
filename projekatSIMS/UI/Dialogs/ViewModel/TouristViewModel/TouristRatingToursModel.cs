@@ -6,10 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
 {
@@ -19,6 +21,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         private RelayCommand submitCommand;
         private RelayCommand toursMoveDownCommand;
         private RelayCommand toursMoveUpCommand;
+        private RelayCommand uploadCommand;
+        private RelayCommand helpCommand;
 
         private ObservableCollection<Tour> items = new ObservableCollection<Tour>();
         private Tour selectedTour;
@@ -86,12 +90,17 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             TouristMainWindow.navigationService.Navigate(
                 new Uri("UI/Dialogs/View/TouristView/TouristActiveToursView.xaml", UriKind.Relative));
         }
+        private void HelpCommandExecute()
+        {
+            TouristMainWindow.navigationService.Navigate(
+                new Uri("UI/Dialogs/View/TouristView/RateHelp.xaml", UriKind.Relative));
+        }
 
         private void SubmitCommandExecute()
         {
             if (!CanSubmitCommandExecute())
             {
-                MessageBox.Show("Please respect the restrictions.","!!!", MessageBoxButton.OK);
+                MessageBox.Show("Please fill out all the necessary fields and respect the restrictions.","!!!", MessageBoxButton.OK);
                 return;
             }
             MessageBoxResult result = MessageBox.Show("Your rating was registered successfuly.", "Thank you. We appreciate it!", MessageBoxButton.OK);
@@ -102,22 +111,70 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             }
         }
 
-        private bool CanSubmitCommandExecute()
+        public void UploadCommandExecute()
+        {
+            if(selectedTour == null)
+            {
+                MessageBox.Show("Please select a tour first!", " ", MessageBoxButton.OK);
+                return;
+            }
+            Microsoft.Win32.OpenFileDialog fileDialog = new Microsoft.Win32.OpenFileDialog();
+            fileDialog.Title = "Select a picture";
+            fileDialog.Filter = "PNG (.png)|*.png";
+            bool? response = fileDialog.ShowDialog();
+            if (response == true)
+            {
+                string filepath = fileDialog.FileName;
+                string destinationFolder = @"C:\Users\Aleksa\Desktop\TouristTourImages";
+                string destinationPath = System.IO.Path.Combine(destinationFolder, System.IO.Path.GetFileName(filepath));
+
+                try
+                {
+                    System.IO.File.Copy(filepath, destinationPath, true);
+                    MessageBox.Show("Image saved successfully!", "", MessageBoxButton.OK);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error saving picture: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        public bool CanSubmitCommandExecute()
         {
             if (!IsTourguideKnowledgeValid()) return false;
+            if(!IsTourguideLanguageProficiencyValid()) return false;
+            if(!IsOverallInterestLevelValid()) return false;
             CreateRating();
             return true;
         }
 
-        private bool IsTourguideKnowledgeValid()
+        public bool IsTourguideKnowledgeValid()
         {
-            if(TourGuideKnowledge < 0 ||  TourGuideKnowledge > 5) return false;
+            if(TourGuideKnowledge < 0 ||  TourGuideKnowledge > 5 || TourGuideKnowledge == null) return false;
+            return true;
+        }
+
+        public bool IsTourguideLanguageProficiencyValid()
+        {
+            if(TourGuideLanguageProficiency < 0 || TourGuideLanguageProficiency > 5 || TourGuideLanguageProficiency == null) return false;
+            return true;
+        }
+
+        public bool IsOverallInterestLevelValid()
+        {
+            if (InterestLevel < 0 || InterestLevel > 5 || InterestLevel == null) return false;
             return true;
         }
 
         private void CreateRating()
         {
-            TourRating tourRating = new TourRating(ratingService.GenerateId(), SelectedTour.Id, userService.GetLoginUser().Id, TourGuideKnowledge, TourGuideLanguageProficiency, InterestLevel, Comment, ImageUrl);
+            if(selectedTour == null)
+            {
+                MessageBox.Show("Please select a tour first!", " ", MessageBoxButton.OK);
+                return;
+            }
+            TourRating tourRating = new TourRating(ratingService.GenerateId(), SelectedTour.Id, userService.GetLoginUser().Id, TourGuideKnowledge, TourGuideLanguageProficiency, InterestLevel, Comment);
             ratingService.Add(tourRating);
         }
         private void ToursMoveDownCommandExecute()
@@ -179,6 +236,14 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             get
             {
                 return submitCommand ?? (submitCommand= new RelayCommand(param => SubmitCommandExecute(), param => CanThisCommandExecute()));
+            }
+        }
+
+        public RelayCommand UploadCommand
+        {
+            get
+            {
+                return uploadCommand ?? (uploadCommand = new RelayCommand(param =>  UploadCommandExecute(), param => CanThisCommandExecute()));
             }
         }
 
@@ -254,6 +319,18 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             get
             {
                 return toursMoveUpCommand ?? (toursMoveUpCommand = new RelayCommand(param => ToursMoveUpCommandExecute(), param => CanThisCommandExecute()));
+            }
+        }
+        public RelayCommand HelpCommand
+        {
+            get
+            {
+                if (helpCommand == null)
+                {
+                    helpCommand = new RelayCommand(param => HelpCommandExecute(), param => CanThisCommandExecute());
+                }
+
+                return helpCommand;
             }
         }
 

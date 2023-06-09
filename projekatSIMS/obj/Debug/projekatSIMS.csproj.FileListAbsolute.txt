@@ -515,3 +515,11 @@ C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialo
 C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\TouristComplexTourRequestsStatisticView.baml
 C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\TouristComplexTourDetailsView.g.cs
 C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\TouristComplexTourDetailsView.baml
+C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\TouristPDF.g.cs
+C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\TouristPDF.baml
+C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\HomeHelp.g.cs
+C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\HomeHelp.baml
+C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\VoucherHelp.g.cs
+C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\VoucherHelp.baml
+C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\RateHelp.g.cs
+C:\Users\Aleksa\Documents\GitHub\projekatSIMSHCI\projekatSIMS\obj\Debug\UI\Dialogs\View\TouristView\RateHelp.baml

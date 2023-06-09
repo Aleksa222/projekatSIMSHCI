@@ -55,7 +55,7 @@
             </Border>
         </Border>
 
-        <Button Grid.Row="2" Grid.Column="1" FontSize="19" Content="Send request" FontWeight="Bold" Command="{Binding SubmitCommand}" Margin="201,135,70,34" IsTabStop="False">
+        <Button Grid.Row="2" Grid.Column="1" FontSize="19" Content="Send request" FontWeight="Bold" Command="{Binding SubmitCommand}" Margin="201,119,70,50" IsTabStop="False">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background">
@@ -70,7 +70,7 @@
             </Button.Style>
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-                    <Border Width="250" Height="100" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                    <Border Width="200" Height="100" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
                         <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -83,38 +83,43 @@
         </Button>
 
         <TextBlock Text="ADVENTO" Grid.Row="0" Foreground="Black" FontSize="35" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="138,43,0,43" Width="160"/>
-        <TextBlock Text="Request a new tour:" Grid.Row="1" Foreground="White" FontSize="35" FontWeight="Bold" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="158,40,0,186" Width="332" Grid.Column="1"/>
+        <TextBlock Text="Request a new tour:" Grid.Row="1" Foreground="White" FontSize="35" FontWeight="Bold" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="168,35,0,191" Width="332" Grid.Column="1"/>
         <TextBlock Text="Create your own" Grid.Row="0" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="134,81,0,35" Width="90"/>
         <TextBlock Text="ADVENTURE" Grid.Row="0" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="229,81,0,38" Width="69"/>
-        <TextBlock Text="CTRL + P" Foreground="Black" FontSize="18" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="58,18,0,90" Grid.Column="2" Width="74"/>
-        <TextBlock Text="CTRL + N" Foreground="Black" FontSize="18" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="195,18,0,90" Grid.Column="2" Width="76"/>
         <TextBlock Text="CTRL + H" Foreground="Black" FontSize="18" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="319,18,0,90" Grid.Column="2" Width="76"/>
         <Image Source="https://img.icons8.com/dusk/256/globe-earth.png" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="100" Margin="10,0,0,0"/>
         <Image Source="https://img.icons8.com/dusk/256/globe-earth.png" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="20" Height="20" RenderTransformOrigin="7.655,0.85" Margin="324,0,0,0" />
-        <Icon:FontAwesome Icon="User" FontSize="60" Grid.Column="2" Margin="55,40,291,29"/>
-        <TextBlock Text="Back to Main Page" Grid.Row="0" Grid.Column="2" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="43,106,0,10" Width="106"/>
-        <Icon:FontAwesome Icon="Bell" FontSize="60" Grid.Column="2" Margin="195,40,145,29"/>
-        <TextBlock Text="View notifications" Grid.Row="0" Grid.Column="2" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="185,106,0,10" Width="106"/>
         <Icon:FontAwesome Icon="Question" Foreground="SlateGray" FontSize="60" Grid.Column="2" Margin="319,40,27,29"/>
         <TextBlock Text="Help" Grid.Row="0" Grid.Column="2" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="345,106,0,10" Width="28"/>
-        <TextBlock Text="CTRL+ENTER" Grid.Row="2" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="285,113,0,140" Grid.Column="1" Width="109" RenderTransformOrigin="0.467,0.671"/>
+        <TextBlock Text="CTRL+ENTER" Grid.Row="2" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="280,220,0,33" Grid.Column="1" Width="108" RenderTransformOrigin="0.467,0.671"/>
         <TextBlock Text="Country:" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="0,113,0,135" Width="189" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1"/>
         <TextBlock Text="City:" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="0,153,0,95" Width="189" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1"/>
         <TextBlock Text="Description:" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="0,195,0,53" Width="189" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1"/>
         <TextBlock Text="Language:" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="0,238,0,10" Width="189" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1"/>
         <TextBlock Text="Guest number:" Grid.Row="2" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="0,10,0,238" Width="189" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1"/>
-        <TextBlock Text="End date:" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="340,227,0,21" Width="112" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1"/>
-        <TextBlock Text="Starting date:" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="340,179,0,69" Width="113" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1"/>
-
+        <TextBlock Text="End date:" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="508,222,0,26" Width="85" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Starting date:" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="494,113,0,135" Width="113" RenderTransformOrigin="-0.076,-15.776" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBlock Text="CTRL + P" Foreground="Black" FontSize="18" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="195,18,0,90" Grid.Column="2" Width="74"/>
+        <Icon:FontAwesome Icon="User" FontSize="60" Grid.Column="2" Margin="197,40,148,29"/>
+        <TextBlock Text="Back to Main Page" Grid.Row="0" Grid.Column="2" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="185,106,0,10" Width="106"/>
 
         <TextBox Text="{Binding State, Mode=TwoWay}" Margin="139,113,269,135" Grid.Column="1" Grid.Row="1" TabIndex="0"/>
         <TextBox Text="{Binding Description, Mode=TwoWay}" Margin="139,195,269,53" Grid.Column="1" Grid.Row="1" TabIndex="2"/>
         <TextBox Text="{Binding City, Mode=TwoWay}" Margin="140,153,269,95" Grid.Column="1" Grid.Row="1" TabIndex="1"/>
         <TextBox Text="{Binding GuestNumber, Mode=TwoWay}" Margin="140,10,269,238" Grid.Column="1" Grid.Row="2" TabIndex="4"/>
         <TextBox Text="{Binding Language, Mode=TwoWay}" Margin="139,238,270,10" Grid.Column="1" Grid.Row="1" TabIndex="3"/>
+        <TextBlock Text="SHIFT+E" Grid.Row="2" Foreground="White" FontSize="16" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="516,8,0,236" Grid.Column="1" Width="64" RenderTransformOrigin="0.467,0.671" Grid.ColumnSpan="2"/>
+        <TextBlock Text="SHIFT+S" Grid.Row="1" Foreground="White" FontSize="16" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="516,175,0,73" Grid.Column="1" Width="69" RenderTransformOrigin="0.467,0.671" Grid.ColumnSpan="2"/>
 
-        <DatePicker FontFamily="Bahnschrift SemiLight" SelectedDate="{Binding StartDate, Mode=TwoWay}" FontSize="22" Width="415" Foreground="#244035" Margin="477,169,72,64" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" DisplayDate="{Binding DefaultStartDate}"/>
-        <DatePicker FontFamily="Bahnschrift SemiLight" FontSize="22" SelectedDate="{Binding EndDate, Mode=TwoWay}" Width="415" Foreground="#244035" Margin="477,219,72,10" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" DisplayDate="{Binding DefaultStartDate}"/>
-
+        <DatePicker FontFamily="Bahnschrift SemiLight" SelectedDate="{Binding StartDate, Mode=TwoWay}" IsDropDownOpen="{Binding IsEndDatePickerOpened}" FontSize="17" Foreground="#244035" Margin="473,245,336,265" Grid.Column="1" Grid.Row="1" DisplayDate="{Binding DefaultStartDate}" Grid.ColumnSpan="2" Grid.RowSpan="2" IsTabStop="False" />
+        <DatePicker FontFamily="Bahnschrift SemiLight" FontSize="17" SelectedDate="{Binding EndDate, Mode=TwoWay}" IsTabStop="False" IsDropDownOpen="{Binding IsStartDatePickerOpened}" Foreground="#244035" Margin="473,140,336,100" Grid.Column="1" Grid.Row="1" DisplayDate="{Binding DefaultStartDate}" Grid.ColumnSpan="2"/>
+        <i:Interaction.Triggers>
+            <i:KeyTrigger Key="S" Modifiers="Shift">
+                <i:InvokeCommandAction Command="{Binding OpenStartDatePickerCommand}" />
+            </i:KeyTrigger>
+            <i:KeyTrigger Key="E" Modifiers="Shift">
+                <i:InvokeCommandAction Command="{Binding OpenEndDatePickerCommand}" />
+            </i:KeyTrigger>
+        </i:Interaction.Triggers>
     </Grid>
 </Page>

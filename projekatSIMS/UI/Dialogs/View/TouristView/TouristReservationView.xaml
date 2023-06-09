@@ -132,7 +132,7 @@
             </Button.Style>
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-                    <Border Width="250" Height="100" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                    <Border Width="200" Height="100" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
                         <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -159,7 +159,7 @@
             </Button.Style>
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="250" Height="100" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                    <Border Width="200" Height="100" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
                         <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -174,25 +174,21 @@
         <TextBlock Text="ADVENTO" Grid.Row="0" Foreground="Black" FontSize="35" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="138,43,0,43" Width="160"/>
         <TextBlock Text="Create your own" Grid.Row="0" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="134,81,0,35" Width="90"/>
         <TextBlock Text="ADVENTURE" Grid.Row="0" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="229,81,0,38" Width="69"/>
-        <TextBlock Text="CTRL + P" Foreground="Black" FontSize="18" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="58,18,0,90" Grid.Column="2" Width="74"/>
-        <TextBlock Text="CTRL + N" Foreground="Black" FontSize="18" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="195,18,0,90" Grid.Column="2" Width="76"/>
         <TextBlock Text="CTRL + H" Foreground="Black" FontSize="18" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="319,18,0,90" Grid.Column="2" Width="76"/>
         <Image Source="https://img.icons8.com/dusk/256/globe-earth.png" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="100" Margin="10,0,0,0"/>
         <Image Source="https://img.icons8.com/dusk/256/globe-earth.png" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="20" Height="20" RenderTransformOrigin="7.655,0.85" Margin="324,0,0,0" />
-        <Icon:FontAwesome Icon="User" FontSize="60" Grid.Column="2" Margin="55,40,291,29"/>
-        <TextBlock Text="Back to Main Page" Grid.Row="0" Grid.Column="2" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="43,106,0,10" Width="106"/>
-        <Icon:FontAwesome Icon="Bell" FontSize="60" Grid.Column="2" Margin="195,40,145,29"/>
-        <TextBlock Text="View notifications" Grid.Row="0" Grid.Column="2" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="185,106,0,10" Width="106"/>
         <Icon:FontAwesome Icon="Question" Foreground="SlateGray" FontSize="60" Grid.Column="2" Margin="319,40,27,29"/>
         <TextBlock Text="Help" Grid.Row="0" Grid.Column="2" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="345,106,0,10" Width="28"/>
         <TextBlock Text="Your vouchers" Grid.Row="1" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Center" Margin="0,48,0,202" Width="106" Grid.Column="2"/>
         <TextBlock Text="CTRL+ENTER" Grid.Row="2" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Center" Margin="0,113,0,140" Grid.Column="2" Width="106" RenderTransformOrigin="0.467,0.671"/>
         <TextBlock Text="SHIFT + V to select a voucher UP DOWN to navigate" Grid.Row="2" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Center" Margin="0,39,0,211" Width="357" Grid.Column="2"/>
-        <TextBlock Text="SHIFT + R to confirm the selected tour" Grid.Row="1" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="152,48,0,202" Width="265" Grid.ColumnSpan="2"/>
+        <TextBlock Text="SHIFT + R to confirm the selected tour" Grid.Row="2" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="152,207,0,43" Width="265" Grid.ColumnSpan="2"/>
         <TextBlock Text="CTRL+B" Grid.Row="2" Foreground="White" FontSize="18" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="374,113,0,140" Grid.Column="1" Width="66" RenderTransformOrigin="0.467,0.671"/>
         <TextBlock Text="Guest number:" Grid.Row="2" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="324,0,0,250" Width="106" Grid.Column="1" RenderTransformOrigin="0.492,1.43"/>
         <TextBlock Text="TAB to enter the guest number" Grid.Row="1" Foreground="White" FontSize="15" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="313,240,0,10" Width="214" Grid.Column="1"/>
-
+        <TextBlock Text="CTRL + P" Foreground="Black" FontSize="18" FontWeight="Medium" FontFamily="Playfair Display" HorizontalAlignment="Left" Margin="195,18,0,90" Grid.Column="2" Width="74"/>
+        <Icon:FontAwesome Icon="User" FontSize="60" Grid.Column="2" Margin="197,40,148,29"/>
+        <TextBlock Text="Back to Main Page" Grid.Row="0" Grid.Column="2" Foreground="Black" FontSize="12" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Margin="185,106,0,10" Width="106"/>
     </Grid>
 
 </Page>

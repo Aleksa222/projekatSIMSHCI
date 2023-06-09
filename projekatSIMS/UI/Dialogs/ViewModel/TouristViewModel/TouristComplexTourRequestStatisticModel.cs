@@ -20,6 +20,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         private ComplexTourRequest selectedRequest;
 
         private RelayCommand detailsCommand;
+        private RelayCommand requestsMoveDownCommand;
+        private RelayCommand requestsMoveUpCommand;
 
         public TouristComplexTourRequestStatisticModel()
         {
@@ -47,6 +49,22 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             else
             {
                 MessageBox.Show("Please select a complex request before proceeding.");
+            }
+        }
+        private void RequestsMoveDownCommandExecute()
+        {
+            int selectedIndex = Items.IndexOf(SelectedRequest);
+            if (selectedIndex < Items.Count - 1)
+            {
+                SelectedRequest = Items[selectedIndex + 1];
+            }
+        }
+        private void RequestsMoveUpCommandExecute()
+        {
+            int selectedIndex = Items.IndexOf(SelectedRequest);
+            if (selectedIndex > 0)
+            {
+                SelectedRequest = Items[selectedIndex - 1];
             }
         }
         public void LoadData()
@@ -86,6 +104,21 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
                 }
 
                 return detailsCommand;
+            }
+        }
+        public RelayCommand RequestsMoveDownCommand
+        {
+            get
+            {
+                return requestsMoveDownCommand ?? (requestsMoveDownCommand = new RelayCommand(param => RequestsMoveDownCommandExecute(), param => CanThisCommandExecute()));
+            }
+        }
+
+        public RelayCommand RequestsMoveUpCommand
+        {
+            get
+            {
+                return requestsMoveUpCommand ?? (requestsMoveUpCommand = new RelayCommand(param => RequestsMoveUpCommandExecute(), param => CanThisCommandExecute()));
             }
         }
     }

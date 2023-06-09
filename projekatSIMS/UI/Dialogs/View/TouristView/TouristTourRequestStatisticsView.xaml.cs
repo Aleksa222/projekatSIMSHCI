@@ -26,5 +26,9 @@ namespace projekatSIMS.UI.Dialogs.View.TouristView
             InitializeComponent();
             DataContext = new TouristTourRequestStatisticModel();
         }
+        public void YearComboBox_DropDownOpened(object sender, EventArgs e)
+        {
+            YearComboBox.Focus();
+        }
     }
 }

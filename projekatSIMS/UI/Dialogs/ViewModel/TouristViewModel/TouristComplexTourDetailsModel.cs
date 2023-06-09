@@ -27,8 +27,8 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
         }
         private bool CanThisCommandExecute()
         {
-            string currentUri = TouristMainWindow.navigationService?.CurrentSource?.ToString() + "ubicuse";
-            if (currentUri.Equals("ubicuse"))
+            string currentUri = TouristMainWindow.navigationService?.CurrentSource?.ToString() + "ALOOOOOOOOO";
+            if (currentUri.Equals("ALOOOOOOOOO"))
             {
                 return true;
             }

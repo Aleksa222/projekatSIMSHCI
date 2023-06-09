@@ -9,12 +9,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
 {
     internal class TouristVouchersModel : ViewModelBase
     {
-        private RelayCommand useCommand;
+        private RelayCommand pdfCommand;
+        private RelayCommand helpCommand;
 
         private ObservableCollection<Voucher> vouchers = new ObservableCollection<Voucher>();
 
@@ -37,11 +39,21 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             string currentUri = TouristMainWindow.navigationService?.CurrentSource?.ToString();
             return currentUri?.EndsWith("TouristVouchersView.xaml", StringComparison.OrdinalIgnoreCase) == true;
         }
-
-        private void UseCommandExecute()
+        private void HelpCommandExecute()
         {
             TouristMainWindow.navigationService.Navigate(
-                new Uri("UI/Dialogs/View/TouristView/TouristSearchTourView.xaml", UriKind.Relative));
+                new Uri("UI/Dialogs/View/TouristView/VoucherHelp.xaml", UriKind.Relative));
+        }
+
+        private void PDFCommandExecute()
+        {
+            TouristPDF report = new TouristPDF();
+
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(report, "Report");
+            }
         }
 
         public void SetService()
@@ -76,9 +88,15 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             int i = 0;
             foreach (TourReservation tourReservation in reservationService.GetAll().ToList())
             {
-                if (tourReservation.GuestId == userService.GetLoginUser().Id) { i++; }
+                if (tourReservation.GuestId == userService.GetLoginUser().Id)
+                {
+                    i++;
+                }
             }
-            reservationsNeeded = (5-i).ToString(); 
+
+            int remainingReservations = (i % 5 == 0) ? 0 : 5 - (i % 5);
+
+            reservationsNeeded = remainingReservations.ToString();
         }
         public void LoadVouchers()
         {
@@ -100,11 +118,11 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             }
         }
 
-        public RelayCommand UseCommand
+        public RelayCommand PDFCommand
         {
             get
             {
-                return useCommand ?? (useCommand = new RelayCommand(param => UseCommandExecute(), param => CanThisCommandExecute()));
+                return pdfCommand ?? (pdfCommand = new RelayCommand(param => PDFCommandExecute(), param => CanThisCommandExecute()));
             }
         }
 
@@ -124,6 +142,18 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.TouristViewModel
             {
                 reservationsNeeded = value;
                 OnPropertyChanged(nameof(NeededReservations));
+            }
+        }
+        public RelayCommand HelpCommand
+        {
+            get
+            {
+                if (helpCommand == null)
+                {
+                    helpCommand = new RelayCommand(param => HelpCommandExecute(), param => CanThisCommandExecute());
+                }
+
+                return helpCommand;
             }
         }
     }
