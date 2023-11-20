@@ -154,6 +154,7 @@
                     </Style>
                 </TextBlock.Style>
             </TextBlock>
+            
             <Button Content="Use Bonus Points" Width="221" Foreground="#244035" FontFamily="Bahnschrift SemiLight" FontSize="22" Height="46" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,40,22" Command="{Binding UseBonusPointCommand}">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">

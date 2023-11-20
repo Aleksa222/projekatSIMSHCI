@@ -1,15 +1,19 @@
-﻿using projekatSIMS.CompositeComon;
+﻿using Microsoft.Win32;
+using projekatSIMS.CompositeComon;
 using projekatSIMS.Model;
 using projekatSIMS.Service;
+using projekatSIMS.UI.Dialogs.View.GuestView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using System.Xml.Linq;
 
 namespace projekatSIMS.UI.Dialogs.ViewModel
@@ -57,6 +61,46 @@ namespace projekatSIMS.UI.Dialogs.ViewModel
                     OnPropertyChanged(nameof(SelectedReservation));
                     OnPropertyChanged(nameof(IsReservationSelected));
                 }
+            }
+        }
+
+        private bool IsValidImagePath(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+                return false;
+
+            if (!Uri.TryCreate(path, UriKind.Absolute, out Uri uri))
+                return false;
+
+            if (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps && uri.Scheme != Uri.UriSchemeFile)
+                return false;
+
+            // Provera pristupa putanji
+            if (uri.Scheme == Uri.UriSchemeFile && !File.Exists(uri.LocalPath))
+                return false;
+
+            return true;
+        }
+
+        private ICommand browseImageCommand;
+        public ICommand BrowseImageCommand
+        {
+            get
+            {
+                if (browseImageCommand == null)
+                    browseImageCommand = new RelayCommand(BrowseImage);
+
+                return browseImageCommand;
+            }
+        }
+
+        private void BrowseImage(object parameter)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif;*.bmp)|*.png;*.jpg;*.jpeg;*.gif;*.bmp|All Files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                ImageUrlText = openFileDialog.FileName;
             }
         }
 
@@ -122,16 +166,49 @@ namespace projekatSIMS.UI.Dialogs.ViewModel
             }
         }
 
+
         public string ImageUrlText
         {
             get { return imageUrlText; }
             set
             {
-                if (imageUrlText != value)
+                if (imageUrlText == value)
+                    return;
+
+                imageUrlText = value;
+                OnPropertyChanged(nameof(ImageUrlText));
+                
+                if (!string.IsNullOrEmpty(imageUrlText) && IsValidImagePath(imageUrlText))
                 {
-                    imageUrlText = value;
-                    OnPropertyChanged(nameof(ImageUrlText));
+                    try
+                    {
+                        Image = new BitmapImage(new Uri(imageUrlText));
+                    }
+                    catch (Exception ex)
+                    {
+                        Image = null;
+                        MessageBox.Show("Error loading image: " + ex.Message);
+                    }
                 }
+                else
+                {
+                    Image = null; 
+                }
+            }
+        }
+
+        public void ShowHelpControl(object param)
+        {
+            SelectedView = new RateNowHelpView();
+        }
+        private BitmapImage image;
+        public BitmapImage Image
+        {
+            get { return image; }
+            set
+            {
+                image = value;
+                OnPropertyChanged(nameof(Image));
             }
         }
         public string GeneralRefurbishment
@@ -199,8 +276,11 @@ namespace projekatSIMS.UI.Dialogs.ViewModel
 
         public ICommand RecommendRenovationCommand { get; }
 
+        public ICommand ShowHelpCommand { get; set; }
+
         public RateNowViewModel()
         {
+            ShowHelpCommand = new RelayCommand(ShowHelpControl);
             RecommendRenovationCommand = new RelayCommand(RecommendRenovation, CanRecommendRenovation);
             accommodationRenovationRecommendationService = new AccommodationRenovationRecommendationService();  
             accommodationReservationService = new AccommodationReservationService();
@@ -335,6 +415,17 @@ namespace projekatSIMS.UI.Dialogs.ViewModel
 
             string comment = CommentText?.Trim();
             string imageUrl = ImageUrlText?.Trim();
+            if (!IsValidImagePath(imageUrl))
+            {
+                SuccessfulLabel = "";
+                ErrorLabel = "";
+                MessageBox.Show("Invalid image path.");
+                return;
+            }
+            else
+            {
+                // Ispravna putanja, brišemo prethodnu poruku o grešci
+            }
 
             if (!AreRatingInputsValid(cleanliness, ownerPoliteness, comment))
             {

@@ -1,6 +1,7 @@
 ﻿using projekatSIMS.CompositeComon;
 using projekatSIMS.Model;
 using projekatSIMS.Service;
+using projekatSIMS.UI.Dialogs.View;
 using projekatSIMS.UI.Dialogs.View.GuestView;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
         ForumService forumService = new ForumService();
         ForumCommentService forumCommentService = new ForumCommentService();
         UserService userService = new UserService();
+        public ICommand ShowHelpForumCommentsCommaand { get; set; }
         public ICommand AddCommentCommand { get; private set; }
 
         private UserControl _selectedView;
@@ -38,6 +40,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
         {
             MoveToPreviousCommentCommand = new RelayCommand(MoveToPreviousComment);
             MoveToNextCommentCommand = new RelayCommand(MoveToNextComment);
+            ShowHelpForumCommentsCommaand = new RelayCommand(HelpForumComments);
             AddCommentCommand = new RelayCommand(AddComment);
             LoadData();
         }
@@ -306,6 +309,11 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
                 forumId = value;
                 OnPropertyChanged(nameof(ForumId));
             }
+        }
+
+        public void HelpForumComments(object param)
+        {
+            SelectedView = new ForumCommentsHelpView();
         }
     }
 }

@@ -9,14 +9,15 @@
 
     <Grid Background="#EEEEEE" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.4*"/>
-            <RowDefinition Height="0.4*"/>
-            <RowDefinition Height="0.7*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Height="82" Margin="40,0,0,0" HorizontalAlignment="Left" Width="613">
             <TextBlock Text="Forum Comments" Foreground="#244035" FontSize="50" FontFamily="Bahnschrift" Width="404" Height="52" VerticalAlignment="Center"/>
-            <Button VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,10,0,0" Background="Transparent" BorderThickness="0" Command="{Binding ShowNewReservationHelpCommand}">
+            <Button VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,10,0,0" Background="Transparent" BorderThickness="0" Command="{Binding ShowHelpForumCommentsCommaand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type fa:ImageAwesome}">
                         <Setter Property="Foreground" Value="#244035"/>
@@ -48,9 +49,9 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-        <StackPanel Grid.Row="1" Background="#426A5A" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Width="1490" Height="450" Grid.RowSpan="3">
-            <Label Content="Questions:" FontFamily="Bahnschrift" Foreground="White" FontSize="32" Width="168" Margin="20,40,0,0" VerticalAlignment="Top"/>
-            <ComboBox Margin="20,30,20,10" Width="1238" Height="69" VerticalAlignment="Top" Background="White" Foreground="#244035" FontFamily="Bahnschrift" FontSize="20" 
+        <StackPanel Grid.Row="1" Background="#426A5A" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Width="1490" Height="450" Grid.RowSpan="4">
+            <Label Content="Questions:" FontFamily="Bahnschrift" Foreground="White" FontSize="32" Width="168" Margin="10,40,0,0" VerticalAlignment="Top"/>
+            <ComboBox Margin="10,30,20,10" Width="1238" Height="69" VerticalAlignment="Top" Background="White" Foreground="#244035" FontFamily="Bahnschrift" FontSize="20" 
     ItemsSource="{Binding ForumItems}" SelectedItem="{Binding SelectedOpeningComment}" BorderBrush="White">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -61,8 +62,8 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
-        <Border Grid.Row="2" Background="#EEEEEE" CornerRadius="5" Margin="30,4,10,10" HorizontalAlignment="Right"/>
-        <Grid Grid.Row="3" HorizontalAlignment="Left" Width="1056" Background="White" Margin="85,80,0,144">
+        <Border Grid.Row="3" Background="#EEEEEE" CornerRadius="5" Margin="0,4,10,10" HorizontalAlignment="Right"/>
+        <Grid Grid.Row="4" HorizontalAlignment="Left" Width="1056" Background="White" Margin="85,80,0,144">
             <TextBox Margin="0,10,116,37" Text="{Binding Comment}" Background="White">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
@@ -96,12 +97,12 @@
                 </TextBox.Style>
             </TextBox>
         </Grid>
-        <Label x:Name="CancelMessageLabel" Foreground="DarkRed" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="1150,193,0,0" Grid.Row="3" FontFamily="Bahnschrift" Content="{Binding CancelMessage}"/>
-        <Label x:Name="SuccessMessageLabel" Foreground="ForestGreen" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="1150,193,0,0" Grid.Row="3" FontFamily="Bahnschrift" Content="{Binding SuccessMessage}"/>
-        <Border Grid.Column="2" Grid.Row="2" Height="250" Width="1400" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="5" BorderThickness="10" BorderBrush="White">
+        <Label x:Name="CancelMessageLabel" Foreground="DarkRed" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="1355,193,0,0" Grid.Row="4" FontFamily="Bahnschrift" Content="{Binding CancelMessage}"/>
+        <Label x:Name="SuccessMessageLabel" Foreground="ForestGreen" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Margin="1355,193,0,0" Grid.Row="4" FontFamily="Bahnschrift" Content="{Binding SuccessMessage}"/>
+        <Border Grid.Row="3" Height="250" Width="1400" VerticalAlignment="Center" Margin="85,0,85,0" CornerRadius="5" BorderThickness="10" BorderBrush="White">
             <TextBlock Text="{Binding CurrentComment}" Margin="8,8,8,8" FontSize="25" Background="Transparent" TextWrapping="Wrap" Foreground="White" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift"/>
         </Border>
-        <Button Command="{Binding MoveToPreviousCommentCommand}" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"  Background="Transparent" BorderThickness="0" Margin="100,0,0,0">
+        <Button Command="{Binding MoveToPreviousCommentCommand}" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left"  Background="Transparent" BorderThickness="0" Margin="100,0,0,0">
             <Button.Resources>
                 <Style TargetType="{x:Type fa:ImageAwesome}">
                     <Setter Property="Foreground" Value="#244035" />
@@ -132,8 +133,8 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-       
-        <Button Command="{Binding MoveToNextCommentCommand}" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Height="50" Width="50" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0" Margin="0,0,100,0">
+
+        <Button Command="{Binding MoveToNextCommentCommand}" Grid.Row="3" VerticalAlignment="Center" Height="50" Width="50" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Margin="1420,0,0,0">
             <Button.Resources>
                 <Style TargetType="{x:Type fa:ImageAwesome}">
                     <Setter Property="Foreground" Value="#244035" />
@@ -164,7 +165,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Grid.Row="3" Content="Answer" HorizontalAlignment="Left" Width="268" Height="80" Foreground="White" FontFamily="Bahnschrift" FontSize="24" Command="{Binding AddCommentCommand}" Margin="1217,108,0,172">
+        <Button Grid.Row="4" Content="Answer" HorizontalAlignment="Left" Width="268" Height="80" Foreground="White" FontFamily="Bahnschrift" FontSize="24" Command="{Binding AddCommentCommand}" Margin="1217,108,0,172">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="NewReservationButton" CornerRadius="5" Margin="20,4,0,4" BorderThickness="1" BorderBrush="#7FB685" Background="#7FB685">
@@ -187,7 +188,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <fa:ImageAwesome Icon="Star" Width="30" Height="30" Opacity="1" Foreground="White" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,40,150,0">
+        <fa:ImageAwesome Icon="Star" Width="30" Height="30" Opacity="1" Foreground="White" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,60,170,0">
             <fa:ImageAwesome.Style>
                 <Style TargetType="fa:ImageAwesome">
                     <Setter Property="Visibility" Value="Collapsed" />
@@ -199,6 +200,46 @@
                 </Style>
             </fa:ImageAwesome.Style>
         </fa:ImageAwesome>
-        <!--<ContentControl Grid.Row="0" Grid.RowSpan="3" Content="{Binding SelectedView}"/>-->
+        <ContentControl Grid.Row="0" Grid.RowSpan="5" Content="{Binding SelectedView}"/>
+        <Button Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,40" Height="40" Width="40" Command="{Binding BackCommand}">
+            <Button.Resources>
+                <Style TargetType="{x:Type fa:ImageAwesome}">
+                    <Setter Property="Foreground" Value="#244035" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="#426A5A" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" Value="#426A5A" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+            <fa:ImageAwesome Icon="Play" Width="40" Height="40" RenderTransformOrigin="0.5,0.5">
+                <fa:ImageAwesome.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </fa:ImageAwesome.RenderTransform>
+            </fa:ImageAwesome>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="ActiveReservationsButton">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" ContentSource="Content" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ActiveReservationsButton" Property="Background" Value="transparent" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ActiveReservationsButton" Property="Background" Value="transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </UserControl>

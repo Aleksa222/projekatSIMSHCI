@@ -35,6 +35,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
         UserService userService;
         public ICommand ShowNewReservationHelpCommand { get; private set; }
         public ICommand BackCommand { get; private set; }
+        public ICommand PdfCommand { get; private set; }
 
 
         private ObservableCollection<Accommodation> accommodationItems = new ObservableCollection<Accommodation>();
@@ -42,6 +43,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
         private ObservableCollection<string> accommodationCityItems = new ObservableCollection<string>();
         private AccommodationService accommodationService;
         private AccommodationReservationService accommodationReservationService;
+        private AccommodationReservation newReservation;
 
         public NewReservationViewModel()
         {
@@ -50,6 +52,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
             BackCommand = new RelayCommand(BackControl);
             ShowNewReservationHelpCommand = new RelayCommand(ShowNewReservationHelpControl);
             accommodationReservationService = new AccommodationReservationService();
+            PdfCommand = new RelayCommand(GenerateAnnualReport);
             GuestCount = 1;
             StartDate = DateTime.Now;
             EndDate = DateTime.Now.AddDays(1);
@@ -57,6 +60,23 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
             LoadData();
         }
 
+        public void GenerateAnnualReport(object obj)
+        {
+            if (newReservation == null)
+            {
+                // Display an error message indicating that a reservation must be made first
+                ReservationSuccessfulLabel = "";
+                ErrorLabel = "Please make a reservation before generating the report.";
+                return;
+            }
+            PDFReportView report = new PDFReportView(newReservation);
+
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(report, "Report");
+                }
+        }
         private void BackControl(object parameter)
         {
             SelectedView = new ActiveReservationsView();
@@ -298,7 +318,7 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
                 return; // do not book the accommodation if input is not valid
             } 
 
-            var newReservation = new AccommodationReservation
+            newReservation = new AccommodationReservation
             {
                 Id = accommodationReservationService.GenerateId(),
                 AccommodationName = SelectedAccommodation.Name,

@@ -304,6 +304,37 @@
         </StackPanel>
         <Label Grid.Row="1"  Content="{Binding ErrorLabel}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="MediumVioletRed" FontSize="20" Margin="0,0,0,36" Grid.ColumnSpan="2"/>
         <Label Grid.Row="1" Content="{Binding ReservationSuccessfulLabel}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="ForestGreen" FontSize="20" Margin="0,0,0,36" Grid.ColumnSpan="2" />
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,330,73" Background="Transparent" BorderThickness="0" Command="{Binding PdfCommand}" Grid.Column="1" Grid.Row="1">
+            <Button.Resources>
+                <Style TargetType="{x:Type fa:ImageAwesome}">
+                    <Setter Property="Foreground" Value="#85BC8B" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="#426A5A" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" Value="#244035" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+            <fa:ImageAwesome Icon="Print" Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="ActiveReservationsButton">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,5" ContentSource="Content" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ActiveReservationsButton" Property="Background" Value="#eeeeee" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ActiveReservationsButton" Property="Background" Value="#eeeeee"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <Button Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,0,40" Height="40" Width="40" Command="{Binding BackCommand}">
             <Button.Resources>
                 <Style TargetType="{x:Type fa:ImageAwesome}">

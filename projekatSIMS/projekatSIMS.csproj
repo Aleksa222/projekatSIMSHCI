@@ -120,6 +120,7 @@
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\VoucherService.cs" />
     <Compile Include="UI\Dialogs\Model\ComboBoxData.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\ForumCommentsHelpViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\ForumCommentsViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\ForumViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\GuestPageBonusViewModel.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\GuestPageViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\NewReservationHelpViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\NewReservationViewModel.cs" />
+    <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\RateNowHelpViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\RequestNewDateHelpViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\GuestViewModel\RequestNewDateViewModel.cs" />
     <Compile Include="UI\Dialogs\ViewModel\OwnerViewModel\OwnerHomeModel.cs" />
@@ -189,6 +191,9 @@
     <Compile Include="UI\Dialogs\View\GuestView\DisplayReviewsView.xaml.cs">
       <DependentUpon>DisplayReviewsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dialogs\View\GuestView\ForumCommentsHelpView.xaml.cs">
+      <DependentUpon>ForumCommentsHelpView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dialogs\View\GuestView\ForumCommentsView.xaml.cs">
       <DependentUpon>ForumCommentsView.xaml</DependentUpon>
     </Compile>
@@ -209,6 +214,9 @@
     </Compile>
     <Compile Include="UI\Dialogs\View\GuestView\NewReservationView.xaml.cs">
       <DependentUpon>NewReservationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\View\GuestView\PDFReportView.xaml.cs">
+      <DependentUpon>PDFReportView.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dialogs\View\GuestView\RateNowHelpView.xaml.cs">
       <DependentUpon>RateNowHelpView.xaml</DependentUpon>
@@ -362,6 +370,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Dialogs\View\GuestView\ForumCommentsHelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Dialogs\View\GuestView\ForumCommentsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -387,6 +399,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Dialogs\View\GuestView\NewReservationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\View\GuestView\PDFReportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

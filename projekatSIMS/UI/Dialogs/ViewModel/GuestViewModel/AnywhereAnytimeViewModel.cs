@@ -25,7 +25,9 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
         private AccommodationReservationService accommodationReservationService = new AccommodationReservationService();
 
         public AnywhereAnytimeViewModel()
-        { 
+        {
+            StartDate = DateTime.Now;
+            EndDate = DateTime.Now.AddDays(1);
             SearchCommand = new RelayCommand(SearchAccommodations);
             LoadAccommodationItems();
         }
@@ -170,21 +172,6 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
                     }
                 }
             }
-            //else if (!IsDateRangeSelected && GuestCount > 0)
-            //{
-            //    foreach (var accommodation in AccommodationItems)
-            //    {
-            //        if (accommodation.GuestLimit >= GuestCount)
-            //        {
-            //            AvailableDates.Add(new AvailableDate
-            //            {
-            //                AvailableStartDate = null,
-            //                AvailableEndDate = null,
-            //                AccommodationName = accommodation.Name
-            //            });
-            //        }
-            //    }
-           // }
         }
 
         private bool IsAccommodationAvailable(Accommodation accommodation)
@@ -203,6 +190,11 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
         }
         private bool IsAccommodationAvailableInDateRange(Accommodation accommodation, DateTime startDate, DateTime endDate)
         {
+            if (startDate == DateTime.MinValue && endDate == DateTime.MinValue)
+            {
+                return true; // Smeštaj je uvek dostupan
+            }
+
             foreach (AccommodationReservation accommodationReservation in accommodationReservationService.GetAll())
             {
                 if (accommodationReservation.AccommodationName == accommodation.Name)
@@ -213,38 +205,96 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
                     }
                 }
             }
+
             return true; // Smeštaj je dostupan za dati opseg datuma
         }
+
+        private string reservationSuccessfulLabel;
+        public string ReservationSuccessfulLabel
+        {
+            get { return reservationSuccessfulLabel; }
+            set
+            {
+                reservationSuccessfulLabel = value;
+                OnPropertyChanged(nameof(ReservationSuccessfulLabel));
+            }
+        }
+
 
         private void SearchAccommodations(object parameter)
         {
             if (GuestCount <= 0 || NumberOfDays <= 0)
             {
-                MessageBox.Show("Morate uneti broj gostiju i broj dana boravka.");
+                ReservationSuccessfulLabel = "You must enter the number of guests and the number of days";
                 return;
             }
 
             AvailableDates.Clear();
 
-            foreach (var accommodation in AccommodationItems)
+            if (StartDate == DateTime.MinValue && EndDate == DateTime.MinValue)
+            {
+                // Pretražuj smeštaje koji su slobodni bilo kada za zadati broj ljudi i broj dana
+                foreach (var accommodation in AccommodationItems)
+                {
+                    if (accommodation.GuestLimit >= GuestCount)
+                    {
+                        AvailableDates.Add(new AvailableDate
+                        {
+                            AvailableStartDate = DateTime.MinValue,
+                            AvailableEndDate = DateTime.MinValue,
+                            AccommodationName = accommodation.Name
+                        });
+
+                    }
+                }
+            }
+            else
+            {
+                // Pretražuj smeštaje za zadati opseg datuma
+                foreach (var accommodation in AccommodationItems)
+                {
+                    if (accommodation.GuestLimit >= GuestCount)
+                    {
+                        DateTime currentDate = StartDate;
+
+                        while (currentDate <= EndDate.AddDays(-NumberOfDays))
+                        {
+                            DateTime reservationEndDate = currentDate.AddDays(NumberOfDays);
+
+                            if (IsAccommodationAvailableInDateRange(accommodation, currentDate, reservationEndDate))
+                            {
+                                AvailableDates.Add(new AvailableDate
+                                {
+                                    AvailableStartDate = currentDate,
+                                    AvailableEndDate = reservationEndDate,
+                                    AccommodationName = accommodation.Name
+                                });
+                            }
+
+                            currentDate = currentDate.AddDays(1);
+                        }
+
+                    }
+                }
+            }
+
+            AccommodationItems.Clear();
+
+            foreach (Accommodation accommodation in accommodationService.GetAll())
             {
                 if (accommodation.GuestLimit >= GuestCount)
                 {
-                    AvailableDates.Add(new AvailableDate
+                    if (IsDateRangeSelected && StartDate != null && EndDate != null && NumberOfDays > 0)
                     {
-                        AvailableStartDate = StartDate,
-                        AvailableEndDate = StartDate.AddDays(NumberOfDays),
-                        AccommodationName = accommodation.Name
-                    });
-                }
-            }
-            AccommodationItems.Clear();
-
-            foreach (var accommodation in AccommodationItems)
-            {
-                if (accommodation.GuestLimit < GuestCount)
-                {
-                    AccommodationItems.Add(accommodation);
+                        if (IsAccommodationAvailableInDateRange(accommodation, StartDate, EndDate.AddDays(-NumberOfDays)))
+                        {
+                            AccommodationItems.Add(accommodation);
+                        }
+                    }
+                    else
+                    {
+                        AccommodationItems.Add(accommodation);
+                    }
                 }
             }
 

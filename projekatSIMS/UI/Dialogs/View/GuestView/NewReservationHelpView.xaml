@@ -283,7 +283,39 @@
             <DatePicker FontFamily="Bahnschrift SemiLight" IsEnabled="False" SelectedDate="{Binding StartDate, Mode=TwoWay}" FontSize="22" Height="45" Width="315" Foreground="#244035" Margin="405,0,0,10"/>
             <DatePicker FontFamily="Bahnschrift SemiLight" IsEnabled="False" FontSize="22" SelectedDate="{Binding EndDate, Mode=TwoWay}" Height="45" Width="315" Foreground="#244035" Margin="120,0,0,10"/>
         </StackPanel>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,330,73" Background="Transparent" BorderThickness="0" Command="{Binding PdfCommand}" Grid.Column="1" Grid.Row="1">
+            <Button.Resources>
+                <Style TargetType="{x:Type fa:ImageAwesome}">
+                    <Setter Property="Foreground" Value="#85BC8B" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="#426A5A" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" Value="#244035" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+            <fa:ImageAwesome Icon="Print" Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="ActiveReservationsButton">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,5" ContentSource="Content" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ActiveReservationsButton" Property="Background" Value="#eeeeee" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ActiveReservationsButton" Property="Background" Value="#eeeeee"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,302,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="138" Width="1550">
+
             <Button Content="BOOK" Width="764" Height="88" IsEnabled="False" Foreground="White" Margin="0,0,0,0" FontFamily="Bahnschrift" FontSize="60" Command="{Binding BookCommand}">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -339,22 +371,26 @@
             </Polygon>
 
             <Border Grid.Row="1" Grid.Column="1" Background="White" CornerRadius="10" 
-        BorderThickness="1" BorderBrush="White" Padding="10" Height="175" Width="340" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1202,662,0,0">
+        BorderThickness="1" BorderBrush="White" Padding="10" Height="175" Width="340" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,559,0,0">
                 <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="20" Height="160" Text="After selecting the accommodation, choose the dates and the number of guests for which you are booking, click the 'Book' button and reserve the accommodation." Width="306"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" Background="White" CornerRadius="10" 
+        BorderThickness="1" BorderBrush="White" Padding="10" Height="80" Width="255" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1117,654,0,0">
+                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="20" Height="50" Text="Print PDF Report here." Width="229" Margin="5,0,0,0"/>
             </Border>
 
             <Polygon Grid.Row="1" Grid.Column="1" Fill="White" Points="0,0 20,0 10,10" Stroke="White" 
-             HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1184,790,0,0" RenderTransformOrigin="0.5,0.5" Height="18" >
+             HorizontalAlignment="Left" VerticalAlignment="Top" Margin="764,734,0,0" RenderTransformOrigin="0.5,0.5" Height="18" >
                 <Polygon.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="90"/>
+                        <RotateTransform Angle="0"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </Polygon.RenderTransform>
             </Polygon>
-            <Button Content="OK" Height="20" FontFamily="Bahnschrift" FontSize="16" Grid.Column="1" Margin="1406,794,50,23" Grid.Row="1" Command="{Binding ShowNewReservationCommand}"/>
+            <Button Content="OK" Height="20" FontFamily="Bahnschrift" FontSize="16" Grid.Column="1" Margin="1247,698,209,119" Grid.Row="1" Command="{Binding ShowNewReservationCommand}"/>
         </Grid>
         <ContentControl Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" Content="{Binding SelectedView}"/>
     </Grid>

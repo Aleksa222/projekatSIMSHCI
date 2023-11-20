@@ -26,10 +26,5 @@ namespace projekatSIMS.UI.Dialogs.View.GuestView
             InitializeComponent();
             DataContext = new RateNowViewModel();
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

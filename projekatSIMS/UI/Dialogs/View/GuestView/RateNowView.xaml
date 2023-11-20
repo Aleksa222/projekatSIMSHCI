@@ -23,7 +23,7 @@
 
         <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Height="82" Margin="20,0,0,0" HorizontalAlignment="Left" Width="613">
             <TextBlock Text="Rate Now" Foreground="#244035" FontSize="50" FontFamily="Bahnschrift" Width="220" Height="52" VerticalAlignment="Center"/>
-            <Button VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,10,0,0" Background="Transparent" BorderThickness="0" Command="{Binding ShowNewReservationHelpCommand}">
+            <Button VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,10,0,0" Background="Transparent" BorderThickness="0" Command="{Binding ShowHelpCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type fa:ImageAwesome}">
                         <Setter Property="Foreground" Value="#244035"/>
@@ -55,26 +55,25 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Background="#426A5A" VerticalAlignment="Center" Orientation="Horizontal" Width="760">
-            <Label Content="Name:" FontFamily="Bahnschrift" Foreground="White" FontSize="32" Width="101" Margin="20,0,0,0" VerticalAlignment="Center"/>
-            <ComboBox Margin="20,10,20,10" Width="607" Height="45" Background="White" Foreground="#244035" FontFamily="Bahnschrift" FontSize="20" 
-    ItemsSource="{Binding ReservationItems}" 
-    SelectedItem="{Binding SelectedReservation}" BorderBrush="White">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding AccommodationName}" Margin="5" FontSize="22" Foreground="DarkRed"/>
-                            <TextBlock Text="{Binding StartDate, StringFormat='Start date: {0:dd/MM/yyyy}'}" Margin="5" />
-                            <TextBlock Text="{Binding EndDate, StringFormat='End date: {0:dd/MM/yyyy}'}" Margin="5" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-        </StackPanel>
-        <TextBox FontFamily="Bahnschrift" Grid.Column="2" Grid.Row="1" FontSize="22" Height="130" Width="130" Foreground="#244035" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,0,0,0" Text="{Binding ImageUrlText}"/>
-        <TextBox FontFamily="Bahnschrift" Grid.Column="2" Grid.Row="1" FontSize="22" Height="130" Width="130" Foreground="#244035" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0"/>
-        <TextBox FontFamily="Bahnschrift" Grid.Column="2" Grid.Row="1" FontSize="22" Height="130" Width="130" Foreground="#244035" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"/>
-        <Button Content="Rate Us!" Width="422" Height="75" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20" Foreground="White" FontFamily="Bahnschrift SemiLight" Grid.Row="2" Grid.Column="0" FontSize="50" Command="{Binding RateCommand}">
+
+        <TextBox FontFamily="Bahnschrift" Grid.Column="1" Grid.Row="1" FontSize="22" Height="19" Width="30" Foreground="#244035" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,102,0,0" Text="{Binding ImageUrlText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <!-- Dodajte Image kontrolu koja će prikazivati sliku -->
+
+        <Border Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="LightGray"></Border>
+        <Border Grid.Row="1" Margin="630,0,556,20" Background="White" Height="374" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Image Source="{Binding Image}" Stretch="Uniform" Height="378" VerticalAlignment="Bottom" />
+        </Border>
+        <Button Content="Add Image" Command="{Binding BrowseImageCommand}" Margin="30,142,569,34" Grid.Row="2" Grid.Column="1" FontFamily="Bahnschrift" Foreground="Green" FontSize="22" />
+        <Button Content="Rate Us!" Width="402" Height="75" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="305,0,0,170" Foreground="White" FontFamily="Bahnschrift SemiLight" Grid.Row="1" Grid.Column="1" FontSize="50" Command="{Binding RateCommand}" Grid.RowSpan="2">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="BookButton" CornerRadius="5" Margin="4" BorderThickness="1" Background="#7FB685">
@@ -91,21 +90,37 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Label Grid.Row="2" Grid.Column="1" Content="{Binding ErrorLabel}" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="MediumVioletRed" Margin="-50,0,0,0"></Label>
-        <Label Grid.Row="2" Grid.Column="1" Content="{Binding SuccessfulLabel}" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="ForestGreen" Margin="-500,0,0,0"></Label>
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Background="#426A5A" VerticalAlignment="Top" Orientation="Horizontal" Width="580" Margin="16,15,0,0">
+            <Label Content="Name:" FontFamily="Bahnschrift" Foreground="White" FontSize="32" Width="101" Margin="20,0,0,0" VerticalAlignment="Center"/>
+            <ComboBox Margin="20,10,20,10" Width="430" Height="45" Background="White" Foreground="#244035" FontFamily="Bahnschrift" FontSize="20" 
+    ItemsSource="{Binding ReservationItems}" 
+    SelectedItem="{Binding SelectedReservation}" BorderBrush="White">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding AccommodationName}" Margin="5" FontSize="22" Foreground="DarkRed"/>
+                            <TextBlock Text="{Binding StartDate, StringFormat='Start date: {0:dd/MM/yyyy}'}" Margin="5" />
+                            <TextBlock Text="{Binding EndDate, StringFormat='End date: {0:dd/MM/yyyy}'}" Margin="5" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <Label Grid.Row="2" Grid.Column="1" Content="{Binding ErrorLabel}" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="MediumVioletRed" Margin="496,59,0,0"></Label>
+        <Label Grid.Row="2" Grid.Column="1" Content="{Binding SuccessfulLabel}" FontFamily="Bahnschrift" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="ForestGreen" Margin="506,0,0,0"></Label>
 
-        <StackPanel Orientation="Vertical" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="20,0,0,0">
+        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="20,102,0,0">
             <Label Content="Clean:" FontFamily="Bahnschrift" Foreground="#426A5A" HorizontalAlignment="Left" FontSize="22" Width="108" Margin="0,0,0,10"/>
             <Label Content="Owner:" FontFamily="Bahnschrift" FontSize="22" Width="109" Foreground="#426A5A" HorizontalAlignment="Left" Margin="0,10,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,204,0,0" Width="422" Height="110" Grid.RowSpan="2">
-            <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" HorizontalAlignment="Center" Width="422" Foreground="#244035" Margin="0,0,0,10"
-         Text="{Binding CleanlinessText}" TextChanged="TextBox_TextChanged" />
-            <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" Width="422" Foreground="#244035" Margin="0,10,0,0"
+        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,94,0,0" Width="438" Height="110">
+            <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" HorizontalAlignment="Center" Width="437" Foreground="#244035" Margin="0,0,0,10"
+         Text="{Binding CleanlinessText}" />
+            <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" Width="437" Foreground="#244035" Margin="0,10,0,0"
          Text="{Binding OwnerPolitenessText}" />
         </StackPanel>
-        <Grid Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="20,204,0,102" Width="755" Background="White" Grid.RowSpan="2">
-            <TextBox Margin="0,0,10,27" Text="{Binding CommentText}" Background="White">
+        <Grid Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="20,21,0,20" Width="576" Background="White">
+            <TextBox Margin="0,0,0,10" Text="{Binding CommentText}" Background="White">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <Setter Property="Foreground" Value="Black" />
@@ -138,7 +153,7 @@
                 </TextBox.Style>
             </TextBox>
         </Grid>
-        <TextBlock Text="Rate Renovation Urgency" Foreground="#426A5A" FontSize="36" FontFamily="Bahnschrift" Grid.Row="3" Width="576" Height="52" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,-5,0,0"/>
+        <TextBlock Text="Rate Renovation Urgency" Foreground="#426A5A" FontSize="36" FontFamily="Bahnschrift" Grid.Row="3" Width="576" Height="52" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
         <StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="252" Margin="20,50,0,0">
             <Label Content="General refurbishment:" FontFamily="Bahnschrift" Foreground="#426A5A" HorizontalAlignment="Left" FontSize="22" Width="258" Margin="0,0,0,0"/>
             <Label Content="Bathroom renovation:" FontFamily="Bahnschrift" FontSize="22" Width="247" Foreground="#426A5A" HorizontalAlignment="Left" Margin="0,10,0,0"/>
@@ -151,7 +166,7 @@
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment ="Center" Width="200" Height="161" Margin="300,50,0,0">
             <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" HorizontalAlignment="Center" Width="200" Foreground="#244035" Margin="0,0,0,0"
-         Text="{Binding GeneralRefurbishment}" TextChanged="TextBox_TextChanged" />
+         Text="{Binding GeneralRefurbishment}" />
             <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" Width="200" Foreground="#244035" Margin="0,10,0,0"
          Text="{Binding BathroomRenovation}" />
             <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" Width="200" Foreground="#244035" Margin="0,10,0,0"
@@ -160,14 +175,14 @@
 
         <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column ="2" HorizontalAlignment="Left" VerticalAlignment ="Center" Width="200" Height="161" Margin="380,50,0,0">
             <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" HorizontalAlignment="Center" Width="200" Foreground="#244035" Margin="0,0,0,0"
-         Text="{Binding TechnicalInstallationsUpgrade}" TextChanged="TextBox_TextChanged" />
+         Text="{Binding TechnicalInstallationsUpgrade}"/>
             <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" Width="200" Foreground="#244035" Margin="0,10,0,0"
          Text="{Binding RecreationAreaRefurbishment}" />
             <TextBox FontFamily="Bahnschrift" FontSize="22" Height="40" Width="200" Foreground="#244035" Margin="0,10,0,0"
          Text="{Binding SafetyImprovements}" />
         </StackPanel>
-        <Grid Grid.Row="4" HorizontalAlignment="Left" Margin="20,20,20,40" Width="1560" Background="White">
-            <TextBox Margin="0,0,0,0" Text="{Binding Comment}" Background="White">
+        <Grid Grid.Row="4" HorizontalAlignment="Left" Margin="20,20,0,68" Width="755" Background="White">
+            <TextBox Margin="0,0,0,52" Text="{Binding Comment}" Background="White">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <Setter Property="Foreground" Value="Black" />
@@ -203,7 +218,7 @@
         <Button Content="Send a recommendation" Width="422" Height="88" Margin="0,0,0,20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Bahnschrift SemiLight" Grid.Row="4" Grid.Column="2" FontSize="35" Command="{Binding RecommendRenovationCommand}">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="BookButton" CornerRadius="5" Margin="4" BorderThickness="1" Background="#7FB685">
+                    <Border x:Name="BookButton" CornerRadius="5" Margin="-151,4,4,28" BorderThickness="1" Background="#426A5A">
                         <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
                     </Border>
                     <ControlTemplate.Triggers>
@@ -217,5 +232,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <ContentControl Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" Grid.ColumnSpan="3" Content="{Binding SelectedView}"/>
     </Grid>
 </UserControl>

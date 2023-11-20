@@ -1,0 +1,117 @@
+﻿<UserControl x:Class="projekatSIMS.UI.Dialogs.View.GuestView.PDFReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:projekatSIMS.UI.Dialogs.View.GuestView"
+             xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="891" d:DesignWidth="630">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Background="#426A5A" Orientation="Horizontal">
+            <Image Source="C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\GuestView\GuestImages\logo.png"
+               Margin="10,5,40,5" Grid.Column="0" Opacity="0.6">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.245" AngleY="-0.075"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="1.48" Y="-0.111"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </TransformGroup>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                        </TransformGroup>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Background="#7FB685" Orientation="Horizontal" HorizontalAlignment="Left" Margin="522,0,0,0" Width="108">
+            <Label Content="REPORT" FontFamily="Bahnschrift" FontSize="16" Foreground="#244035"
+               VerticalAlignment="Center" Margin="0 0 0 0" Width="72"/>
+            <fa:ImageAwesome Icon="AddressBook" Width="20" Height="20" Opacity="1" Foreground="#244035"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Background="#426A5A">
+            <Image Source="C:\Users\Andrea\Documents\GitHub\projekatSIMSHCI\projekatSIMS\UI\Dialogs\View\GuestView\GuestImages\logo.png"
+               Margin="0,2,0,0" Grid.Column="0" Opacity="0.6" Height="26" Width="316">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.245" AngleY="-0.075"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="1.48" Y="-0.111"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.1" ScaleY="0.1"/>
+                                </TransformGroup>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                        </TransformGroup>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </StackPanel>
+
+        <!-- Dodata polja i tekstualna polja za izveštaj -->
+        <StackPanel Grid.Row="1" Background="#EEEEEE" Margin="20">
+            <Label Background="#85BC8B" Foreground="White" Content="   RESERVATION REPORT   " HorizontalAlignment="Center" Margin="0,40,0,0" FontSize="24" FontStyle="Italic" FontWeight="Bold"></Label>
+
+            <Label Content="Accommodation Name:" FontFamily="Bahnschrift" FontSize="15" Foreground="#244035"
+               Margin="0 40 0 5" FontStyle="Italic"/>
+            <TextBox Background="White" Name="AccommodationNameTextBox" BorderThickness="1" BorderBrush="#CCCCCC" Padding="7"/>
+
+            <Label Content="Start Date:" FontFamily="Bahnschrift" FontSize="15" Foreground="#244035"
+               Margin="0 30 0 5" FontStyle="Italic"/>
+            <TextBox Background="White" Name="StartDateTextBox" BorderThickness="1" BorderBrush="#CCCCCC" Padding="7"/>
+
+            <Label Content="End Date:" FontFamily="Bahnschrift" FontSize="15" Foreground="#244035"
+               Margin="0 30 0 5" FontStyle="Italic"/>
+            <TextBox Background="White" BorderThickness="1" Name="EndDateTextBox" BorderBrush="#CCCCCC" Padding="7"/>
+
+            <Label Content="Guest Count:" FontFamily="Bahnschrift" FontSize="15" Foreground="#244035"
+               Margin="0 30 0 5" FontStyle="Italic"/>
+            <TextBox Background="White" BorderThickness="1" Name="GuestCountTextBox" BorderBrush="#CCCCCC" Padding="7"/>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

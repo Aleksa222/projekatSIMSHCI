@@ -13,3 +13,5 @@
 12|3|John|I highly recommend exploring the Latin Quarter in Paris. It's full of charm and great restaurants.|True
 13|4|Sara|You should also try visiting the Anne Frank House in Amsterdam. It's a moving experience.|False
 14|4|Ana|For a unique adventure, consider renting a boat and exploring Amsterdam's famous canal system.|False
+15|1|Andrea|aaaaaaa|True
+16|2|Andrea|fklmavfadnbk|True

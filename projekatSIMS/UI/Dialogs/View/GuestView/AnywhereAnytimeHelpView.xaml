@@ -13,9 +13,9 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock Text="Anywhere/Anytime Accommodations" Margin="20,0,0,0" Foreground="#244035" FontSize="72" FontFamily="Bahnschrift" FontWeight="Bold"/>
-            <Button Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Background="Transparent" BorderThickness="0" Command="{Binding ShowAnywhereAnytimeHelpCommand}">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0,0,0">
+            <TextBlock Text="Anywhere / Anytime" Foreground="#244035" FontSize="50" FontFamily="Bahnschrift" Width="471" Height="52" VerticalAlignment="Center"/>
+            <Button VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" Background="Transparent" BorderThickness="0" Command="{Binding ShowAnywhereAnytimeHelpCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type fa:ImageAwesome}">
                         <Setter Property="Foreground" Value="#244035" />

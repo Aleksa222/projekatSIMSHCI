@@ -17,8 +17,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
-            <TextBlock Text="All Accommodations" Margin="20,0,0,0" Foreground="#244035" FontSize="72" FontFamily="Bahnschrift" FontWeight="Bold"/>
-            <Button Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Background="Transparent" BorderThickness="0" Command="{Binding ShowAllAccommodationsHelpCommand}">
+            <TextBlock Text="All Accommodations" Margin="20,0,0,0" Foreground="#244035" FontSize="50" FontFamily="Bahnschrift"/>
+            <Button Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Background="Transparent" BorderThickness="0" Command="{Binding ShowAllAccommodationsHelpCommand}">
                 <Button.Resources>
                     <Style TargetType="{x:Type fa:ImageAwesome}">
                         <Setter Property="Foreground" Value="#244035" />
@@ -32,7 +32,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Resources>
-                <fa:ImageAwesome Icon="QuestionCircleOutline" Width="60" Height="60"/>
+                <fa:ImageAwesome Icon="QuestionCircleOutline" Width="40" Height="40"/>
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border x:Name="ActiveReservationsButton">

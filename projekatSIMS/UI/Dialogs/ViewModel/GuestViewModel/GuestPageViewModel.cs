@@ -252,12 +252,12 @@ namespace projekatSIMS.UI.Dialogs.ViewModel.GuestViewModel
             bool success = userService.UseBonusPoint(userId);
             if (success)
             {
-                SuccessLabel = "Uspešno ste iskorisitli bonus poen!";
+                SuccessLabel = "You have successfully used the bonus point!";
                 ErrorLabel = "";
             }
             else
             {
-                ErrorLabel = "Nemoguće iskoristiti bonus poen.";
+                ErrorLabel = "Impossible to use bonus point.";
                 SuccessLabel = "";
             }
 
